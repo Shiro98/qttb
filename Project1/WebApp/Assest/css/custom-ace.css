@@ -1,0 +1,118 @@
+﻿/*Font*/
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url(/Assest/fonts/Font-Roboto/Roboto-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url(/Assest/fonts/Font-Roboto/Roboto-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: url(/Assest/fonts/Font-Roboto/Roboto-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-Italic';
+    src: url(/Assest/fonts/Font-Roboto/Roboto-Italic.ttf) format('truetype');
+}
+/*End Font*/
+/*modify style*/
+body {
+    font-family: 'Roboto-Regular';
+    font-size: 11.555pt;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Roboto-Regular","Helvetica Neue",Helvetica,Arial,sans-serif
+}
+.small, small {
+    font-family: Roboto-Bold;
+    font-size:14pt;
+}
+.nav-list > li > a { 
+    text-shadow: none !important;
+    font-size: 11.555pt;
+    font-family:Roboto-Bold;
+}
+.jexcel > thead > tr > td, .nav-tabs > li > a, .nav-tabs > li > a:focus {
+    font-size: 10pt;
+    color: #585858;
+    font-weight: bold;
+}
+.jexcel > tbody > tr > td {
+    font-size: 10pt;
+    color: #585858;
+    font-weight: normal;
+}
+.jexcel > tfoot > tr > td {
+    font-size: 10pt;
+    color: #585858;
+    font-weight: bold;
+}
+.btn {
+    padding: 2px 12px; 
+}
+.sidebar.h-sidebar .nav-list > li.hover > .submenu { 
+    width: 310px; 
+    /* position: relative; */
+}
+/*End modify style*/
+@media (min-width:992px) {
+    .modal-dialog.modal-lg, .modal-dialog.modal-xl {
+        max-width: 800px !important
+    }
+}
+
+@media (min-width:1200px) {
+    .modal-dialog.modal-xl {
+        max-width: 1140px !important
+    }
+}
+@media (min-width:768px) {
+    .modal-dialog.modal-lg, .modal-dialog.modal-xl,, .modal-dialog.modal-xs {
+        max-width: 600px !important
+    }
+}
+
+.tree-container {
+    min-height: none;
+    max-width: none;
+}
+
+input[type=email], input[type=url], input[type=search], input[type=tel], input[type=color], input[type=text], input[type=password], input[type=datetime], input[type=datetime-local], input[type=date], input[type=month], input[type=time], input[type=week], input[type=number], textarea {
+    padding: 0px !important;
+}
+
+select {
+    padding: 1px;
+    height: 25px !important;
+}
+
+.btn-header {
+    background-color: #00933f;
+    color: #fff;
+}
+
+.pagination > li.active > a, .pagination > li.active > a:focus, .pagination > li.active > a:hover {
+    background-color: #00933f;
+}
+
+/*.btn {
+    padding: 2px 12px;
+}*/
+
+    .btn.btn-bold, .btn.btn-round {
+        border-bottom-width: 1px;
+    }
+.form-control{
+    height: 28px !important;
+}
+.select2-container--default .select2-selection {
+    line-height: unset !important;
+}
+.select2-container .select2-selection--multiple{
+    height: 28px !important;
+    min-height: unset !important;
+}

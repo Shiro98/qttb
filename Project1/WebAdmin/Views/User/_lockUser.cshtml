@@ -1,0 +1,22 @@
+﻿<div class="modal-header">
+    <h4 class="modal-title">Nhập ý kiến</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="cancel()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form class=" col-md-12" id="formSubmit">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="requiredInput">Ý kiến khóa</label>
+                    <textarea class="form-control" rows="2" ng-model="Content" name="Content"></textarea>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" ng-click="submit()">Lưu</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancel()">Hủy</button>
+</div>

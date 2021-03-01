@@ -1,0 +1,99 @@
+D:\Work\WebApp\WebApp\Data\bin\Debug\Data.dll.config
+D:\Work\WebApp\WebApp\Data\bin\Debug\Data.dll
+D:\Work\WebApp\WebApp\Data\bin\Debug\Data.pdb
+D:\Work\WebApp\WebApp\Data\bin\Debug\Common.dll
+D:\Work\WebApp\WebApp\Data\bin\Debug\EntityFramework.dll
+D:\Work\WebApp\WebApp\Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\Work\WebApp\WebApp\Data\bin\Debug\Model.dll
+D:\Work\WebApp\WebApp\Data\bin\Debug\Simple.dll
+D:\Work\WebApp\WebApp\Data\bin\Debug\System.Web.Mvc.dll
+D:\Work\WebApp\WebApp\Data\bin\Debug\System.Web.WebPages.dll
+D:\Work\WebApp\WebApp\Data\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Work\WebApp\WebApp\Data\bin\Debug\System.Web.Razor.dll
+D:\Work\WebApp\WebApp\Data\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Work\WebApp\WebApp\Data\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Work\WebApp\WebApp\Data\bin\Debug\Common.pdb
+D:\Work\WebApp\WebApp\Data\bin\Debug\Model.pdb
+D:\Work\WebApp\WebApp\Data\bin\Debug\Model.dll.config
+D:\Work\WebApp\WebApp\Data\bin\Debug\Simple.pdb
+D:\Work\WebApp\WebApp\Data\bin\Debug\EntityFramework.xml
+D:\Work\WebApp\WebApp\Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\Work\WebApp\WebApp\Data\bin\Debug\System.Web.Mvc.xml
+D:\Work\WebApp\WebApp\Data\bin\Debug\System.Web.WebPages.xml
+D:\Work\WebApp\WebApp\Data\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Work\WebApp\WebApp\Data\bin\Debug\System.Web.Razor.xml
+D:\Work\WebApp\WebApp\Data\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Work\WebApp\WebApp\Data\obj\Debug\Data.csprojAssemblyReference.cache
+D:\Work\WebApp\WebApp\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+D:\Work\WebApp\WebApp\Data\obj\Debug\Data.csproj.CopyComplete
+D:\Work\WebApp\WebApp\Data\obj\Debug\Data.dll
+D:\Work\WebApp\WebApp\Data\obj\Debug\Data.pdb
+F:\OutSource\Quản lý thiết bị\Code\Data\bin\Debug\Data.dll.config
+F:\OutSource\Quản lý thiết bị\Code\Data\bin\Debug\Data.dll
+F:\OutSource\Quản lý thiết bị\Code\Data\bin\Debug\Data.pdb
+F:\OutSource\Quản lý thiết bị\Code\Data\bin\Debug\Common.dll
+F:\OutSource\Quản lý thiết bị\Code\Data\bin\Debug\EntityFramework.dll
+F:\OutSource\Quản lý thiết bị\Code\Data\bin\Debug\EntityFramework.SqlServer.dll
+F:\OutSource\Quản lý thiết bị\Code\Data\bin\Debug\Model.dll
+F:\OutSource\Quản lý thiết bị\Code\Data\bin\Debug\Simple.dll
+F:\OutSource\Quản lý thiết bị\Code\Data\bin\Debug\System.Web.Mvc.dll
+F:\OutSource\Quản lý thiết bị\Code\Data\bin\Debug\Common.pdb
+F:\OutSource\Quản lý thiết bị\Code\Data\bin\Debug\Model.pdb
+F:\OutSource\Quản lý thiết bị\Code\Data\bin\Debug\Model.dll.config
+F:\OutSource\Quản lý thiết bị\Code\Data\bin\Debug\Simple.pdb
+F:\OutSource\Quản lý thiết bị\Code\Data\bin\Debug\EntityFramework.xml
+F:\OutSource\Quản lý thiết bị\Code\Data\bin\Debug\EntityFramework.SqlServer.xml
+F:\OutSource\Quản lý thiết bị\Code\Data\obj\Debug\Data.csprojAssemblyReference.cache
+F:\OutSource\Quản lý thiết bị\Code\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+F:\OutSource\Quản lý thiết bị\Code\Data\obj\Debug\Data.csproj.CopyComplete
+F:\OutSource\Quản lý thiết bị\Code\Data\obj\Debug\Data.dll
+F:\OutSource\Quản lý thiết bị\Code\Data\obj\Debug\Data.pdb
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Data\obj\Debug\Data.csprojAssemblyReference.cache
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Data\obj\Debug\Data.dll
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Data\obj\Debug\Data.pdb
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Data\bin\Debug\Data.dll.config
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Data\bin\Debug\Data.dll
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Data\bin\Debug\Data.pdb
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Data\bin\Debug\Common.dll
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Data\bin\Debug\EntityFramework.dll
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Data\bin\Debug\EntityFramework.SqlServer.dll
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Data\bin\Debug\Model.dll
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Data\bin\Debug\Simple.dll
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Data\bin\Debug\System.Web.Mvc.dll
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Data\bin\Debug\Common.pdb
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Data\bin\Debug\Model.pdb
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Data\bin\Debug\Model.dll.config
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Data\bin\Debug\Simple.pdb
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Data\bin\Debug\EntityFramework.xml
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Data\bin\Debug\EntityFramework.SqlServer.xml
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Data\obj\Debug\Data.csproj.CopyComplete
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Data\bin\Debug\log4net.dll
+D:\Code\QuanLyThietBi\Source\Dev\Data\obj\Debug\Data.csprojAssemblyReference.cache
+D:\Code\QuanLyThietBi\Source\Dev\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+D:\Code\QuanLyThietBi\Source\Dev\Data\obj\Debug\Data.dll
+D:\Code\QuanLyThietBi\Source\Dev\Data\obj\Debug\Data.pdb
+D:\Code\QuanLyThietBi\Source\Dev\Data\bin\Debug\Data.dll.config
+D:\Code\QuanLyThietBi\Source\Dev\Data\bin\Debug\Data.dll
+D:\Code\QuanLyThietBi\Source\Dev\Data\bin\Debug\Data.pdb
+D:\Code\QuanLyThietBi\Source\Dev\Data\bin\Debug\Common.dll
+D:\Code\QuanLyThietBi\Source\Dev\Data\bin\Debug\EntityFramework.dll
+D:\Code\QuanLyThietBi\Source\Dev\Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\Code\QuanLyThietBi\Source\Dev\Data\bin\Debug\log4net.dll
+D:\Code\QuanLyThietBi\Source\Dev\Data\bin\Debug\Model.dll
+D:\Code\QuanLyThietBi\Source\Dev\Data\bin\Debug\Simple.dll
+D:\Code\QuanLyThietBi\Source\Dev\Data\bin\Debug\System.Web.Mvc.dll
+D:\Code\QuanLyThietBi\Source\Dev\Data\bin\Debug\Common.pdb
+D:\Code\QuanLyThietBi\Source\Dev\Data\bin\Debug\Model.pdb
+D:\Code\QuanLyThietBi\Source\Dev\Data\bin\Debug\Model.dll.config
+D:\Code\QuanLyThietBi\Source\Dev\Data\bin\Debug\Simple.pdb
+D:\Code\QuanLyThietBi\Source\Dev\Data\bin\Debug\EntityFramework.xml
+D:\Code\QuanLyThietBi\Source\Dev\Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\Code\QuanLyThietBi\Source\Dev\Data\bin\Debug\log4net.xml
+D:\Code\QuanLyThietBi\Source\Dev\Data\obj\Debug\Data.csproj.CopyComplete
+D:\Code\QuanLyThietBi\Source\Dev\Data\bin\Debug\Newtonsoft.Json.dll
+D:\Code\QuanLyThietBi\Source\Dev\Data\bin\Debug\Newtonsoft.Json.xml
+C:\Users\trant\source\repos\Project1\Data\obj\Debug\Data.csprojAssemblyReference.cache
+C:\Users\trant\source\repos\Project1\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\trant\source\repos\Project1\Data\obj\Debug\Data.dll
+C:\Users\trant\source\repos\Project1\Data\obj\Debug\Data.pdb

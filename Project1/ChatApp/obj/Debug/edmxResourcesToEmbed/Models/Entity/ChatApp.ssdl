@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CHAT_APPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CONVERSATIONS">
+    <Key>
+      <PropertyRef Name="CONVERSATION_ID" />
+    </Key>
+    <Property Name="CONVERSATION_ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SEND_USER" Type="varchar" MaxLength="50" />
+    <Property Name="RECIVE_USER" Type="varchar" MaxLength="50" />
+    <Property Name="MESSAGE" Type="ntext" />
+    <Property Name="ISREAD" Type="bit" />
+    <Property Name="ATTACH_FILE_ID" Type="int" />
+    <Property Name="CREATED_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="FILES">
+    <Key>
+      <PropertyRef Name="FILE_ID" />
+    </Key>
+    <Property Name="FILE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FILE_NAME" Type="nvarchar" MaxLength="500" />
+    <Property Name="FILE_URL" Type="nvarchar" MaxLength="500" />
+    <Property Name="FILE_EXTEND" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityContainer Name="CHAT_APPModelStoreContainer">
+    <EntitySet Name="CONVERSATIONS" EntityType="Self.CONVERSATIONS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FILES" EntityType="Self.FILES" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

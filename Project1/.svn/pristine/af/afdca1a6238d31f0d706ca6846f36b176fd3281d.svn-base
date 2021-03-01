@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b5533d6f0e0b459e803be2c4cd05901b" Name="Diagram1">
+        <EntityTypeShape EntityType="THIET_BI_VTModel.DM_THIET_BI_VT" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="THIET_BI_VTModel.KH_NHAP_XUAT_KHO" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="THIET_BI_VTModel.KH_NHAP_XUAT_KHO_CT" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="THIET_BI_VTModel.SLOG_KH_NHAP_XUAT_KHO" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="THIET_BI_VTModel.SLOG_KH_NHAP_XUAT_KHO_CT" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="THIET_BI_VTModel.FK_KH_NHAP_XUAT_KHO_CT_DM_THIET_BI_VT" ManuallyRouted="false" />
+        <AssociationConnector Association="THIET_BI_VTModel.FK_KH_NHAP_XUAT_KHO_CT_KH_NHAP_XUAT_KHO" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

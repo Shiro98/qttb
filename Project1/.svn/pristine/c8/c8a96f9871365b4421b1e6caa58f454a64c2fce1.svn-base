@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row" ng-controller="UserController">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Tài khoản</h3>
+                <div class="card-tools">
+                    @*<button type="button" class="btn btn-" ng-click="add()">
+                            <i class="fas fa-plus"></i> Tìm kiếm
+                        </button>*@
+                    <button type="button" class="btn btn-primary" ng-show="RoleBtnCreate == true" ng-click="add()">
+                        <i class="fas fa-plus"></i> Thêm mới
+                    </button>
+                    <button type="button" class="btn btn-primary" ng-show="RoleBtnSearch == true" ng-click="LoadPage()">
+                        <i class="fas fa-sync-alt"></i> Làm mới
+                    </button>
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="width:10px;">STT </th>
+                            <th style="width:100px;" class="sort sorting" ng-click="Sort($event, 'LOGIN_NAME')">Tên đăng nhập </th>
+                            <th style="width:300px;" class="sort sorting" ng-click="Sort($event, 'FULL_NAME')">Họ và tên </th>
+                            <th style="width:100px;">Số điện thoại </th>
+                            <th style="width:100px;">Nhóm quyền </th>
+                            <th style="width:100px;" class="sort sorting" ng-click="Sort($event, 'USER_GROUP')">Nhóm người dùng </th>
+                            <th style="width:100px;" class="sort sorting" ng-click="Sort($event, 'UNIT_ID')">Đơn vị </th>
+                            <th style="width:70px;">Trạng thái</th>
+                            <th style="width: 8%;">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in ListUser" ng-click="ViewDetail(item.USER_ID, $index)" ng-class="{activerow:$index==selectedRow}">
+                            <td class="text-center">{{(10 * (modelSearch.currentPage-1)) + $index + 1}}</td>
+                            <td>{{item.LOGIN_NAME}}</td>
+                            <td>{{item.FULL_NAME}}</td>
+                            <td>{{item.TEL_NO}}</td>
+                            <td>{{item.ROLE_DESC}}</td>
+                            <td>{{item.USER_GROUP}}</td>
+                            <td>{{item.UNIT_NAME}}</td>
+                            <td class="text-center">{{item.ENABLED_FLAG == 'Y' ? 'Sử dụng' : 'Không sử dụng'}}</td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-sm btn-primary" ng-show="RoleBtnUpdate == true" ng-click="edit(item.USER_ID)">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-danger" ng-show="RoleBtnDelete == true" ng-click="delete(item.USER_ID, item.FULL_NAME)">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-red" ng-show="RoleBtnLock == true && item.IsLock == 0" ng-click="lockUser(item.USER_ID)">
+                                    <i class="fas fa-lock"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-primary" ng-show="RoleBtnUnlock == true && item.IsLock == 1" ng-click="unlockUser(item.USER_ID, item.FULL_NAME)">
+                                    <i class="fas fa-unlock"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="pagination pagination-sm m-0 float-right" uib-pagination total-items="modelSearch.totalItems" items-per-page="modelSearch.pageSize" ng-model="modelSearch.currentPage" ng-change="pageChanged()" max-size="modelSearch.maxSize" class="pagination-sm" boundary-links="true" rotate="false" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+</div>
+@section scripts{
+    <script src="~/app/Controller/UserController.js"></script>
+}

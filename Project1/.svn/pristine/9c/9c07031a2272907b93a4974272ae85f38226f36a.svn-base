@@ -1,0 +1,45 @@
+﻿<div class="modal-header">
+    <h4 class="modal-title">Thêm mới nhóm quyền</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="cancel()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form class=" col-md-12" id="formSubmit">
+        <div class="row" style="margin-bottom:10px;">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="requiredInput">Danh mục Nhóm/Loại</label>
+                    <select class="form-control" ng-model="model.FLEX_VALUE_SET_ID" ui-select2 name="FLEX_VALUE_SET_ID" ng-options="item.FLEX_VALUE_SET_ID as item.FLEX_VALUE_SET_NAME for item in ListFlexValueSet">
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-6" ng-show="GetShowHide('FLEX_VALUE_CATEGORY')">
+                <div class="form-group">
+                    <label>{{GetTitle('FLEX_VALUE_CATEGORY')}}</label>
+                    <input class="form-control" type="text" ng-model="model.FLEX_VALUE_CATEGORY" />
+                </div>
+            </div>
+            <div class="col-lg-12" ng-show="GetShowHide('DESCRIPTION')">
+                <label>{{GetTitle('DESCRIPTION')}}</label>
+                <textarea class="form-control" rows="2" ng-model="model.DESCRIPTION"></textarea>
+            </div>
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label>Cấp trên</label>
+                    <select class="form-control" ng-model="model.PARENT_FLEX_VALUE_CATEGORY" ui-select2 name="PARENT_FLEX_VALUE_CATEGORY" ng-options="item.FLEX_VALUE_ID as item.DESCRIPTION for item in ListFlexValueCateParent">
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-8" ng-show="GetShowHide('NOTE')">
+                <label>{{GetTitle('NOTE')}}</label>
+                <textarea class="form-control" rows="2" ng-model="model.NOTE"></textarea>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" ng-click="submit()">Lưu</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancel()">Hủy</button>
+</div>
+

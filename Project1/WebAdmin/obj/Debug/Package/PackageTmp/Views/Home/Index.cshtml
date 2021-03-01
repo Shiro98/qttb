@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Receipt";
+    string fullUrl = Url.Action("PrintInvoice", "Receipt",
+        new { area = "Portal", No = 5, id = 4, ReportType = 1 });
+}
+<script language="JavaScript" type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="/js/jquery-ui-personalized-1.5.2.packed.js"></script>
+<script language="JavaScript" type="text/javascript" src="/js/sprinkle.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            async: false,
+            url: "http://jsonip.com",
+            success: function (data) {
+                alert(data.ip);
+            }
+        });
+    });
+</script>
+
+<div>
+    <h3>Xin chào</h3>
+</div>
+
+
+
+
+

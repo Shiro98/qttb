@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CHAT_APPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CONVERSATIONS">
+          <Key>
+            <PropertyRef Name="CONVERSATION_ID" />
+          </Key>
+          <Property Name="CONVERSATION_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SEND_USER" Type="varchar" MaxLength="50" />
+          <Property Name="RECIVE_USER" Type="varchar" MaxLength="50" />
+          <Property Name="MESSAGE" Type="ntext" />
+          <Property Name="ISREAD" Type="bit" />
+          <Property Name="ATTACH_FILE_ID" Type="int" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="FILES">
+          <Key>
+            <PropertyRef Name="FILE_ID" />
+          </Key>
+          <Property Name="FILE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FILE_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="FILE_URL" Type="nvarchar" MaxLength="500" />
+          <Property Name="FILE_EXTEND" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="CHAT_APPModelStoreContainer">
+          <EntitySet Name="CONVERSATIONS" EntityType="Self.CONVERSATIONS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FILES" EntityType="Self.FILES" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CHAT_APPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CONVERSATION">
+          <Key>
+            <PropertyRef Name="CONVERSATION_ID" />
+          </Key>
+          <Property Name="CONVERSATION_ID" Type="Guid" Nullable="false" />
+          <Property Name="SEND_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RECIVE_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MESSAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ISREAD" Type="Boolean" />
+          <Property Name="ATTACH_FILE_ID" Type="Int32" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="FILE">
+          <Key>
+            <PropertyRef Name="FILE_ID" />
+          </Key>
+          <Property Name="FILE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FILE_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FILE_URL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FILE_EXTEND" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="CHAT_APPEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CONVERSATIONS" EntityType="Self.CONVERSATION" />
+          <EntitySet Name="FILES" EntityType="Self.FILE" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CHAT_APPModelStoreContainer" CdmEntityContainer="CHAT_APPEntities">
+          <EntitySetMapping Name="CONVERSATIONS">
+            <EntityTypeMapping TypeName="CHAT_APPModel.CONVERSATION">
+              <MappingFragment StoreEntitySet="CONVERSATIONS">
+                <ScalarProperty Name="CONVERSATION_ID" ColumnName="CONVERSATION_ID" />
+                <ScalarProperty Name="SEND_USER" ColumnName="SEND_USER" />
+                <ScalarProperty Name="RECIVE_USER" ColumnName="RECIVE_USER" />
+                <ScalarProperty Name="MESSAGE" ColumnName="MESSAGE" />
+                <ScalarProperty Name="ISREAD" ColumnName="ISREAD" />
+                <ScalarProperty Name="ATTACH_FILE_ID" ColumnName="ATTACH_FILE_ID" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FILES">
+            <EntityTypeMapping TypeName="CHAT_APPModel.FILE">
+              <MappingFragment StoreEntitySet="FILES">
+                <ScalarProperty Name="FILE_ID" ColumnName="FILE_ID" />
+                <ScalarProperty Name="FILE_NAME" ColumnName="FILE_NAME" />
+                <ScalarProperty Name="FILE_URL" ColumnName="FILE_URL" />
+                <ScalarProperty Name="FILE_EXTEND" ColumnName="FILE_EXTEND" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

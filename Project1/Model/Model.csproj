@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5E412635-0A53-4F04-9046-AF424FC70278}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Model</RootNamespace>
+    <AssemblyName>Model</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ModelExtend\FlexColumnModel.cs" />
+    <Compile Include="ModelExtend\FlexValueCategoryColumn.cs" />
+    <Compile Include="ModelExtend\FlexValueCategoryModel.cs" />
+    <Compile Include="ModelExtend\FlexValueColumun.cs" />
+    <Compile Include="ModelExtend\FlexValueModel.cs" />
+    <Compile Include="ModelExtend\MenuModel.cs" />
+    <Compile Include="ModelExtend\ModelSearchFelexValue.cs" />
+    <Compile Include="ModelExtend\ModelSearchFlexValueCategory.cs" />
+    <Compile Include="ModelExtend\ModelSearchUser.cs" />
+    <Compile Include="ModelExtend\NhapXuatKho.cs" />
+    <Compile Include="ModelExtend\NhapXuatKhoChiTiet.cs" />
+    <Compile Include="ModelExtend\RolePageModel.cs" />
+    <Compile Include="ModelExtend\SelectModel.cs" />
+    <Compile Include="ModelExtend\SysParameterPageModel.cs" />
+    <Compile Include="ModelExtend\TC_PHAM_NHANModel.cs" />
+    <Compile Include="ModelExtend\TokenModel.cs" />
+    <Compile Include="ModelExtend\TP_CB_BIET_PHAIModel.cs" />
+    <Compile Include="ModelExtend\TP_CB_CHO_HUUModel.cs" />
+    <Compile Include="ModelExtend\TP_CB_CONG_TACModel.cs" />
+    <Compile Include="ModelExtend\TP_CB_DI_HOCModel.cs" />
+    <Compile Include="ModelExtend\TP_CB_TongHopModel.cs" />
+    <Compile Include="ModelExtend\TP_CB_TUYEN_MOIModel.cs" />
+    <Compile Include="ModelExtend\TP_CS_NGHIA_VUModel.cs" />
+    <Compile Include="ModelExtend\TreeItem.cs" />
+    <Compile Include="ModelExtend\TreeModel.cs" />
+    <Compile Include="ModelExtend\UserPageModel.cs" />
+    <Compile Include="Model\APPS_CONF.cs">
+      <DependentUpon>ITEMS_SYSTEM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_CAP_BAC.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_CAP_BAC_CHO_QUAN_SO.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_CAP_BAC_HAM.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_CAP_BAC_NHOM.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_CONG_TY.cs">
+      <DependentUpon>ITEMS_LIST.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_DINH_MUC.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_DINH_MUC_SP.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_DINH_MUC_SP_VT.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_DONVI.cs">
+      <DependentUpon>ITEMS_LIST.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_DON_VI_DUOC_TRO_GIA.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_DON_VI_NHOM.cs">
+      <DependentUpon>ITEMS_LIST.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_DON_VI_TINH.cs">
+      <DependentUpon>ITEMS_LIST.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_KHO.cs">
+      <DependentUpon>ITEMS_LIST.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_KHU_VUC.cs">
+      <DependentUpon>ITEMS_LIST.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_LOAI_DT.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_LOAI_HAM.cs">
+      <DependentUpon>ITEMS_LIST.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_LOAI_PHAM.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_LOAI_TC.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_LUC_LUONG.cs">
+      <DependentUpon>ITEMS_LIST.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_NHOM_SAN_PHAM_BG.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_NHOM_SAN_PHAM_BG_D.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_NHOM_SP.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_NHOM_TC.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_NHOM_TC_CAP_BAC.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_NHOM_TC_KHU_VUC.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ITEMS_LIST.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ITEMS_LIST.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ITEMS_LIST.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ITEMS_LIST.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ITEMS_LIST.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ITEMS_LIST.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ITEMS_SYSTEM.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ITEMS_SYSTEM.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ITEMS_SYSTEM.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ITEMS_SYSTEM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ITEMS_SYSTEM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ITEMS_SYSTEM.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LT_DATA_TYPES.cs">
+      <DependentUpon>ITEMS_LIST.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LT_DESC_FLEX_COLUMN_USAGES.cs">
+      <DependentUpon>ITEMS_LIST.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LT_FLEX_VALUES.cs">
+      <DependentUpon>ITEMS_LIST.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LT_FLEX_VALUE_CATEGORIES.cs">
+      <DependentUpon>ITEMS_LIST.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LT_FLEX_VALUE_SETS.cs">
+      <DependentUpon>ITEMS_LIST.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QS_CBCS.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QS_CBCS_CHUYEN_LL_TH.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QS_CBCS_HT.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QS_CBCS_SD.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QS_QUAN_TRANG.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QS_QUAN_TRANG.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QS_QUAN_TRANG.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QS_QUAN_TRANG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QS_QUAN_TRANG.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SP_SAN_PHAM.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SP_SAN_PHAM_BG.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ST_PAGES_MENU.cs">
+      <DependentUpon>ITEMS_SYSTEM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ST_PAGE_FUNCTIONS.cs">
+      <DependentUpon>ITEMS_SYSTEM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ST_PARAMETERS.cs">
+      <DependentUpon>ITEMS_SYSTEM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ST_PARAMETERS_EFF_DATE.cs">
+      <DependentUpon>ITEMS_SYSTEM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ST_ROLES.cs">
+      <DependentUpon>ITEMS_SYSTEM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ST_ROLE_PAGES.cs">
+      <DependentUpon>ITEMS_SYSTEM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ST_UNITS.cs">
+      <DependentUpon>ITEMS_SYSTEM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ST_USERS.cs">
+      <DependentUpon>ITEMS_SYSTEM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ST_USER_ROLES.cs">
+      <DependentUpon>ITEMS_SYSTEM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sysdiagram.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TC_CBCS.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TC_DON_VI_NH.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TC_PHAM_NHAN.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TF_TASKFLOW_CONF.cs">
+      <DependentUpon>ITEMS_SYSTEM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TP_CB_BIET_PHAI.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TP_CB_CHO_HUU.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TP_CB_CONG_TAC.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TP_CB_DI_HOC.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TP_CB_TUYEN_MOI.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TP_CS_NGHIA_VU.cs">
+      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\USER_LOCK.cs">
+      <DependentUpon>ITEMS_SYSTEM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="Model\ITEMS_LIST.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ITEMS_LIST.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\ITEMS_LIST.edmx.diagram">
+      <DependentUpon>ITEMS_LIST.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="Model\ITEMS_SYSTEM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ITEMS_SYSTEM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\ITEMS_SYSTEM.edmx.diagram">
+      <DependentUpon>ITEMS_SYSTEM.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="Model\QS_QUAN_TRANG.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QS_QUAN_TRANG.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\QS_QUAN_TRANG.edmx.diagram">
+      <DependentUpon>QS_QUAN_TRANG.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Simple\Simple.csproj">
+      <Project>{BD4A1E8A-D01F-430B-8369-D1EE837363D1}</Project>
+      <Name>Simple</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\ITEMS_LIST.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ITEMS_LIST.edmx</DependentUpon>
+      <LastGenOutput>ITEMS_LIST.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\ITEMS_LIST.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ITEMS_LIST.edmx</DependentUpon>
+      <LastGenOutput>ITEMS_LIST.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\ITEMS_SYSTEM.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ITEMS_SYSTEM.edmx</DependentUpon>
+      <LastGenOutput>ITEMS_SYSTEM.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\ITEMS_SYSTEM.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ITEMS_SYSTEM.edmx</DependentUpon>
+      <LastGenOutput>ITEMS_SYSTEM.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\QS_QUAN_TRANG.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QS_QUAN_TRANG.edmx</DependentUpon>
+      <LastGenOutput>QS_QUAN_TRANG.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\QS_QUAN_TRANG.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QS_QUAN_TRANG.edmx</DependentUpon>
+      <LastGenOutput>QS_QUAN_TRANG.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

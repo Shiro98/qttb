@@ -1,0 +1,148 @@
+﻿<div class="modal-header">
+    <h4 class="modal-title">Cập nhật tài khoản</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="cancel()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form class=" col-md-12" id="formSubmit">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="requiredInput">Tên truy cập</label>
+                            <input type="text" class="form-control" ng-model="model.LOGIN_NAME" name="LOGIN_NAME" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="requiredInput">Nhóm quyền</label>
+                            <select class="form-control" multiple="multiple" ng-model="ListRole" ui-select2 name="ListRole" required ng-options="item.ID as item.Name for item in ListUserGroup">
+        </select>
+                            @*<select class="form-control" ng-model="ListRole" multiple ui-select2 name="ListRole" required>
+            <option ng-repeat="item in ListUserGroup" value="{{item.ID}}">{{ item.Name}}</option>
+        </select>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="requiredInput">Họ và tên</label>
+                            <input type="text" class="form-control" ng-model="model.FULL_NAME" name="FULL_NAME" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Số điện thoại</label>
+                            <input type="number" ng-pattern="ph_numbr" maxlength="10" name="TEL_NO" class="form-control" ng-model="model.TEL_NO">
+                            <span ng-show="formDemo.Phone.$error.pattern">Hãy nhập số điện thoại đúng định dạng!</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label class="requiredInput">Đơn vị</label>
+                                <select class="form-control" ng-model="model.UNIT_ID" ui-select2 name="UNIT_ID" required ng-options="item.UNIT_ID as item.UNIT_NAME for item in ListUnit">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Hiệu lực từ ngày</label>
+                            <div class="input-group date" id="reStartDate" data-target-input="nearest">
+                                <input type="text" class="form-control datetimepicker-input" ng-model="model.START_DATE" data-target="#reStartDate">
+                                <div class="input-group-append" data-target="#reStartDate" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Hiệu lực đến ngày</label>
+                            <div class="input-group date" id="reEndDate" data-target-input="nearest">
+                                <input type="text" class="form-control datetimepicker-input" ng-model="model.END_DATE" data-target="#reEndDate">
+                                <div class="input-group-append" data-target="#reEndDate" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-2">
+                <div>
+                    <img style="        width: 128px" id="pathPhoto" src="~/Assest/dist/img/avatar.png" />
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Chọn ảnh đại diện</label>
+                            <div class="custom-file">
+                                <input type="text" hidden class="form-control" ng-model="model.IMG_PATH">
+                                <input id="filePhoto" name="filePhoto" type="file" onchange="angular.element(this).scope().SelectFile(event)" class="custom-file-input">
+                                <label for="filePhoto" id="lableFile" class="custom-file-label text-truncate">Chọn file...</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <div class="form-group">
+                        <label class="requiredInput">Nhóm người dùng</label>
+
+                        <select class="form-control select2" ui-select2 ng-model="model.USER_GROUP" name="USER_GROUP" required>
+                            <option value="A">Quản trị</option>
+                            <option value="B">Nghiệp vụ</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="requiredInput">Cấp</label>
+                    <select class="form-control select2" ui-select2 ng-model="model.USER_CLASS" name="USER_CLASS" required>
+                        <option value="E" selected="selected">Cán bộ</option>
+                        <option value="L">Lãnh đạo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Mô tả</label>
+                    <textarea class="form-control" rows="2" ng-model="model.USER_DESC" name="USER_DESC"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Chức danh</label>
+                    <select class="form-control" ng-model="model.TITLE_ID" ui-select2 name="TITLE_ID" required ng-options="item.ID as item.Name for item in ListTITLE">
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Cấp bậc</label>
+                    <select class="form-control" ng-model="model.LEVEL_ID" ui-select2 name="LEVEL_ID" required ng-options="item.ID as item.Name for item in ListLEVEL">
+                    </select>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" ng-click="submit()">Lưu</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancel()">Hủy</button>
+</div>
+

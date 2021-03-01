@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5E412635-0A53-4F04-9046-AF424FC70278}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Model</RootNamespace>
+    <AssemblyName>Model</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ModelExtend\MenuModel.cs" />
+    <Compile Include="ModelExtend\ModelSearchUser.cs" />
+    <Compile Include="ModelExtend\NhapXuatKho.cs" />
+    <Compile Include="ModelExtend\NhapXuatKhoChiTiet.cs" />
+    <Compile Include="ModelExtend\RolePageModel.cs" />
+    <Compile Include="ModelExtend\SysParameterPageModel.cs" />
+    <Compile Include="ModelExtend\TokenModel.cs" />
+    <Compile Include="ModelExtend\TreeItem.cs" />
+    <Compile Include="ModelExtend\TreeModel.cs" />
+    <Compile Include="ModelExtend\UserPageModel.cs" />
+    <Compile Include="Model\APP.cs">
+      <DependentUpon>WebApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\APPS_CONF.cs">
+      <DependentUpon>WebApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DM_THIET_BI_VT.cs">
+      <DependentUpon>ThietBiVT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KH_NHAP_XUAT_KHO.cs">
+      <DependentUpon>ThietBiVT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KH_NHAP_XUAT_KHO_CT.cs">
+      <DependentUpon>ThietBiVT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SLOG_KH_NHAP_XUAT_KHO.cs">
+      <DependentUpon>ThietBiVT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SLOG_KH_NHAP_XUAT_KHO_CT.cs">
+      <DependentUpon>ThietBiVT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ST_PAGES_MENU.cs">
+      <DependentUpon>WebApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ST_PAGE_FUNCTIONS.cs">
+      <DependentUpon>WebApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ST_PARAMETERS.cs">
+      <DependentUpon>WebApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ST_PARAMETERS_EFF_DATE.cs">
+      <DependentUpon>WebApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ST_ROLES.cs">
+      <DependentUpon>WebApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ST_ROLE_PAGES.cs">
+      <DependentUpon>WebApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ST_UNITS.cs">
+      <DependentUpon>WebApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ST_USERS.cs">
+      <DependentUpon>WebApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ST_USER_ROLES.cs">
+      <DependentUpon>WebApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sysdiagram.cs">
+      <DependentUpon>WebApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TF_TASKFLOW_CONF.cs">
+      <DependentUpon>WebApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ThietBiVT.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThietBiVT.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ThietBiVT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThietBiVT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ThietBiVT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThietBiVT.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\USER_LOCK.cs">
+      <DependentUpon>WebApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WebApp.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebApp.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WebApp.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WebApp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebApp.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="Model\WebApp.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WebApp.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Model\ThietBiVT.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ThietBiVT.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\ThietBiVT.edmx.diagram">
+      <DependentUpon>ThietBiVT.edmx</DependentUpon>
+    </None>
+    <None Include="Model\WebApp.edmx.diagram">
+      <DependentUpon>WebApp.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Simple\Simple.csproj">
+      <Project>{BD4A1E8A-D01F-430B-8369-D1EE837363D1}</Project>
+      <Name>Simple</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\ThietBiVT.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ThietBiVT.edmx</DependentUpon>
+      <LastGenOutput>ThietBiVT.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\ThietBiVT.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ThietBiVT.edmx</DependentUpon>
+      <LastGenOutput>ThietBiVT.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\WebApp.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WebApp.edmx</DependentUpon>
+      <LastGenOutput>WebApp.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\WebApp.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WebApp.edmx</DependentUpon>
+      <LastGenOutput>WebApp.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

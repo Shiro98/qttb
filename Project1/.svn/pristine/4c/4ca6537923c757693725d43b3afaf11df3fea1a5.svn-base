@@ -1,0 +1,392 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Custom/ChatStyle.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Content/Custom/jquery.ui.position.min.js"></script>
+    <link href="~/Content/Custom/jquery.contextMenu.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Content/Custom/jquery.contextMenu.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
+    <script src="/signalr/hubs"></script>
+    <style>
+        .file_attch {
+            text-align: right;
+            right: 20px;
+        }
+    </style>
+    <script type="text/javascript">
+        var IntervalVal;
+            if ($('#chatUser').val() !== null && $('#chatUser').val() === undefined && $('#chatUser').val() === "") {
+                $('.mesgs').removeClass('hide');
+            }
+            var chatHub = $.connection.chatHub;
+            registerClientMethods(chatHub);
+            $.connection.hub.start().done(function () {
+                registerEvents(chatHub);
+            });
+            //Lấy thời gian hiện tại
+            function GetCurentDate() {
+                var d = new Date();
+
+                var month = d.getMonth() + 1;
+                var day = d.getDate();
+
+                var output = d.getFullYear() + '/' +
+                    (month < 10 ? '0' : '') + month + '/' +
+                    (day < 10 ? '0' : '') + day;
+                return output;
+            }
+            // Hiển thị thông báo có tin nhắn mới
+            function ShowTitleAlert(pageTitle, newMessageTitle) {
+                if (document.title == pageTitle) {
+                    document.title = newMessageTitle;
+                }
+                else {
+                    document.title = pageTitle;
+                }
+            }
+            function registerEvents(chatHub) {
+                var name = '@ViewBag.UserName';
+                if (name.length > 0) {
+                    chatHub.server.connect(name);
+
+                }
+                //Click nút gửi
+                $('#btnSendMsg').click(function () {
+                    var msg = $(".write_msg").val();
+                    if (msg.length > 0) {
+                        var userName = $('#hdUserName').val();
+                        chatHub.server.sendPrivateMessage($('#chatUser').val(), $('#toUserName').val() , msg, 1);
+                        $('.msg_history').append('<div class="outgoing_msg">' +
+                            '<div class="sent_msg"><p>' + $(".write_msg").val() + '</p>' +
+                            '<span class="time_date hide">' + GetCurentDate() + '</span> </div></div>');
+                        $(".msg_history").animate({ scrollTop: $(".msg_history").prop("scrollHeight") });
+                        $(".write_msg").val('');
+                    }
+                });
+                // Send Message on Enter Button
+                $(".write_msg").keypress(function (e) {
+                    if (e.which == 13) {
+                        $('#btnSendMsg').click();
+                        e.preventDefault();
+                    }
+                });
+            }
+            function registerClientMethods(chatHub) {
+                // Calls when user successfully logged in
+                chatHub.client.onConnected = function (id, userName, allUsers, messages, times) {
+                    $('#hdId').val(id);
+                    $('#hdUserName').val(userName);
+                    $('#spanUser').html(userName);
+
+                    //Hiển thị tất cả user đang online
+                    for (i = 0; i < allUsers.length; i++) {
+                        AddUser(chatHub, allUsers[i].ConnectionId, allUsers[i].UserName, allUsers[i].UserImage, allUsers[i].LoginTime, allUsers[i].IsOnline);
+                    }
+                    //Add tin nhắn đã tồn tại
+                    //for (i = 0; i < messages.length; i++) {
+                    //    if (messages[i].fromUser === userName)
+                    //        AddMessage(messages[i].fromUser, messages[i].Message, messages[i].Time, messages[i].UserImage);
+                    //    else
+                    //        AddMessageReceive(messages[i].userName, messages[i].Message, messages[i].Time, messages[i].UserImage);
+                    //}
+                }
+
+                //Có user mới Connected
+                chatHub.client.onNewUserConnected = function (id, name, UserImage, loginDate) {
+                    if ($('.inbox_chat').find('#' + name) !== undefined) {
+                        $('#' + name).remove();
+                        AddUser(chatHub, id, name, UserImage, loginDate, true);
+                    }
+                }
+
+                //Có user Disconnected
+                chatHub.client.onUserDisconnected = function (id, userName) {
+
+                    $('#Div' + id).remove();
+
+                    var ctrId = 'private_' + id;
+                    $('#' + ctrId).remove();
+
+
+                    var disc = $('<div class="disconnect">"' + userName + '" logged off.</div>');
+
+                    $(disc).hide();
+                    $('#divusers').prepend(disc);
+                    $(disc).fadeIn(200).delay(2000).fadeOut(200);
+
+                }
+
+                chatHub.client.messageReceived = function (userName, message, time, userimg) {
+                    AddMessageReceive(userName, message, time, userimg);
+
+                    //
+                    var CurrUser1 = $('#hdUserName').val();
+                    if (CurrUser1 != userName) {
+                        var Notification = 'Tin nhắn mới từ ' + userName;
+                        document.title = Notification;
+                    }
+                }
+
+
+                chatHub.client.sendPrivateMessage = function (windowId, fromUserName, message, userimg, CurrentDateTime) {
+                    var ctrId = 'private_' + windowId;
+                    var CurrUser = $('#hdUserName').val();
+                    var Side = 'right';
+                    var TimeSide = 'left';
+
+                    if (CurrUser == fromUserName) {
+                        Side = 'left';
+                        TimeSide = 'right';
+                    }
+                    else {
+                        var Notification = 'Tin nhắn mới từ ' + fromUserName;
+                        document.title = Notification;
+                        IntervalVal = setInterval(ShowTitleAlert('SignalR Chat App', Notification), 800);
+                        $('.msg_history').append('<div class="incoming_msg">' +
+                            '<div class="received_msg"><div class="received_withd_msg"><p>' + message + '</p>' +
+                            '<span class="time_date hide"> ' + GetCurentDate() + '</span></div></div></div>');
+                    }
+                }
+
+            }
+
+            function AddUser(chatHub, id, name, UserImage, date, IsOnline) {
+                var userId = $('#hdId').val();
+                var userName = $('#hdUserName').val();
+                var Clist;
+                var imgIsOnline = '';
+                var description = 'Offline';
+                if (IsOnline) {
+                    description = 'Đang online'
+                    imgIsOnline = '/Content/Image/online.png';
+                }
+
+                if (userId != id) {
+                    Clist = $('<div class="chat_list" id="' + name + '"><div class="chat_people"><div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>' +
+                        '<div class="chat_ib" id="' + id + '" name="' + name + '"><h5>' + name + ' <span class="chat_date"><img style="width: 10px; height: 10px;" src="' + imgIsOnline + '"></span></h5><p>' + description + '</p></div></div></div>');
+
+                    var UserLink = $('<a id="' + id + '" class="user" >' + name + '<a>');
+                    $(Clist).click(function () {
+                        var id = $(this).find('.chat_ib').attr('id');
+                        if (userId != id) {
+                            var ctrId = 'private_' + id;
+                            $('#chatUser').val(id)
+                            $('#toUserName').val($(this).find('.chat_ib').attr('name'))
+                            $('.usernametitle h4').text($(this).find('.chat_ib').attr('name'));
+                        }
+                        $('.mesgs').removeClass('hide');
+
+                        $.ajax({
+                            type: 'post',
+                            url: '/Chat/GetHistoryMessage',
+                            data: { toUser: $(this).find('.chat_ib').attr('name') },
+                            success: function (messages) {
+                                $('.msg_history').children('.outgoing_msg').remove();
+                                $('.msg_history').children('.incoming_msg').remove();
+                                for (i = 0; i < messages.length; i++) {
+                                    if (messages[i].fromUser === userName)
+                                        LoadMessage(messages[i].fromUser, messages[i].Message, messages[i].Time, messages[i].UserImage, messages[i].IsMedia);
+                                    else
+                                        LoadMessageReceive(messages[i].userName, messages[i].Message, messages[i].Time, messages[i].UserImage, messages[i].IsMedia);
+                                }
+                            }
+                        })
+                    });
+
+                }
+                $(".inbox_chat").append(Clist);
+
+            }
+            function AddMessage(userName, message, time, userimg) {
+                var CurrUser = $('#hdUserName').val();
+
+                $('.msg_history').append('<div class="outgoing_msg">' +
+                    '<div class="sent_msg"><p>' + message + '</p>' +
+                    '<span class="time_date hide"> ' + GetCurentDate() + ' </div></div>');
+
+               //Set vị trí scroll xuống cuối của chat
+                $(".msg_history").animate({ scrollTop: $(".msg_history").prop("scrollHeight") });
+            }
+
+             function AddMessageReceive(userName, message, time, userimg) {
+                var CurrUser = $('#hdUserName').val();
+                 if (CurrUser != userName)
+                    $('.msg_history').append('<div class="incoming_msg">' +
+                     '<div class="received_msg"><div class="received_withd_msg"><p>' + message + '</p>' +
+                     '<span class="time_date hide"> ' + GetCurentDate() + '</span></div></div></div>');
+                //Set vị trí scroll xuống cuối của chat
+                 $(".msg_history").animate({ scrollTop: $(".msg_history").prop("scrollHeight") });
+            }
+            function LoadMessage(userName, message, time, userimg, isMedia) {
+                if (isMedia == 1) {
+                    var data = JSON.parse(message);
+                    $('.msg_history').append('<div class="outgoing_msg">' +
+                        '<div class="sent_msg file_attch"><img src="' + data.Path.replace('~', '') + '" style="width: 25%;">' +
+                        '<span class="time_date hide">' + time + '</span> </div></div>');
+                }
+
+                else
+                     $('.msg_history').append('<div class="outgoing_msg">' +
+                        '<div class="sent_msg"><p>' + message + '</p>' +
+                        '<span class="time_date hide"> ' + time + ' </div></div>');
+
+                //Set vị trí scroll xuống cuối của chat
+                $(".msg_history").animate({ scrollTop: $(".msg_history").prop("scrollHeight") });
+            }
+        function LoadMessageReceive(userName, message, time, userimg, isMedia) {
+                var CurrUser = $('#hdUserName').val();
+                if (CurrUser != userName) {
+                    if (isMedia == 1) {
+                        var data = JSON.parse(message);
+                        $('.msg_history').append('<div class="incoming_msg">' +
+                            '<div class="received_msg"><div class="received_withd_msg"><img src="' + data.Path.replace('~', '') + '" style="width: 25%;">' +
+                            '<span class="time_date hide"> ' + time + '</span></div></div></div>');
+                    }
+                    else
+                        $('.msg_history').append('<div class="incoming_msg">' +
+                            '<div class="received_msg"><div class="received_withd_msg"><p>' + message + '</p>' +
+                            '<span class="time_date hide"> ' + time + '</span></div></div></div>');
+                }
+
+                //Set vị trí scroll xuống cuối của chat
+                $(".msg_history").animate({ scrollTop: $(".msg_history").prop("scrollHeight") });
+            }
+            $(document).on('click', '.sent_msg p', function () {
+                $('.time_date').addClass('hide');
+                $($(this).next('.time_date')).removeClass('hide');
+            });
+            $(document).on('click', '.received_withd_msg p', function () {
+                $('.time_date').addClass('hide');
+                $($(this).next('.time_date')).removeClass('hide');
+            });
+
+
+            function AddMessageReceiveFile(userName, message, time, userimg) {
+                var CurrUser = $('#hdUserName').val();
+                if (CurrUser != userName)
+                    $('.msg_history').append('<div class="incoming_msg">' +
+                        '<div class="received_msg"><div class="received_withd_msg"><p>' + message + '</p>' +
+                        '<span class="time_date hide"> ' + GetCurentDate() + '</span></div></div></div>');
+                //Set vị trí scroll xuống cuối của chat
+                $(".msg_history").animate({ scrollTop: $(".msg_history").prop("scrollHeight") });
+            }
+            function AddMessageFile(userName, message, time, userimg) {
+                var CurrUser = $('#hdUserName').val();
+
+                $('.msg_history').append('<div class="outgoing_msg">' +
+                    '<div class="sent_msg"><p>' + message + '</p>' +
+                    '<span class="time_date hide"> ' + GetCurentDate() + ' </div></div>');
+
+                //Set vị trí scroll xuống cuối của chat
+                $(".msg_history").animate({ scrollTop: $(".msg_history").prop("scrollHeight") });
+            }
+            function IsValidateFile(fileF) {
+                var allowedFiles = [".doc", ".docx", ".pdf", ".txt", ".xlsx", ".xls", ".png", ".jpg", ".gif"];
+                var regex = new RegExp("([a-zA-Z0-9\s_\\.\-:])+(" + allowedFiles.join('|') + ")$");
+                if (!regex.test(fileF.toLowerCase())) {
+                    alert("Please upload files having extensions: " + allowedFiles.join(', ') + " only.");
+                    return false;
+                }
+                return true;
+            }
+
+            function IsImageFile(fileF) {
+                var ImageFiles = [".png", ".jpg", ".gif"];
+                var regex = new RegExp("(" + ImageFiles.join('|') + ")$");
+                if (!regex.test(fileF.toLowerCase())) {
+                    return false;
+                }
+                return true;
+            }
+            function UploadFile() {
+                var formData = new FormData();
+                formData.append('file', $('input[type=file]')[0].files[0]);
+                $.ajax({
+                    url: '/Chat/SendAttachFile',
+                    data: formData,
+                    type: 'POST',
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        var isMedia = 1;
+                        chatHub.server.sendPrivateMessage($('#chatUser').val(), $('#toUserName').val(), JSON.stringify(data), isMedia);
+                        $('.msg_history').append('<div class="outgoing_msg">' +
+                            '<div class="sent_msg file_attch"><img src="' + data.Path.replace('~', '') + '" style="width: 25%;">' +
+                            '<span class="time_date hide">' + GetCurentDate() + '</span> </div></div>');
+                        $(".msg_history").animate({ scrollTop: $(".msg_history").prop("scrollHeight") });
+                        $(".write_msg").val('');
+                    }
+                });
+        }
+        $.contextMenu({
+            selector: 'body',
+            callback: function (key, options) {
+                var m = "clicked: " + key;
+                window.console && console.log(m) || alert(m);
+            },
+            items: {
+                "edit": { name: "Tải xuống", icon: "" },
+                "copy": { name: "Copy", icon: "" }
+            }
+        });
+    </script>
+</head>
+<body>
+    <input id="hdId" type="hidden" />
+    <input id="PWCount" type="hidden" value="info" />
+    <input id="chatUser" type="hidden" value="" />
+    <input id="toUserName" type="hidden" value="" />
+    <input id="hdUserName" type="hidden" />
+    <div class="messaging">
+        <div class="inbox_msg">
+            <div class="inbox_people">
+                <div class="headind_srch">
+                    <div class="recent_heading">
+                        <h4>Danh bạ</h4>
+                    </div>
+                    @*<div class="srch_bar">
+                            <div class="stylish-input-group">
+                                <input type="text" class="search-bar" placeholder="Tìm kiếm">
+                            </div>
+                        </div>*@
+                </div>
+                <div class="inbox_chat scroll">
+                </div>
+            </div>
+            <div class="mesgs hide">
+                <div class="headind_srch">
+                    <div class="recent_heading usernametitle">
+                        <h4></h4>
+                    </div>
+                </div>
+                <div class="msg_history">
+                </div>
+                <div class="type_msg">
+                    <div class="input_msg_write">
+                        <textarea type="text" class="write_msg" placeholder="Nhập tin nhắn"> </textarea>
+                        <input type="file" onchange="UploadFile()" class="custom-file-input" id="customFile" name="filename" style="display:none;">
+                        <label class="msg_attach" for="customFile"><i style="padding:10px;" class="fa fa-paperclip" aria-hidden="true"></i></label>
+                        @*<input type="file" class="custom-file-input" id="customFile" name="filename">
+                            <labal class="msg_attach" for="customFile" id="btnAttach"><i class="fa fa-paperclip" aria-hidden="true"></i></labal>*@
+                        <button class="msg_send_btn" id="btnSendMsg" type="button"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

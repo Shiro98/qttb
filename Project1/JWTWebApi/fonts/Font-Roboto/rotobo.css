@@ -1,0 +1,35 @@
+/*Font*/
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url(/fonts/Font-Roboto/Roboto-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url(/fonts/Font-Roboto/Roboto-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: url(/fonts/Font-Roboto/Roboto-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-Italic';
+    src: url(/fonts/Font-Roboto/Roboto-Italic.ttf) format('truetype');
+}
+/*End Font*/
+/*modify style*/
+body {
+    font-family: 'Roboto-Regular';
+    font-size: 11.555pt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Roboto-Regular","Helvetica Neue",Helvetica,Arial,sans-serif
+}
+.h1, h1 {
+    font-size: 24pt;
+    font-family: 'Roboto-Bold';
+}
+/*End modify style*/

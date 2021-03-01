@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="THIET_BI_VTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DM_THIET_BI_VT">
+          <Key>
+            <PropertyRef Name="ID_THIET_BI" />
+          </Key>
+          <Property Name="ID_THIET_BI" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MA" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="TEN" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="MO_TA" Type="nvarchar" MaxLength="250" />
+          <Property Name="HIEU_LUC" Type="char" MaxLength="1" />
+          <Property Name="NGAY_TAO" Type="datetime" />
+          <Property Name="NGUOI_TAO" Type="int" />
+          <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+          <Property Name="NGUOI_CAP_NHAT" Type="int" />
+          <Property Name="DON_VI_TINH" Type="int" />
+          <Property Name="NHOM_HANG" Type="int" />
+          <Property Name="LOAI_HANG" Type="int" />
+        </EntityType>
+        <EntityType Name="KH_NHAP_XUAT_KHO">
+          <Key>
+            <PropertyRef Name="ID_NHAP_XUAT" />
+          </Key>
+          <Property Name="ID_NHAP_XUAT" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SO_KE_HOACH" Type="nvarchar" MaxLength="6" />
+          <Property Name="NGUON_TIEP_NHAN_ID" Type="int" Nullable="false" />
+          <Property Name="NGUOI_NHAP_NHAN_ID" Type="int" Nullable="false" />
+          <Property Name="NGUOI_NHAP_NHAN" Type="nvarchar" MaxLength="255" />
+          <Property Name="DON_VI_NHAP_NHAN_ID" Type="int" Nullable="false" />
+          <Property Name="DON_VI_NHAP_NHAN" Type="nvarchar" MaxLength="255" />
+          <Property Name="NGAY_NHAP_NHAN" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="CAN_CU_ID" Type="int" />
+          <Property Name="NGUOI_DUYET_ID" Type="int" />
+          <Property Name="NGUOI_DUYET" Type="nvarchar" MaxLength="255" />
+          <Property Name="GHI_CHU" Type="nvarchar" MaxLength="255" />
+          <Property Name="LOAI" Type="tinyint" />
+          <Property Name="NGUOI_TAO" Type="int" />
+          <Property Name="NGAY_TAO" Type="nvarchar" MaxLength="14" />
+          <Property Name="NGUOI_SUA" Type="int" />
+          <Property Name="NGAY_SUA" Type="nvarchar" MaxLength="14" />
+          <Property Name="TRANG_THAI" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="KH_NHAP_XUAT_KHO_CT">
+          <Key>
+            <PropertyRef Name="ID_NHAP_XUAT" />
+            <PropertyRef Name="SO_TT" />
+          </Key>
+          <Property Name="ID_NHAP_XUAT" Type="bigint" Nullable="false" />
+          <Property Name="SO_TT" Type="smallint" Nullable="false" />
+          <Property Name="ID_KHO" Type="int" />
+          <Property Name="ID_THIET_BI" Type="int" Nullable="false" />
+          <Property Name="HANG_HOA" Type="nvarchar" MaxLength="250" />
+          <Property Name="SO_LUONG" Type="float" />
+          <Property Name="ID_CHAT_LUONG" Type="int" />
+          <Property Name="GHI_CHU" Type="nvarchar" MaxLength="250" />
+          <Property Name="NGUON_GOC" Type="nvarchar" MaxLength="250" />
+          <Property Name="NHA_SAN_XUAT" Type="nvarchar" MaxLength="250" />
+          <Property Name="NAM_SAN_XUAT" Type="smallint" />
+        </EntityType>
+        <EntityType Name="SLOG_KH_NHAP_XUAT_KHO">
+          <Key>
+            <PropertyRef Name="SLOG_KH_NHAP_XUAT_KHO_ID" />
+          </Key>
+          <Property Name="SLOG_KH_NHAP_XUAT_KHO_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_NHAP_XUAT" Type="bigint" />
+          <Property Name="SO_KE_HOACH" Type="nvarchar" MaxLength="6" />
+          <Property Name="NGUON_TIEP_NHAN_ID" Type="int" />
+          <Property Name="NGUOI_NHAP_NHAN_ID" Type="int" />
+          <Property Name="NGUOI_NHAP_NHAN" Type="nvarchar" MaxLength="255" />
+          <Property Name="DON_VI_NHAP_NHAN_ID" Type="int" />
+          <Property Name="DON_VI_NHAP_NHAN" Type="nvarchar" MaxLength="255" />
+          <Property Name="NGAY_NHAP_NHAN" Type="nvarchar" MaxLength="8" />
+          <Property Name="CAN_CU_ID" Type="int" />
+          <Property Name="NGUOI_DUYET_ID" Type="int" />
+          <Property Name="NGUOI_DUYET" Type="nvarchar" MaxLength="255" />
+          <Property Name="GHI_CHU" Type="nvarchar" MaxLength="255" />
+          <Property Name="LOAI" Type="tinyint" />
+          <Property Name="NGUOI_TAO" Type="int" />
+          <Property Name="NGAY_TAO" Type="nvarchar" MaxLength="14" />
+          <Property Name="NGUOI_SUA" Type="int" />
+          <Property Name="NGAY_SUA" Type="nvarchar" MaxLength="14" />
+          <Property Name="TRANG_THAI" Type="char" MaxLength="1" />
+          <Property Name="OPERATION_TYPE" Type="varchar" MaxLength="1" />
+          <Property Name="CLIENT_IP_ADDRESS" Type="varchar" MaxLength="50" />
+          <Property Name="OPERATION_TIME" Type="datetime" />
+          <Property Name="OPERATED_BY" Type="int" />
+        </EntityType>
+        <EntityType Name="SLOG_KH_NHAP_XUAT_KHO_CT">
+          <Key>
+            <PropertyRef Name="SLOG_KH_NHAP_XUAT_KHO_CT_ID" />
+          </Key>
+          <Property Name="SLOG_KH_NHAP_XUAT_KHO_CT_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_NHAP_XUAT" Type="bigint" />
+          <Property Name="SO_TT" Type="smallint" />
+          <Property Name="ID_KHO" Type="int" />
+          <Property Name="ID_THIET_BI" Type="int" />
+          <Property Name="HANG_HOA" Type="nvarchar" MaxLength="250" />
+          <Property Name="SO_LUONG" Type="float" />
+          <Property Name="ID_CHAT_LUONG" Type="int" />
+          <Property Name="GHI_CHU" Type="nvarchar" MaxLength="250" />
+          <Property Name="NGUON_GOC" Type="nvarchar" MaxLength="250" />
+          <Property Name="NHA_SAN_XUAT" Type="nvarchar" MaxLength="250" />
+          <Property Name="NAM_SAN_XUAT" Type="smallint" />
+          <Property Name="OPERATION_TYPE" Type="varchar" MaxLength="1" />
+          <Property Name="CLIENT_IP_ADDRESS" Type="varchar" MaxLength="50" />
+          <Property Name="OPERATION_TIME" Type="datetime" />
+          <Property Name="OPERATED_BY" Type="int" />
+        </EntityType>
+        <Association Name="FK_KH_NHAP_XUAT_KHO_CT_DM_THIET_BI_VT">
+          <End Role="DM_THIET_BI_VT" Type="Self.DM_THIET_BI_VT" Multiplicity="1" />
+          <End Role="KH_NHAP_XUAT_KHO_CT" Type="Self.KH_NHAP_XUAT_KHO_CT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DM_THIET_BI_VT">
+              <PropertyRef Name="ID_THIET_BI" />
+            </Principal>
+            <Dependent Role="KH_NHAP_XUAT_KHO_CT">
+              <PropertyRef Name="ID_THIET_BI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KH_NHAP_XUAT_KHO_CT_KH_NHAP_XUAT_KHO">
+          <End Role="KH_NHAP_XUAT_KHO" Type="Self.KH_NHAP_XUAT_KHO" Multiplicity="1" />
+          <End Role="KH_NHAP_XUAT_KHO_CT" Type="Self.KH_NHAP_XUAT_KHO_CT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KH_NHAP_XUAT_KHO">
+              <PropertyRef Name="ID_NHAP_XUAT" />
+            </Principal>
+            <Dependent Role="KH_NHAP_XUAT_KHO_CT">
+              <PropertyRef Name="ID_NHAP_XUAT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="THIET_BI_VTModelStoreContainer">
+          <EntitySet Name="DM_THIET_BI_VT" EntityType="Self.DM_THIET_BI_VT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KH_NHAP_XUAT_KHO" EntityType="Self.KH_NHAP_XUAT_KHO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KH_NHAP_XUAT_KHO_CT" EntityType="Self.KH_NHAP_XUAT_KHO_CT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SLOG_KH_NHAP_XUAT_KHO" EntityType="Self.SLOG_KH_NHAP_XUAT_KHO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SLOG_KH_NHAP_XUAT_KHO_CT" EntityType="Self.SLOG_KH_NHAP_XUAT_KHO_CT" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_KH_NHAP_XUAT_KHO_CT_DM_THIET_BI_VT" Association="Self.FK_KH_NHAP_XUAT_KHO_CT_DM_THIET_BI_VT">
+            <End Role="DM_THIET_BI_VT" EntitySet="DM_THIET_BI_VT" />
+            <End Role="KH_NHAP_XUAT_KHO_CT" EntitySet="KH_NHAP_XUAT_KHO_CT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KH_NHAP_XUAT_KHO_CT_KH_NHAP_XUAT_KHO" Association="Self.FK_KH_NHAP_XUAT_KHO_CT_KH_NHAP_XUAT_KHO">
+            <End Role="KH_NHAP_XUAT_KHO" EntitySet="KH_NHAP_XUAT_KHO" />
+            <End Role="KH_NHAP_XUAT_KHO_CT" EntitySet="KH_NHAP_XUAT_KHO_CT" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="THIET_BI_VTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DM_THIET_BI_VT">
+          <Key>
+            <PropertyRef Name="ID_THIET_BI" />
+          </Key>
+          <Property Name="ID_THIET_BI" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MA" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TEN" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MO_TA" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="HIEU_LUC" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="NGAY_TAO" Type="DateTime" Precision="3" />
+          <Property Name="NGUOI_TAO" Type="Int32" />
+          <Property Name="NGAY_CAP_NHAT" Type="DateTime" Precision="3" />
+          <Property Name="NGUOI_CAP_NHAT" Type="Int32" />
+          <Property Name="DON_VI_TINH" Type="Int32" />
+          <Property Name="NHOM_HANG" Type="Int32" />
+          <Property Name="LOAI_HANG" Type="Int32" />
+          <NavigationProperty Name="KH_NHAP_XUAT_KHO_CT" Relationship="Self.FK_KH_NHAP_XUAT_KHO_CT_DM_THIET_BI_VT" FromRole="DM_THIET_BI_VT" ToRole="KH_NHAP_XUAT_KHO_CT" />
+        </EntityType>
+        <EntityType Name="KH_NHAP_XUAT_KHO">
+          <Key>
+            <PropertyRef Name="ID_NHAP_XUAT" />
+          </Key>
+          <Property Name="ID_NHAP_XUAT" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SO_KE_HOACH" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="NGUON_TIEP_NHAN_ID" Type="Int32" Nullable="false" />
+          <Property Name="NGUOI_NHAP_NHAN_ID" Type="Int32" Nullable="false" />
+          <Property Name="NGUOI_NHAP_NHAN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DON_VI_NHAP_NHAN_ID" Type="Int32" Nullable="false" />
+          <Property Name="DON_VI_NHAP_NHAN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NGAY_NHAP_NHAN" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CAN_CU_ID" Type="Int32" />
+          <Property Name="NGUOI_DUYET_ID" Type="Int32" />
+          <Property Name="NGUOI_DUYET" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="GHI_CHU" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LOAI" Type="Byte" />
+          <Property Name="NGUOI_TAO" Type="Int32" />
+          <Property Name="NGAY_TAO" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="NGUOI_SUA" Type="Int32" />
+          <Property Name="NGAY_SUA" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="TRANG_THAI" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="KH_NHAP_XUAT_KHO_CT" Relationship="Self.FK_KH_NHAP_XUAT_KHO_CT_KH_NHAP_XUAT_KHO" FromRole="KH_NHAP_XUAT_KHO" ToRole="KH_NHAP_XUAT_KHO_CT" />
+        </EntityType>
+        <EntityType Name="KH_NHAP_XUAT_KHO_CT">
+          <Key>
+            <PropertyRef Name="ID_NHAP_XUAT" />
+            <PropertyRef Name="SO_TT" />
+          </Key>
+          <Property Name="ID_NHAP_XUAT" Type="Int64" Nullable="false" />
+          <Property Name="SO_TT" Type="Int16" Nullable="false" />
+          <Property Name="ID_KHO" Type="Int32" />
+          <Property Name="ID_THIET_BI" Type="Int32" Nullable="false" />
+          <Property Name="HANG_HOA" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SO_LUONG" Type="Double" />
+          <Property Name="ID_CHAT_LUONG" Type="Int32" />
+          <Property Name="GHI_CHU" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NGUON_GOC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NHA_SAN_XUAT" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NAM_SAN_XUAT" Type="Int16" />
+          <NavigationProperty Name="DM_THIET_BI_VT" Relationship="Self.FK_KH_NHAP_XUAT_KHO_CT_DM_THIET_BI_VT" FromRole="KH_NHAP_XUAT_KHO_CT" ToRole="DM_THIET_BI_VT" />
+          <NavigationProperty Name="KH_NHAP_XUAT_KHO" Relationship="Self.FK_KH_NHAP_XUAT_KHO_CT_KH_NHAP_XUAT_KHO" FromRole="KH_NHAP_XUAT_KHO_CT" ToRole="KH_NHAP_XUAT_KHO" />
+        </EntityType>
+        <EntityType Name="SLOG_KH_NHAP_XUAT_KHO">
+          <Key>
+            <PropertyRef Name="SLOG_KH_NHAP_XUAT_KHO_ID" />
+          </Key>
+          <Property Name="SLOG_KH_NHAP_XUAT_KHO_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_NHAP_XUAT" Type="Int64" />
+          <Property Name="SO_KE_HOACH" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="NGUON_TIEP_NHAN_ID" Type="Int32" />
+          <Property Name="NGUOI_NHAP_NHAN_ID" Type="Int32" />
+          <Property Name="NGUOI_NHAP_NHAN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DON_VI_NHAP_NHAN_ID" Type="Int32" />
+          <Property Name="DON_VI_NHAP_NHAN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NGAY_NHAP_NHAN" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="CAN_CU_ID" Type="Int32" />
+          <Property Name="NGUOI_DUYET_ID" Type="Int32" />
+          <Property Name="NGUOI_DUYET" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="GHI_CHU" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LOAI" Type="Byte" />
+          <Property Name="NGUOI_TAO" Type="Int32" />
+          <Property Name="NGAY_TAO" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="NGUOI_SUA" Type="Int32" />
+          <Property Name="NGAY_SUA" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="TRANG_THAI" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="OPERATION_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CLIENT_IP_ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OPERATION_TIME" Type="DateTime" Precision="3" />
+          <Property Name="OPERATED_BY" Type="Int32" />
+        </EntityType>
+        <EntityType Name="SLOG_KH_NHAP_XUAT_KHO_CT">
+          <Key>
+            <PropertyRef Name="SLOG_KH_NHAP_XUAT_KHO_CT_ID" />
+          </Key>
+          <Property Name="SLOG_KH_NHAP_XUAT_KHO_CT_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_NHAP_XUAT" Type="Int64" />
+          <Property Name="SO_TT" Type="Int16" />
+          <Property Name="ID_KHO" Type="Int32" />
+          <Property Name="ID_THIET_BI" Type="Int32" />
+          <Property Name="HANG_HOA" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SO_LUONG" Type="Double" />
+          <Property Name="ID_CHAT_LUONG" Type="Int32" />
+          <Property Name="GHI_CHU" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NGUON_GOC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NHA_SAN_XUAT" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NAM_SAN_XUAT" Type="Int16" />
+          <Property Name="OPERATION_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CLIENT_IP_ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OPERATION_TIME" Type="DateTime" Precision="3" />
+          <Property Name="OPERATED_BY" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_KH_NHAP_XUAT_KHO_CT_DM_THIET_BI_VT">
+          <End Role="DM_THIET_BI_VT" Type="Self.DM_THIET_BI_VT" Multiplicity="1" />
+          <End Role="KH_NHAP_XUAT_KHO_CT" Type="Self.KH_NHAP_XUAT_KHO_CT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DM_THIET_BI_VT">
+              <PropertyRef Name="ID_THIET_BI" />
+            </Principal>
+            <Dependent Role="KH_NHAP_XUAT_KHO_CT">
+              <PropertyRef Name="ID_THIET_BI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KH_NHAP_XUAT_KHO_CT_KH_NHAP_XUAT_KHO">
+          <End Role="KH_NHAP_XUAT_KHO" Type="Self.KH_NHAP_XUAT_KHO" Multiplicity="1" />
+          <End Role="KH_NHAP_XUAT_KHO_CT" Type="Self.KH_NHAP_XUAT_KHO_CT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KH_NHAP_XUAT_KHO">
+              <PropertyRef Name="ID_NHAP_XUAT" />
+            </Principal>
+            <Dependent Role="KH_NHAP_XUAT_KHO_CT">
+              <PropertyRef Name="ID_NHAP_XUAT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="THIET_BI_VTEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DM_THIET_BI_VT" EntityType="Self.DM_THIET_BI_VT" />
+          <EntitySet Name="KH_NHAP_XUAT_KHO" EntityType="Self.KH_NHAP_XUAT_KHO" />
+          <EntitySet Name="KH_NHAP_XUAT_KHO_CT" EntityType="Self.KH_NHAP_XUAT_KHO_CT" />
+          <EntitySet Name="SLOG_KH_NHAP_XUAT_KHO" EntityType="Self.SLOG_KH_NHAP_XUAT_KHO" />
+          <EntitySet Name="SLOG_KH_NHAP_XUAT_KHO_CT" EntityType="Self.SLOG_KH_NHAP_XUAT_KHO_CT" />
+          <AssociationSet Name="FK_KH_NHAP_XUAT_KHO_CT_DM_THIET_BI_VT" Association="Self.FK_KH_NHAP_XUAT_KHO_CT_DM_THIET_BI_VT">
+            <End Role="DM_THIET_BI_VT" EntitySet="DM_THIET_BI_VT" />
+            <End Role="KH_NHAP_XUAT_KHO_CT" EntitySet="KH_NHAP_XUAT_KHO_CT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KH_NHAP_XUAT_KHO_CT_KH_NHAP_XUAT_KHO" Association="Self.FK_KH_NHAP_XUAT_KHO_CT_KH_NHAP_XUAT_KHO">
+            <End Role="KH_NHAP_XUAT_KHO" EntitySet="KH_NHAP_XUAT_KHO" />
+            <End Role="KH_NHAP_XUAT_KHO_CT" EntitySet="KH_NHAP_XUAT_KHO_CT" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="THIET_BI_VTModelStoreContainer" CdmEntityContainer="THIET_BI_VTEntities1">
+          <EntitySetMapping Name="DM_THIET_BI_VT">
+            <EntityTypeMapping TypeName="THIET_BI_VTModel.DM_THIET_BI_VT">
+              <MappingFragment StoreEntitySet="DM_THIET_BI_VT">
+                <ScalarProperty Name="ID_THIET_BI" ColumnName="ID_THIET_BI" />
+                <ScalarProperty Name="MA" ColumnName="MA" />
+                <ScalarProperty Name="TEN" ColumnName="TEN" />
+                <ScalarProperty Name="MO_TA" ColumnName="MO_TA" />
+                <ScalarProperty Name="HIEU_LUC" ColumnName="HIEU_LUC" />
+                <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+                <ScalarProperty Name="NGUOI_TAO" ColumnName="NGUOI_TAO" />
+                <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+                <ScalarProperty Name="NGUOI_CAP_NHAT" ColumnName="NGUOI_CAP_NHAT" />
+                <ScalarProperty Name="DON_VI_TINH" ColumnName="DON_VI_TINH" />
+                <ScalarProperty Name="NHOM_HANG" ColumnName="NHOM_HANG" />
+                <ScalarProperty Name="LOAI_HANG" ColumnName="LOAI_HANG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KH_NHAP_XUAT_KHO">
+            <EntityTypeMapping TypeName="THIET_BI_VTModel.KH_NHAP_XUAT_KHO">
+              <MappingFragment StoreEntitySet="KH_NHAP_XUAT_KHO">
+                <ScalarProperty Name="ID_NHAP_XUAT" ColumnName="ID_NHAP_XUAT" />
+                <ScalarProperty Name="SO_KE_HOACH" ColumnName="SO_KE_HOACH" />
+                <ScalarProperty Name="NGUON_TIEP_NHAN_ID" ColumnName="NGUON_TIEP_NHAN_ID" />
+                <ScalarProperty Name="NGUOI_NHAP_NHAN_ID" ColumnName="NGUOI_NHAP_NHAN_ID" />
+                <ScalarProperty Name="NGUOI_NHAP_NHAN" ColumnName="NGUOI_NHAP_NHAN" />
+                <ScalarProperty Name="DON_VI_NHAP_NHAN_ID" ColumnName="DON_VI_NHAP_NHAN_ID" />
+                <ScalarProperty Name="DON_VI_NHAP_NHAN" ColumnName="DON_VI_NHAP_NHAN" />
+                <ScalarProperty Name="NGAY_NHAP_NHAN" ColumnName="NGAY_NHAP_NHAN" />
+                <ScalarProperty Name="CAN_CU_ID" ColumnName="CAN_CU_ID" />
+                <ScalarProperty Name="NGUOI_DUYET_ID" ColumnName="NGUOI_DUYET_ID" />
+                <ScalarProperty Name="NGUOI_DUYET" ColumnName="NGUOI_DUYET" />
+                <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
+                <ScalarProperty Name="LOAI" ColumnName="LOAI" />
+                <ScalarProperty Name="NGUOI_TAO" ColumnName="NGUOI_TAO" />
+                <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+                <ScalarProperty Name="NGUOI_SUA" ColumnName="NGUOI_SUA" />
+                <ScalarProperty Name="NGAY_SUA" ColumnName="NGAY_SUA" />
+                <ScalarProperty Name="TRANG_THAI" ColumnName="TRANG_THAI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KH_NHAP_XUAT_KHO_CT">
+            <EntityTypeMapping TypeName="THIET_BI_VTModel.KH_NHAP_XUAT_KHO_CT">
+              <MappingFragment StoreEntitySet="KH_NHAP_XUAT_KHO_CT">
+                <ScalarProperty Name="ID_NHAP_XUAT" ColumnName="ID_NHAP_XUAT" />
+                <ScalarProperty Name="SO_TT" ColumnName="SO_TT" />
+                <ScalarProperty Name="ID_KHO" ColumnName="ID_KHO" />
+                <ScalarProperty Name="ID_THIET_BI" ColumnName="ID_THIET_BI" />
+                <ScalarProperty Name="HANG_HOA" ColumnName="HANG_HOA" />
+                <ScalarProperty Name="SO_LUONG" ColumnName="SO_LUONG" />
+                <ScalarProperty Name="ID_CHAT_LUONG" ColumnName="ID_CHAT_LUONG" />
+                <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
+                <ScalarProperty Name="NGUON_GOC" ColumnName="NGUON_GOC" />
+                <ScalarProperty Name="NHA_SAN_XUAT" ColumnName="NHA_SAN_XUAT" />
+                <ScalarProperty Name="NAM_SAN_XUAT" ColumnName="NAM_SAN_XUAT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SLOG_KH_NHAP_XUAT_KHO">
+            <EntityTypeMapping TypeName="THIET_BI_VTModel.SLOG_KH_NHAP_XUAT_KHO">
+              <MappingFragment StoreEntitySet="SLOG_KH_NHAP_XUAT_KHO">
+                <ScalarProperty Name="SLOG_KH_NHAP_XUAT_KHO_ID" ColumnName="SLOG_KH_NHAP_XUAT_KHO_ID" />
+                <ScalarProperty Name="ID_NHAP_XUAT" ColumnName="ID_NHAP_XUAT" />
+                <ScalarProperty Name="SO_KE_HOACH" ColumnName="SO_KE_HOACH" />
+                <ScalarProperty Name="NGUON_TIEP_NHAN_ID" ColumnName="NGUON_TIEP_NHAN_ID" />
+                <ScalarProperty Name="NGUOI_NHAP_NHAN_ID" ColumnName="NGUOI_NHAP_NHAN_ID" />
+                <ScalarProperty Name="NGUOI_NHAP_NHAN" ColumnName="NGUOI_NHAP_NHAN" />
+                <ScalarProperty Name="DON_VI_NHAP_NHAN_ID" ColumnName="DON_VI_NHAP_NHAN_ID" />
+                <ScalarProperty Name="DON_VI_NHAP_NHAN" ColumnName="DON_VI_NHAP_NHAN" />
+                <ScalarProperty Name="NGAY_NHAP_NHAN" ColumnName="NGAY_NHAP_NHAN" />
+                <ScalarProperty Name="CAN_CU_ID" ColumnName="CAN_CU_ID" />
+                <ScalarProperty Name="NGUOI_DUYET_ID" ColumnName="NGUOI_DUYET_ID" />
+                <ScalarProperty Name="NGUOI_DUYET" ColumnName="NGUOI_DUYET" />
+                <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
+                <ScalarProperty Name="LOAI" ColumnName="LOAI" />
+                <ScalarProperty Name="NGUOI_TAO" ColumnName="NGUOI_TAO" />
+                <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+                <ScalarProperty Name="NGUOI_SUA" ColumnName="NGUOI_SUA" />
+                <ScalarProperty Name="NGAY_SUA" ColumnName="NGAY_SUA" />
+                <ScalarProperty Name="TRANG_THAI" ColumnName="TRANG_THAI" />
+                <ScalarProperty Name="OPERATION_TYPE" ColumnName="OPERATION_TYPE" />
+                <ScalarProperty Name="CLIENT_IP_ADDRESS" ColumnName="CLIENT_IP_ADDRESS" />
+                <ScalarProperty Name="OPERATION_TIME" ColumnName="OPERATION_TIME" />
+                <ScalarProperty Name="OPERATED_BY" ColumnName="OPERATED_BY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SLOG_KH_NHAP_XUAT_KHO_CT">
+            <EntityTypeMapping TypeName="THIET_BI_VTModel.SLOG_KH_NHAP_XUAT_KHO_CT">
+              <MappingFragment StoreEntitySet="SLOG_KH_NHAP_XUAT_KHO_CT">
+                <ScalarProperty Name="SLOG_KH_NHAP_XUAT_KHO_CT_ID" ColumnName="SLOG_KH_NHAP_XUAT_KHO_CT_ID" />
+                <ScalarProperty Name="ID_NHAP_XUAT" ColumnName="ID_NHAP_XUAT" />
+                <ScalarProperty Name="SO_TT" ColumnName="SO_TT" />
+                <ScalarProperty Name="ID_KHO" ColumnName="ID_KHO" />
+                <ScalarProperty Name="ID_THIET_BI" ColumnName="ID_THIET_BI" />
+                <ScalarProperty Name="HANG_HOA" ColumnName="HANG_HOA" />
+                <ScalarProperty Name="SO_LUONG" ColumnName="SO_LUONG" />
+                <ScalarProperty Name="ID_CHAT_LUONG" ColumnName="ID_CHAT_LUONG" />
+                <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
+                <ScalarProperty Name="NGUON_GOC" ColumnName="NGUON_GOC" />
+                <ScalarProperty Name="NHA_SAN_XUAT" ColumnName="NHA_SAN_XUAT" />
+                <ScalarProperty Name="NAM_SAN_XUAT" ColumnName="NAM_SAN_XUAT" />
+                <ScalarProperty Name="OPERATION_TYPE" ColumnName="OPERATION_TYPE" />
+                <ScalarProperty Name="CLIENT_IP_ADDRESS" ColumnName="CLIENT_IP_ADDRESS" />
+                <ScalarProperty Name="OPERATION_TIME" ColumnName="OPERATION_TIME" />
+                <ScalarProperty Name="OPERATED_BY" ColumnName="OPERATED_BY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

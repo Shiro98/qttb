@@ -1,0 +1,92 @@
+﻿<div class="modal-header">
+    <h4 class="modal-title">Cập nhật</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="cancel()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form class=" col-md-12" id="formSubmit">
+        <div class="row" style="margin-bottom:10px;">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="requiredInput">Danh mục</label>
+                    <select class="form-control" ng-model="model.FLEX_VALUE_SET_ID" ui-select2 name="FLEX_VALUE_SET_ID" ng-options="item.FLEX_VALUE_SET_ID as item.FLEX_VALUE_SET_NAME for item in ListFlexValueSet">
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3" ng-show="GetShowHide('FLEX_VALUE')">
+                <div class="form-group">
+                    <label>{{GetTitle('FLEX_VALUE')}}</label>
+                    <input class="form-control" type="text" ng-model="model.FLEX_VALUE" />
+                </div>
+            </div>
+            <div class="col-lg-3" ng-show="GetShowHide('SUMMARY_FLAG')">
+                <label>{{GetTitle('SUMMARY_FLAG')}}</label>
+                <input class="form-control" type="checkbox" ng-model="model.SUMMARY_FLAG" />
+            </div>
+            <div class="col-lg-12" ng-show="GetShowHide('DESCRIPTION')">
+                <label>{{GetTitle('DESCRIPTION')}}</label>
+                <textarea class="form-control" rows="2" ng-model="model.DESCRIPTION"></textarea>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label>Cấp trên</label>
+                    <select class="form-control" ng-model="model.PARENT_FLEX_VALUE_ID" ui-select2 name="PARENT_FLEX_VALUE_ID" ng-options="item.FLEX_VALUE_ID as item.DESCRIPTION for item in ListFlexValueParent">
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-6" ng-show="GetShowHide('FLEX_VALUE_CATEGORY')">
+                <div class="form-group">
+                    <label>{{GetTitle('FLEX_VALUE_CATEGORY')}}</label>
+                    <select class="form-control" ng-model="model.FLEX_VALUE_CATEGORY" ui-select2 name="FLEX_VALUE_CATEGORY" ng-options="item.FLEX_VALUE_CATEGORY as item.DESCRIPTION for item in ListFlexValueCate">
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-6" ng-show="GetShowHide('ATTRIBUTE1')">
+                <label>{{GetTitle('ATTRIBUTE1')}}</label>
+                <input class="form-control" type="text" ng-model="model.ATTRIBUTE1" />
+            </div>
+            <div class="col-lg-6" ng-show="GetShowHide('ATTRIBUTE2')">
+                <label>{{GetTitle('ATTRIBUTE2')}}</label>
+                <input class="form-control" type="text" ng-model="model.ATTRIBUTE2" />
+            </div>
+            <div class="col-lg-6" ng-show="GetShowHide('ATTRIBUTE3')">
+                <label>{{GetTitle('ATTRIBUTE3')}}</label>
+                <input class="form-control" type="text" ng-model="model.ATTRIBUTE3" />
+            </div>
+            <div class="col-lg-6" ng-show="GetShowHide('ATTRIBUTE4')">
+                <label>{{GetTitle('ATTRIBUTE4')}}</label>
+                <input class="form-control" type="text" ng-model="model.ATTRIBUTE4" />
+            </div>
+            <div class="col-lg-6" ng-show="GetShowHide('ATTRIBUTE5')">
+                <label>{{GetTitle('ATTRIBUTE5')}}</label>
+                <input class="form-control" type="text" ng-model="model.ATTRIBUTE5" />
+            </div>
+            <div class="col-lg-6" ng-show="GetShowHide('ATTRIBUTE6')">
+                <label>{{GetTitle('ATTRIBUTE6')}}</label>
+                <input class="form-control" type="text" ng-model="model.ATTRIBUTE6" />
+            </div>
+            <div class="col-lg-6" ng-show="GetShowHide('ATTRIBUTE7')">
+                <label>{{GetTitle('ATTRIBUTE7')}}</label>
+                <input class="form-control" type="text" ng-model="model.ATTRIBUTE7" />
+            </div>
+            <div class="col-lg-6" ng-show="GetShowHide('ATTRIBUTE8')">
+                <label>{{GetTitle('ATTRIBUTE8')}}</label>
+                <input class="form-control" type="text" ng-model="model.ATTRIBUTE8" />
+            </div>
+            <div class="col-lg-6" ng-show="GetShowHide('ATTRIBUTE9')">
+                <label>{{GetTitle('ATTRIBUTE9')}}</label>
+                <input class="form-control" type="text" ng-model="model.ATTRIBUTE9" />
+            </div>
+            <div class="col-lg-6" ng-show="GetShowHide('ATTRIBUTE10')">
+                <label>{{GetTitle('ATTRIBUTE10')}}</label>
+                <input class="form-control" type="text" ng-model="model.ATTRIBUTE10" />
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" ng-click="submit()">Lưu</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancel()">Hủy</button>
+</div>
+

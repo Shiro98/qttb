@@ -1,0 +1,76 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+a {
+    text-decoration: none;
+}
+
+    a:link, a:visited {
+        color: #257bb2;
+    }
+
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+.headerDiv {
+    display: table;
+    font-weight: normal;
+    height: 80px;
+    line-height: 25px;
+    margin: 0;
+    width: 100%;
+}
+
+.h2, h2 {
+    font-size: 30px;
+}
+
+.imgDiv {
+    display: table-cell;
+    padding: 0 8px 0 20px;
+    vertical-align: middle;
+    width: 38px;
+}
+
+.titleDiv {
+    color: rgba(0,0,0,0.65);
+    display: table-cell;
+    font-size: 16px;
+    line-height: 32px;
+    vertical-align: middle;
+    font-weight: normal;
+    text-align: left;
+}
+
+.contentDiv :hover {
+    color: #FFF;
+    background-color: #3b8ac9;
+}
+
+.contentDiv {
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
+    background-color: #fff;
+    display: inline-block;
+    width: 100%;
+}

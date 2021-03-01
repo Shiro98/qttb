@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CHAT_APPModelStoreContainer" CdmEntityContainer="CHAT_APPEntities">
+    <EntitySetMapping Name="CONVERSATIONS">
+      <EntityTypeMapping TypeName="CHAT_APPModel.CONVERSATION">
+        <MappingFragment StoreEntitySet="CONVERSATIONS">
+          <ScalarProperty Name="CONVERSATION_ID" ColumnName="CONVERSATION_ID" />
+          <ScalarProperty Name="SEND_USER" ColumnName="SEND_USER" />
+          <ScalarProperty Name="RECIVE_USER" ColumnName="RECIVE_USER" />
+          <ScalarProperty Name="MESSAGE" ColumnName="MESSAGE" />
+          <ScalarProperty Name="ISREAD" ColumnName="ISREAD" />
+          <ScalarProperty Name="ATTACH_FILE_ID" ColumnName="ATTACH_FILE_ID" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FILES">
+      <EntityTypeMapping TypeName="CHAT_APPModel.FILE">
+        <MappingFragment StoreEntitySet="FILES">
+          <ScalarProperty Name="FILE_ID" ColumnName="FILE_ID" />
+          <ScalarProperty Name="FILE_NAME" ColumnName="FILE_NAME" />
+          <ScalarProperty Name="FILE_URL" ColumnName="FILE_URL" />
+          <ScalarProperty Name="FILE_EXTEND" ColumnName="FILE_EXTEND" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

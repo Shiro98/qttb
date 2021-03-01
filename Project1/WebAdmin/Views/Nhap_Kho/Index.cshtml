@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    .modal-ku {
+        width: 1200px;
+        margin: auto;
+    }
+</style>
+<div class="row" ng-controller="NhapKhoController">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Nhập Kho</h3>
+                <div class="card-tools">
+                    @*<button type="button" class="btn btn-" ng-click="add()">
+                            <i class="fas fa-plus"></i> Tìm kiếm
+                        </button>*@
+                    <button type="button" class="btn btn-primary" ng-click="add()">
+                        <i class="fas fa-plus"></i> Thêm mới
+                    </button>
+                    <button type="button" class="btn btn-primary" ng-click="LoadPage()">
+                        <i class="fas fa-sync-alt"></i> Làm mới
+                    </button>
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="width:5%;">Stt </th>
+                            <th style="width:10%;">Số kế hoạch</th>
+                            <th style="width:15%;">Nguồn tiếp nhận</th>
+                            <th style="width:12%;">Đơn vị nhận</th>
+                            <th style="width:8%;">Người nhập</th>
+                            <th style="width:8%;">Ngày nhập</th>
+                            <th style="width: 8%;">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in dsNhapKho" ng-class="{activerow:$index==selectedRow}">
+                            <td class="text-center">{{$index + 1}}</td>
+                            <td>{{item.SO_KE_HOACH}}</td>
+                            <td>{{item.NGUON_TIEP_NHAN_ID}}</td>
+                            <td>{{item.DON_VI_NHAP_NHAN}}</td>
+                            <td>{{item.NGUOI_NHAP_NHAN}}</td>
+
+                            <td>{{item.NGAY_NHAP_NHAN.substring(6, 8) + '/' + item.NGAY_NHAP_NHAN.substring(4, 6) + '/' + item.NGAY_NHAP_NHAN.substring(0, 4)}}</td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-sm btn-primary" ng-click="edit(item.ID_NHAP_XUAT)">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-danger" ng-click="delete(item.ID_NHAP_XUAT)">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="pagination pagination-sm m-0 float-right" uib-pagination total-items="modelSearch.totalItems" items-per-page="modelSearch.pageSize" ng-model="modelSearch.currentPage" ng-change="pageChanged()" max-size="modelSearch.maxSize" class="pagination-sm" boundary-links="true" rotate="false" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+
+    @Html.Partial("~/Views/Nhap_Kho/_add.cshtml")
+    @Html.Partial("~/Views/Nhap_Kho/_addct.cshtml")
+</div>
+@section scripts{
+    <script src="~/app/Controller/NhapKhoController.js"></script>
+}
