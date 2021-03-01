@@ -1,0 +1,31 @@
+﻿@{
+    var userInfo = ViewBag.UserInfo as JWTWebApi.Models.UserLoginModel;
+    var lstApp = ViewBag.ListSite as List<JWTWebApi.Models.AppModel>;
+}
+<div style=" margin-bottom: 30px; color: inherit; background-color: #eeeeee; padding: 15px 15px 5px 15px;">
+    <p class="info-main">Xin chào, <strong> @userInfo.Name </strong> bạn vừa đăng nhập thành công vào Hệ thống xác thực tập trung. Ấn vào đây để <a href="/LogOut">Đăng xuất</a></p>
+</div>
+<div class="row ">
+    @{
+        if (lstApp != null && lstApp.Count > 0)
+        {
+            foreach (var item in lstApp)
+            {
+                <div class="col-md-6">
+                    <div class="contentDiv">
+                        <a href="@item.Url">
+                            <h2 class="headerDiv">
+                                <div class="imgDiv">
+                                    <img src="images/logo_BHXH.svg" width="36" height="36">
+                                </div>
+                                <div class="titleDiv">
+                                    <label>@item.AppName</label>
+                                </div>
+                            </h2>
+                        </a>
+                    </div>
+                </div>
+            }
+        }
+    }
+</div>

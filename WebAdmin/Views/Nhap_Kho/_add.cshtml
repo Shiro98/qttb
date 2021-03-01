@@ -1,0 +1,132 @@
+﻿
+<div id="nhapKho" class="modal fade" role="dialog" >
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Nhập kho</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="cancel()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class=" col-md-12" id="formSubmit">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="requiredInput">Số kế hoạch</label>
+                                        <input type="text" class="form-control" ng-model="model.SO_KE_HOACH" name="SO_KE_HOACH" required>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="requiredInput">Số KH gần nhất</label>
+                                        <input type="text" class="form-control" disabled ng-model="model.SO_KE_HOACH_GAN">
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label class="requiredInput">Nguồn tiếp nhận</label>
+                                            <select class="form-control" ng-model="model.NGUON_TIEP_NHAN_ID" ui-select2 name="NGUON_TIEP_NHAN_ID" required ng-options="item.ID as item.NAME for item in nguonNhan">
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="requiredInput">Người nhập</label>
+                                        <select class="form-control" ng-model="model.NGUOI_NHAP_NHAN_ID" ui-select2 name="NGUOI_NHAP_NHAN" required ng-options="item.ID as item.NAME for item in dsNguoiNhan">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Ngày nhập</label>
+                                        <div class="input-group date" id="reStartDate" data-target-input="nearest">
+                                            <input type="text" class="form-control datetimepicker-input" ng-model="model.NGAY_NHAP_NHAN" data-target="#reStartDate">
+                                            <div class="input-group-append" data-target="#reStartDate" data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label class="requiredInput">Đơn vị nhập</label>
+                                            <select class="form-control" ng-model="model.DON_VI_NHAP_NHAN_ID" ui-select2 name="DON_VI_NHAP_NHAN" required ng-options="item.UNIT_ID as item.UNIT_NAME for item in dsDonVi">
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label class="requiredInput">Ghi chú</label>
+                                            <input type="text" class="form-control" ng-model="model.GHI_CHU" name="GHI_CHU">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="card-body table-responsive p-0">
+                                    <label class="requiredInput">Danh sách các mặt hàng</label>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th style="width:5%;">Stt </th>
+                                                <th style="width:10%;">Mã hàng</th>
+                                                <th style="width:15%;">Tên hàng</th>
+                                                <th style="width:12%;">Mã kho</th>
+                                                <th style="width:8%;">Tên kho</th>
+                                                <th style="width:8%;">Số lượng</th>
+                                                <th style="width: 8%;">Chất lượng</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="item in ListHangHoa">
+                                                <td class="text-center">{{$index + 1}}</td>
+                                                <td>{{item.HANG_MA}}</td>
+                                                <td>{{item.HANG_HOA}}</td>
+                                                <td>{{item.MA_KHO}}</td>
+                                                <td>{{item.TEN_KHO}}</td>
+                                                <td>{{item.SO_LUONG}}</td>
+                                                <td>{{item.TEN_CHAT_LUONG}}</td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <ul class="pagination pagination-sm m-0 float-right" uib-pagination total-items="modelSearch.totalItems" items-per-page="modelSearch.pageSize" ng-model="modelSearch.currentPage" ng-change="pageChanged()" max-size="modelSearch.maxSize" class="pagination-sm" boundary-links="true" rotate="false" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" ng-click="themHang()">Thêm hàng</button>
+                <button type="button" class="btn btn-primary" ng-click="submit()">Lưu</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancel()">Hủy</button>
+            </div>
+        </div>
+    </div>
+</div>

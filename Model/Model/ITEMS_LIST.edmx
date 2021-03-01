@@ -1,0 +1,790 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ITEMS_LISTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DM_CONG_TY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TEN_CONG_TY" Type="nvarchar" MaxLength="200" />
+          <Property Name="TEN_VIET_TAT" Type="nvarchar" MaxLength="100" />
+          <Property Name="MO_TA" Type="nvarchar" MaxLength="500" />
+          <Property Name="DIA_CHI" Type="nvarchar" MaxLength="500" />
+          <Property Name="NGAY_TAO" Type="datetime" />
+          <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+          <Property Name="NGUOI_CAP_NHAT" Type="int" />
+        </EntityType>
+        <EntityType Name="DM_DON_VI_NHOM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="TEN_NHOM_DV" Type="nvarchar" MaxLength="200" />
+          <Property Name="MO_TA" Type="nvarchar" MaxLength="500" />
+          <Property Name="LOAI_NHOM_DV" Type="int" />
+          <Property Name="NGAY_TAO" Type="datetime" />
+          <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+          <Property Name="NGUOI_CAP_NHAT" Type="int" />
+        </EntityType>
+        <EntityType Name="DM_DON_VI_TINH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TEN_DVT" Type="nvarchar" MaxLength="200" />
+          <Property Name="MO_TA" Type="nvarchar" MaxLength="500" />
+          <Property Name="NGAY_TAO" Type="datetime" />
+          <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+          <Property Name="NGUOI_CAP_NHAT" Type="int" />
+        </EntityType>
+        <EntityType Name="DM_DONVI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TEN_DON_VI" Type="nvarchar" MaxLength="200" />
+          <Property Name="MO_TA" Type="nvarchar" MaxLength="500" />
+          <Property Name="PHIEN_HIEU" Type="varchar" MaxLength="50" />
+          <Property Name="NHOM_DON_VI_ID" Type="int" />
+          <Property Name="DON_VI_CHA_ID" Type="int" />
+          <Property Name="KHU_VUC_ID" Type="int" />
+          <Property Name="IS_QUAN_LY_KHO" Type="char" MaxLength="1" />
+          <Property Name="KHO_DEFAULT1_ID" Type="int" />
+          <Property Name="KHO_DEFAULT2_ID" Type="int" />
+          <Property Name="CONG_TY_DEFAULT1_ID" Type="int" />
+          <Property Name="CONG_TY_DEFAULT2_ID" Type="int" />
+          <Property Name="CONTACT_NAME" Type="nvarchar" MaxLength="200" />
+          <Property Name="CONTACT_TEL" Type="varchar" MaxLength="20" />
+          <Property Name="CONTACT_ID" Type="varchar" MaxLength="50" />
+          <Property Name="CONTACT_ADDRESS" Type="nvarchar" MaxLength="1000" />
+          <Property Name="SO_NAM_DAO_TAO" Type="int" />
+          <Property Name="IS_TRO_GIA" Type="char" MaxLength="1" />
+          <Property Name="IS_CAN_BO" Type="char" MaxLength="1" />
+          <Property Name="NGAY_TAO" Type="datetime" />
+          <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+          <Property Name="NGUOI_CAP_NHAT" Type="int" />
+          <Property Name="SO_THU_TU_VUNG" Type="int" />
+          <Property Name="IS_CHECK_QUAN_SO" Type="char" MaxLength="1" />
+          <Property Name="NGAY_CHECK" Type="datetime" />
+          <Property Name="MaDonVi" Type="varchar" MaxLength="100" />
+          <Property Name="DonViCha_ID" Type="varchar" MaxLength="100" />
+          <Property Name="KhoDefault1_ID" Type="varchar" MaxLength="100" />
+          <Property Name="KhoDefault2_ID" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="DM_KHO">
+          <Key>
+            <PropertyRef Name="ID_KHO" />
+          </Key>
+          <Property Name="ID_KHO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PHIEN_HIEU_KHO" Type="nvarchar" MaxLength="50" />
+          <Property Name="TEN_KHO" Type="nvarchar" MaxLength="200" />
+          <Property Name="MO_TA" Type="nvarchar" MaxLength="500" />
+          <Property Name="DIA_CHI" Type="nvarchar" MaxLength="500" />
+          <Property Name="KHU_VUC_ID" Type="int" />
+          <Property Name="DON_VI_ID" Type="int" />
+          <Property Name="KHO_CHA_ID" Type="uniqueidentifier" />
+          <Property Name="IS_HOP_DONG" Type="char" MaxLength="1" />
+          <Property Name="HOP_DONG_ID" Type="bigint" />
+          <Property Name="CONG_TY_ID" Type="int" />
+          <Property Name="STATUS" Type="int" />
+          <Property Name="NGAY_TAO" Type="datetime" Nullable="false" />
+          <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+          <Property Name="NGUOI_CAP_NHAT" Type="int" />
+        </EntityType>
+        <EntityType Name="DM_KHU_VUC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="TEN_KHU_VUC" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="MO_TA" Type="nvarchar" MaxLength="500" />
+          <Property Name="NGAY_TAO" Type="datetime" />
+          <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+          <Property Name="NGUOI_CAP_NHAT" Type="int" />
+        </EntityType>
+        <EntityType Name="DM_LOAI_HAM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="LOAI_HAM" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="DM_LUC_LUONG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="TEN_LL" Type="nvarchar" MaxLength="200" />
+          <Property Name="MO_TA" Type="nvarchar" MaxLength="500" />
+          <Property Name="IS_TAN_BINH" Type="char" MaxLength="1" />
+          <Property Name="LL_CHA_ID" Type="int" />
+          <Property Name="NGAY_TAO" Type="datetime" />
+          <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+          <Property Name="NGUOI_CAP_NHAT" Type="int" />
+          <Property Name="SO_THU_TU" Type="int" />
+          <Property Name="KY_HIEU_VIET_TAT" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="LT_DATA_TYPES">
+          <Key>
+            <PropertyRef Name="DATA_TYPE_ID" />
+          </Key>
+          <Property Name="DATA_TYPE_ID" Type="smallint" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="50" />
+          <Property Name="DATABASE_DATA_TYPE" Type="varchar" MaxLength="30" />
+          <Property Name="DATA_TYPE_FORMAT" Type="varchar" MaxLength="30" />
+          <Property Name="ENABLED_FLAG" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="LT_DESC_FLEX_COLUMN_USAGES">
+          <Key>
+            <PropertyRef Name="FLEX_VALUE_SET_ID" />
+            <PropertyRef Name="FLEX_COLUMN_NAME" />
+          </Key>
+          <Property Name="FLEX_VALUE_SET_ID" Type="int" Nullable="false" />
+          <Property Name="FLEX_COLUMN_NAME" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="FLEX_VALUE_SET" Type="varchar" MaxLength="30" />
+          <Property Name="FLEX_COL_DATA_TYPE" Type="varchar" MaxLength="30" />
+          <Property Name="ENABLED_FLAG" Type="char" MaxLength="1" />
+          <Property Name="REQUIRED_FLAG" Type="char" MaxLength="1" />
+          <Property Name="END_USER_COLUMN_NAME" Type="nvarchar" MaxLength="150" />
+          <Property Name="DISPLAY_FLAG" Type="char" MaxLength="1" />
+          <Property Name="DEFAULT_VALUE" Type="nvarchar" MaxLength="150" />
+          <Property Name="COLUMN_SEQ_NUM" Type="int" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="150" />
+          <Property Name="CONTROL_NAME" Type="varchar" MaxLength="30" />
+          <Property Name="IS_CATEGORY_COLUMN" Type="char" MaxLength="1" />
+          <Property Name="FLEX_VALUE_CATEGORY" Type="varchar" MaxLength="30" />
+          <Property Name="FLEX_COL_DATA_LENGTH" Type="int" />
+          <Property Name="CONTROL_TYPE" Type="varchar" MaxLength="30" />
+          <Property Name="VIEW_COLUMN_NAME" Type="varchar" MaxLength="30" />
+          <Property Name="SHOW_ON_SEARCHING" Type="char" MaxLength="1" />
+          <Property Name="SHOW_ON_LIST" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="LT_FLEX_VALUE_CATEGORIES">
+          <Key>
+            <PropertyRef Name="FLEX_VALUE_CATEGORY_ID" />
+          </Key>
+          <Property Name="FLEX_VALUE_CATEGORY_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FLEX_VALUE_SET_ID" Type="int" Nullable="false" />
+          <Property Name="FLEX_VALUE_CATEGORY" Type="varchar" MaxLength="30" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="255" />
+          <Property Name="BRIEF_NAME" Type="nvarchar" MaxLength="30" />
+          <Property Name="ENABLED_FLAG" Type="varchar" MaxLength="1" />
+          <Property Name="LAST_UPDATE_DATE" Type="datetime" />
+          <Property Name="LAST_UPDATED_BY" Type="int" />
+          <Property Name="CREATION_DATE" Type="datetime" />
+          <Property Name="CREATED_BY" Type="int" />
+          <Property Name="PARENT_FLEX_VALUE_CATEGORY" Type="int" />
+          <Property Name="NOTE" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATA_SOURCE" Type="varchar" MaxLength="30" />
+          <Property Name="ATTRIBUTE1" Type="nvarchar" MaxLength="255" />
+          <Property Name="ATTRIBUTE2" Type="nvarchar" MaxLength="255" />
+          <Property Name="ATTRIBUTE3" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LT_FLEX_VALUE_SETS">
+          <Key>
+            <PropertyRef Name="FLEX_VALUE_SET_ID" />
+          </Key>
+          <Property Name="FLEX_VALUE_SET_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FLEX_VALUE_SET_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LAST_UPDATE_DATE" Type="varchar" MaxLength="8" />
+          <Property Name="LAST_UPDATED_BY" Type="int" />
+          <Property Name="CREATION_DATE" Type="datetime" />
+          <Property Name="CREATED_BY" Type="int" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="255" />
+          <Property Name="ENABLED_FLAG" Type="varchar" MaxLength="1" />
+          <Property Name="FLEX_TYPE" Type="varchar" MaxLength="1" />
+          <Property Name="SCOPE" Type="varchar" MaxLength="1" />
+          <Property Name="FORM_DISPLAY_FLAG" Type="varchar" MaxLength="1" />
+          <Property Name="APP_CODE" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="LT_FLEX_VALUES">
+          <Key>
+            <PropertyRef Name="FLEX_VALUE_ID" />
+          </Key>
+          <Property Name="FLEX_VALUE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FLEX_VALUE_SET_ID" Type="int" Nullable="false" />
+          <Property Name="FLEX_VALUE" Type="varchar" MaxLength="30" />
+          <Property Name="LAST_UPDATE_DATE" Type="datetime" />
+          <Property Name="LAST_UPDATED_BY" Type="int" />
+          <Property Name="CREATION_DATE" Type="datetime" />
+          <Property Name="CREATED_BY" Type="int" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="255" />
+          <Property Name="ENABLED_FLAG" Type="varchar" MaxLength="1" />
+          <Property Name="SUMMARY_FLAG" Type="varchar" MaxLength="1" />
+          <Property Name="PARENT_FLEX_VALUE_ID" Type="int" />
+          <Property Name="HIERARCHY_LEVEL" Type="smallint" />
+          <Property Name="FLEX_VALUE_CATEGORY" Type="varchar" MaxLength="30" />
+          <Property Name="ATTRIBUTE1" Type="nvarchar" MaxLength="255" />
+          <Property Name="ATTRIBUTE2" Type="nvarchar" MaxLength="255" />
+          <Property Name="ATTRIBUTE3" Type="nvarchar" MaxLength="255" />
+          <Property Name="ATTRIBUTE4" Type="nvarchar" MaxLength="255" />
+          <Property Name="ATTRIBUTE5" Type="nvarchar" MaxLength="255" />
+          <Property Name="ATTRIBUTE6" Type="nvarchar" MaxLength="255" />
+          <Property Name="ATTRIBUTE7" Type="nvarchar" MaxLength="255" />
+          <Property Name="ATTRIBUTE8" Type="nvarchar" MaxLength="255" />
+          <Property Name="ATTRIBUTE9" Type="nvarchar" MaxLength="255" />
+          <Property Name="ATTRIBUTE10" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK_LT_FLEX_VALUE_CATEGORIES_LT_FLEX_VALUE_SETS">
+          <End Role="LT_FLEX_VALUE_SETS" Type="Self.LT_FLEX_VALUE_SETS" Multiplicity="1" />
+          <End Role="LT_FLEX_VALUE_CATEGORIES" Type="Self.LT_FLEX_VALUE_CATEGORIES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LT_FLEX_VALUE_SETS">
+              <PropertyRef Name="FLEX_VALUE_SET_ID" />
+            </Principal>
+            <Dependent Role="LT_FLEX_VALUE_CATEGORIES">
+              <PropertyRef Name="FLEX_VALUE_SET_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ITEMS_LISTModelStoreContainer">
+          <EntitySet Name="DM_CONG_TY" EntityType="Self.DM_CONG_TY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_DON_VI_NHOM" EntityType="Self.DM_DON_VI_NHOM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_DON_VI_TINH" EntityType="Self.DM_DON_VI_TINH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_DONVI" EntityType="Self.DM_DONVI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_KHO" EntityType="Self.DM_KHO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_KHU_VUC" EntityType="Self.DM_KHU_VUC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_LOAI_HAM" EntityType="Self.DM_LOAI_HAM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_LUC_LUONG" EntityType="Self.DM_LUC_LUONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LT_DATA_TYPES" EntityType="Self.LT_DATA_TYPES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LT_DESC_FLEX_COLUMN_USAGES" EntityType="Self.LT_DESC_FLEX_COLUMN_USAGES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LT_FLEX_VALUE_CATEGORIES" EntityType="Self.LT_FLEX_VALUE_CATEGORIES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LT_FLEX_VALUE_SETS" EntityType="Self.LT_FLEX_VALUE_SETS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LT_FLEX_VALUES" EntityType="Self.LT_FLEX_VALUES" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_LT_FLEX_VALUE_CATEGORIES_LT_FLEX_VALUE_SETS" Association="Self.FK_LT_FLEX_VALUE_CATEGORIES_LT_FLEX_VALUE_SETS">
+            <End Role="LT_FLEX_VALUE_SETS" EntitySet="LT_FLEX_VALUE_SETS" />
+            <End Role="LT_FLEX_VALUE_CATEGORIES" EntitySet="LT_FLEX_VALUE_CATEGORIES" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ITEMS_LISTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DM_CONG_TY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TEN_CONG_TY" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TEN_VIET_TAT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MO_TA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DIA_CHI" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NGAY_TAO" Type="DateTime" Precision="3" />
+          <Property Name="NGAY_CAP_NHAT" Type="DateTime" Precision="3" />
+          <Property Name="NGUOI_CAP_NHAT" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DM_DON_VI_NHOM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="TEN_NHOM_DV" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MO_TA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LOAI_NHOM_DV" Type="Int32" />
+          <Property Name="NGAY_TAO" Type="DateTime" Precision="3" />
+          <Property Name="NGAY_CAP_NHAT" Type="DateTime" Precision="3" />
+          <Property Name="NGUOI_CAP_NHAT" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DM_DON_VI_TINH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TEN_DVT" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MO_TA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NGAY_TAO" Type="DateTime" Precision="3" />
+          <Property Name="NGAY_CAP_NHAT" Type="DateTime" Precision="3" />
+          <Property Name="NGUOI_CAP_NHAT" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DM_DONVI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TEN_DON_VI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MO_TA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PHIEN_HIEU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NHOM_DON_VI_ID" Type="Int32" />
+          <Property Name="DON_VI_CHA_ID" Type="Int32" />
+          <Property Name="KHU_VUC_ID" Type="Int32" />
+          <Property Name="IS_QUAN_LY_KHO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="KHO_DEFAULT1_ID" Type="Int32" />
+          <Property Name="KHO_DEFAULT2_ID" Type="Int32" />
+          <Property Name="CONG_TY_DEFAULT1_ID" Type="Int32" />
+          <Property Name="CONG_TY_DEFAULT2_ID" Type="Int32" />
+          <Property Name="CONTACT_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CONTACT_TEL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CONTACT_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CONTACT_ADDRESS" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="SO_NAM_DAO_TAO" Type="Int32" />
+          <Property Name="IS_TRO_GIA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="IS_CAN_BO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="NGAY_TAO" Type="DateTime" Precision="3" />
+          <Property Name="NGAY_CAP_NHAT" Type="DateTime" Precision="3" />
+          <Property Name="NGUOI_CAP_NHAT" Type="Int32" />
+          <Property Name="SO_THU_TU_VUNG" Type="Int32" />
+          <Property Name="IS_CHECK_QUAN_SO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="NGAY_CHECK" Type="DateTime" Precision="3" />
+          <Property Name="MaDonVi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DonViCha_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="KhoDefault1_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="KhoDefault2_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DM_KHO">
+          <Key>
+            <PropertyRef Name="ID_KHO" />
+          </Key>
+          <Property Name="ID_KHO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PHIEN_HIEU_KHO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TEN_KHO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MO_TA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DIA_CHI" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="KHU_VUC_ID" Type="Int32" />
+          <Property Name="DON_VI_ID" Type="Int32" />
+          <Property Name="KHO_CHA_ID" Type="Guid" />
+          <Property Name="IS_HOP_DONG" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="HOP_DONG_ID" Type="Int64" />
+          <Property Name="CONG_TY_ID" Type="Int32" />
+          <Property Name="STATUS" Type="Int32" />
+          <Property Name="NGAY_TAO" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="NGAY_CAP_NHAT" Type="DateTime" Precision="3" />
+          <Property Name="NGUOI_CAP_NHAT" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DM_KHU_VUC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="TEN_KHU_VUC" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MO_TA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NGAY_TAO" Type="DateTime" Precision="3" />
+          <Property Name="NGAY_CAP_NHAT" Type="DateTime" Precision="3" />
+          <Property Name="NGUOI_CAP_NHAT" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DM_LOAI_HAM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="LOAI_HAM" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DM_LUC_LUONG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="TEN_LL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MO_TA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IS_TAN_BINH" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="LL_CHA_ID" Type="Int32" />
+          <Property Name="NGAY_TAO" Type="DateTime" Precision="3" />
+          <Property Name="NGAY_CAP_NHAT" Type="DateTime" Precision="3" />
+          <Property Name="NGUOI_CAP_NHAT" Type="Int32" />
+          <Property Name="SO_THU_TU" Type="Int32" />
+          <Property Name="KY_HIEU_VIET_TAT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LT_DATA_TYPES">
+          <Key>
+            <PropertyRef Name="DATA_TYPE_ID" />
+          </Key>
+          <Property Name="DATA_TYPE_ID" Type="Int16" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DATABASE_DATA_TYPE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_TYPE_FORMAT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ENABLED_FLAG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LT_DESC_FLEX_COLUMN_USAGES">
+          <Key>
+            <PropertyRef Name="FLEX_VALUE_SET_ID" />
+            <PropertyRef Name="FLEX_COLUMN_NAME" />
+          </Key>
+          <Property Name="FLEX_VALUE_SET_ID" Type="Int32" Nullable="false" />
+          <Property Name="FLEX_COLUMN_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FLEX_VALUE_SET" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FLEX_COL_DATA_TYPE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ENABLED_FLAG" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="REQUIRED_FLAG" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="END_USER_COLUMN_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DISPLAY_FLAG" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="DEFAULT_VALUE" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="COLUMN_SEQ_NUM" Type="Int32" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CONTROL_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="IS_CATEGORY_COLUMN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="FLEX_VALUE_CATEGORY" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FLEX_COL_DATA_LENGTH" Type="Int32" />
+          <Property Name="CONTROL_TYPE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="VIEW_COLUMN_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SHOW_ON_SEARCHING" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="SHOW_ON_LIST" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LT_FLEX_VALUE_CATEGORIES">
+          <Key>
+            <PropertyRef Name="FLEX_VALUE_CATEGORY_ID" />
+          </Key>
+          <Property Name="FLEX_VALUE_CATEGORY_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FLEX_VALUE_SET_ID" Type="Int32" Nullable="false" />
+          <Property Name="FLEX_VALUE_CATEGORY" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="BRIEF_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ENABLED_FLAG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="LAST_UPDATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDATED_BY" Type="Int32" />
+          <Property Name="CREATION_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_BY" Type="Int32" />
+          <Property Name="PARENT_FLEX_VALUE_CATEGORY" Type="Int32" />
+          <Property Name="NOTE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DATA_SOURCE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ATTRIBUTE1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ATTRIBUTE2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ATTRIBUTE3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LT_FLEX_VALUE_SETS" Relationship="Self.FK_LT_FLEX_VALUE_CATEGORIES_LT_FLEX_VALUE_SETS" FromRole="LT_FLEX_VALUE_CATEGORIES" ToRole="LT_FLEX_VALUE_SETS" />
+        </EntityType>
+        <EntityType Name="LT_FLEX_VALUE_SETS">
+          <Key>
+            <PropertyRef Name="FLEX_VALUE_SET_ID" />
+          </Key>
+          <Property Name="FLEX_VALUE_SET_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FLEX_VALUE_SET_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LAST_UPDATE_DATE" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="LAST_UPDATED_BY" Type="Int32" />
+          <Property Name="CREATION_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_BY" Type="Int32" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ENABLED_FLAG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FLEX_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SCOPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FORM_DISPLAY_FLAG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="APP_CODE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LT_FLEX_VALUE_CATEGORIES" Relationship="Self.FK_LT_FLEX_VALUE_CATEGORIES_LT_FLEX_VALUE_SETS" FromRole="LT_FLEX_VALUE_SETS" ToRole="LT_FLEX_VALUE_CATEGORIES" />
+        </EntityType>
+        <EntityType Name="LT_FLEX_VALUES">
+          <Key>
+            <PropertyRef Name="FLEX_VALUE_ID" />
+          </Key>
+          <Property Name="FLEX_VALUE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FLEX_VALUE_SET_ID" Type="Int32" Nullable="false" />
+          <Property Name="FLEX_VALUE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LAST_UPDATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDATED_BY" Type="Int32" />
+          <Property Name="CREATION_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_BY" Type="Int32" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ENABLED_FLAG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SUMMARY_FLAG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="PARENT_FLEX_VALUE_ID" Type="Int32" />
+          <Property Name="HIERARCHY_LEVEL" Type="Int16" />
+          <Property Name="FLEX_VALUE_CATEGORY" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ATTRIBUTE1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ATTRIBUTE2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ATTRIBUTE3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ATTRIBUTE4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ATTRIBUTE5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ATTRIBUTE6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ATTRIBUTE7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ATTRIBUTE8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ATTRIBUTE9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ATTRIBUTE10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_LT_FLEX_VALUE_CATEGORIES_LT_FLEX_VALUE_SETS">
+          <End Role="LT_FLEX_VALUE_SETS" Type="Self.LT_FLEX_VALUE_SETS" Multiplicity="1" />
+          <End Role="LT_FLEX_VALUE_CATEGORIES" Type="Self.LT_FLEX_VALUE_CATEGORIES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LT_FLEX_VALUE_SETS">
+              <PropertyRef Name="FLEX_VALUE_SET_ID" />
+            </Principal>
+            <Dependent Role="LT_FLEX_VALUE_CATEGORIES">
+              <PropertyRef Name="FLEX_VALUE_SET_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ITEMS_LISTEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DM_CONG_TY" EntityType="Self.DM_CONG_TY" />
+          <EntitySet Name="DM_DON_VI_NHOM" EntityType="Self.DM_DON_VI_NHOM" />
+          <EntitySet Name="DM_DON_VI_TINH" EntityType="Self.DM_DON_VI_TINH" />
+          <EntitySet Name="DM_DONVI" EntityType="Self.DM_DONVI" />
+          <EntitySet Name="DM_KHO" EntityType="Self.DM_KHO" />
+          <EntitySet Name="DM_KHU_VUC" EntityType="Self.DM_KHU_VUC" />
+          <EntitySet Name="DM_LOAI_HAM" EntityType="Self.DM_LOAI_HAM" />
+          <EntitySet Name="DM_LUC_LUONG" EntityType="Self.DM_LUC_LUONG" />
+          <EntitySet Name="LT_DATA_TYPES" EntityType="Self.LT_DATA_TYPES" />
+          <EntitySet Name="LT_DESC_FLEX_COLUMN_USAGES" EntityType="Self.LT_DESC_FLEX_COLUMN_USAGES" />
+          <EntitySet Name="LT_FLEX_VALUE_CATEGORIES" EntityType="Self.LT_FLEX_VALUE_CATEGORIES" />
+          <EntitySet Name="LT_FLEX_VALUE_SETS" EntityType="Self.LT_FLEX_VALUE_SETS" />
+          <EntitySet Name="LT_FLEX_VALUES" EntityType="Self.LT_FLEX_VALUES" />
+          <AssociationSet Name="FK_LT_FLEX_VALUE_CATEGORIES_LT_FLEX_VALUE_SETS" Association="Self.FK_LT_FLEX_VALUE_CATEGORIES_LT_FLEX_VALUE_SETS">
+            <End Role="LT_FLEX_VALUE_SETS" EntitySet="LT_FLEX_VALUE_SETS" />
+            <End Role="LT_FLEX_VALUE_CATEGORIES" EntitySet="LT_FLEX_VALUE_CATEGORIES" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ITEMS_LISTModelStoreContainer" CdmEntityContainer="ITEMS_LISTEntities">
+          <EntitySetMapping Name="DM_CONG_TY">
+            <EntityTypeMapping TypeName="ITEMS_LISTModel.DM_CONG_TY">
+              <MappingFragment StoreEntitySet="DM_CONG_TY">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TEN_CONG_TY" ColumnName="TEN_CONG_TY" />
+                <ScalarProperty Name="TEN_VIET_TAT" ColumnName="TEN_VIET_TAT" />
+                <ScalarProperty Name="MO_TA" ColumnName="MO_TA" />
+                <ScalarProperty Name="DIA_CHI" ColumnName="DIA_CHI" />
+                <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+                <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+                <ScalarProperty Name="NGUOI_CAP_NHAT" ColumnName="NGUOI_CAP_NHAT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_DON_VI_NHOM">
+            <EntityTypeMapping TypeName="ITEMS_LISTModel.DM_DON_VI_NHOM">
+              <MappingFragment StoreEntitySet="DM_DON_VI_NHOM">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TEN_NHOM_DV" ColumnName="TEN_NHOM_DV" />
+                <ScalarProperty Name="MO_TA" ColumnName="MO_TA" />
+                <ScalarProperty Name="LOAI_NHOM_DV" ColumnName="LOAI_NHOM_DV" />
+                <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+                <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+                <ScalarProperty Name="NGUOI_CAP_NHAT" ColumnName="NGUOI_CAP_NHAT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_DON_VI_TINH">
+            <EntityTypeMapping TypeName="ITEMS_LISTModel.DM_DON_VI_TINH">
+              <MappingFragment StoreEntitySet="DM_DON_VI_TINH">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TEN_DVT" ColumnName="TEN_DVT" />
+                <ScalarProperty Name="MO_TA" ColumnName="MO_TA" />
+                <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+                <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+                <ScalarProperty Name="NGUOI_CAP_NHAT" ColumnName="NGUOI_CAP_NHAT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_DONVI">
+            <EntityTypeMapping TypeName="ITEMS_LISTModel.DM_DONVI">
+              <MappingFragment StoreEntitySet="DM_DONVI">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TEN_DON_VI" ColumnName="TEN_DON_VI" />
+                <ScalarProperty Name="MO_TA" ColumnName="MO_TA" />
+                <ScalarProperty Name="PHIEN_HIEU" ColumnName="PHIEN_HIEU" />
+                <ScalarProperty Name="NHOM_DON_VI_ID" ColumnName="NHOM_DON_VI_ID" />
+                <ScalarProperty Name="DON_VI_CHA_ID" ColumnName="DON_VI_CHA_ID" />
+                <ScalarProperty Name="KHU_VUC_ID" ColumnName="KHU_VUC_ID" />
+                <ScalarProperty Name="IS_QUAN_LY_KHO" ColumnName="IS_QUAN_LY_KHO" />
+                <ScalarProperty Name="KHO_DEFAULT1_ID" ColumnName="KHO_DEFAULT1_ID" />
+                <ScalarProperty Name="KHO_DEFAULT2_ID" ColumnName="KHO_DEFAULT2_ID" />
+                <ScalarProperty Name="CONG_TY_DEFAULT1_ID" ColumnName="CONG_TY_DEFAULT1_ID" />
+                <ScalarProperty Name="CONG_TY_DEFAULT2_ID" ColumnName="CONG_TY_DEFAULT2_ID" />
+                <ScalarProperty Name="CONTACT_NAME" ColumnName="CONTACT_NAME" />
+                <ScalarProperty Name="CONTACT_TEL" ColumnName="CONTACT_TEL" />
+                <ScalarProperty Name="CONTACT_ID" ColumnName="CONTACT_ID" />
+                <ScalarProperty Name="CONTACT_ADDRESS" ColumnName="CONTACT_ADDRESS" />
+                <ScalarProperty Name="SO_NAM_DAO_TAO" ColumnName="SO_NAM_DAO_TAO" />
+                <ScalarProperty Name="IS_TRO_GIA" ColumnName="IS_TRO_GIA" />
+                <ScalarProperty Name="IS_CAN_BO" ColumnName="IS_CAN_BO" />
+                <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+                <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+                <ScalarProperty Name="NGUOI_CAP_NHAT" ColumnName="NGUOI_CAP_NHAT" />
+                <ScalarProperty Name="SO_THU_TU_VUNG" ColumnName="SO_THU_TU_VUNG" />
+                <ScalarProperty Name="IS_CHECK_QUAN_SO" ColumnName="IS_CHECK_QUAN_SO" />
+                <ScalarProperty Name="NGAY_CHECK" ColumnName="NGAY_CHECK" />
+                <ScalarProperty Name="MaDonVi" ColumnName="MaDonVi" />
+                <ScalarProperty Name="DonViCha_ID" ColumnName="DonViCha_ID" />
+                <ScalarProperty Name="KhoDefault1_ID" ColumnName="KhoDefault1_ID" />
+                <ScalarProperty Name="KhoDefault2_ID" ColumnName="KhoDefault2_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_KHO">
+            <EntityTypeMapping TypeName="ITEMS_LISTModel.DM_KHO">
+              <MappingFragment StoreEntitySet="DM_KHO">
+                <ScalarProperty Name="ID_KHO" ColumnName="ID_KHO" />
+                <ScalarProperty Name="PHIEN_HIEU_KHO" ColumnName="PHIEN_HIEU_KHO" />
+                <ScalarProperty Name="TEN_KHO" ColumnName="TEN_KHO" />
+                <ScalarProperty Name="MO_TA" ColumnName="MO_TA" />
+                <ScalarProperty Name="DIA_CHI" ColumnName="DIA_CHI" />
+                <ScalarProperty Name="KHU_VUC_ID" ColumnName="KHU_VUC_ID" />
+                <ScalarProperty Name="DON_VI_ID" ColumnName="DON_VI_ID" />
+                <ScalarProperty Name="KHO_CHA_ID" ColumnName="KHO_CHA_ID" />
+                <ScalarProperty Name="IS_HOP_DONG" ColumnName="IS_HOP_DONG" />
+                <ScalarProperty Name="HOP_DONG_ID" ColumnName="HOP_DONG_ID" />
+                <ScalarProperty Name="CONG_TY_ID" ColumnName="CONG_TY_ID" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+                <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+                <ScalarProperty Name="NGUOI_CAP_NHAT" ColumnName="NGUOI_CAP_NHAT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_KHU_VUC">
+            <EntityTypeMapping TypeName="ITEMS_LISTModel.DM_KHU_VUC">
+              <MappingFragment StoreEntitySet="DM_KHU_VUC">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TEN_KHU_VUC" ColumnName="TEN_KHU_VUC" />
+                <ScalarProperty Name="MO_TA" ColumnName="MO_TA" />
+                <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+                <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+                <ScalarProperty Name="NGUOI_CAP_NHAT" ColumnName="NGUOI_CAP_NHAT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_LOAI_HAM">
+            <EntityTypeMapping TypeName="ITEMS_LISTModel.DM_LOAI_HAM">
+              <MappingFragment StoreEntitySet="DM_LOAI_HAM">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LOAI_HAM" ColumnName="LOAI_HAM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_LUC_LUONG">
+            <EntityTypeMapping TypeName="ITEMS_LISTModel.DM_LUC_LUONG">
+              <MappingFragment StoreEntitySet="DM_LUC_LUONG">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TEN_LL" ColumnName="TEN_LL" />
+                <ScalarProperty Name="MO_TA" ColumnName="MO_TA" />
+                <ScalarProperty Name="IS_TAN_BINH" ColumnName="IS_TAN_BINH" />
+                <ScalarProperty Name="LL_CHA_ID" ColumnName="LL_CHA_ID" />
+                <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+                <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+                <ScalarProperty Name="NGUOI_CAP_NHAT" ColumnName="NGUOI_CAP_NHAT" />
+                <ScalarProperty Name="SO_THU_TU" ColumnName="SO_THU_TU" />
+                <ScalarProperty Name="KY_HIEU_VIET_TAT" ColumnName="KY_HIEU_VIET_TAT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LT_DATA_TYPES">
+            <EntityTypeMapping TypeName="ITEMS_LISTModel.LT_DATA_TYPES">
+              <MappingFragment StoreEntitySet="LT_DATA_TYPES">
+                <ScalarProperty Name="DATA_TYPE_ID" ColumnName="DATA_TYPE_ID" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="DATABASE_DATA_TYPE" ColumnName="DATABASE_DATA_TYPE" />
+                <ScalarProperty Name="DATA_TYPE_FORMAT" ColumnName="DATA_TYPE_FORMAT" />
+                <ScalarProperty Name="ENABLED_FLAG" ColumnName="ENABLED_FLAG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LT_DESC_FLEX_COLUMN_USAGES">
+            <EntityTypeMapping TypeName="ITEMS_LISTModel.LT_DESC_FLEX_COLUMN_USAGES">
+              <MappingFragment StoreEntitySet="LT_DESC_FLEX_COLUMN_USAGES">
+                <ScalarProperty Name="FLEX_VALUE_SET_ID" ColumnName="FLEX_VALUE_SET_ID" />
+                <ScalarProperty Name="FLEX_COLUMN_NAME" ColumnName="FLEX_COLUMN_NAME" />
+                <ScalarProperty Name="FLEX_VALUE_SET" ColumnName="FLEX_VALUE_SET" />
+                <ScalarProperty Name="FLEX_COL_DATA_TYPE" ColumnName="FLEX_COL_DATA_TYPE" />
+                <ScalarProperty Name="ENABLED_FLAG" ColumnName="ENABLED_FLAG" />
+                <ScalarProperty Name="REQUIRED_FLAG" ColumnName="REQUIRED_FLAG" />
+                <ScalarProperty Name="END_USER_COLUMN_NAME" ColumnName="END_USER_COLUMN_NAME" />
+                <ScalarProperty Name="DISPLAY_FLAG" ColumnName="DISPLAY_FLAG" />
+                <ScalarProperty Name="DEFAULT_VALUE" ColumnName="DEFAULT_VALUE" />
+                <ScalarProperty Name="COLUMN_SEQ_NUM" ColumnName="COLUMN_SEQ_NUM" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="CONTROL_NAME" ColumnName="CONTROL_NAME" />
+                <ScalarProperty Name="IS_CATEGORY_COLUMN" ColumnName="IS_CATEGORY_COLUMN" />
+                <ScalarProperty Name="FLEX_VALUE_CATEGORY" ColumnName="FLEX_VALUE_CATEGORY" />
+                <ScalarProperty Name="FLEX_COL_DATA_LENGTH" ColumnName="FLEX_COL_DATA_LENGTH" />
+                <ScalarProperty Name="CONTROL_TYPE" ColumnName="CONTROL_TYPE" />
+                <ScalarProperty Name="VIEW_COLUMN_NAME" ColumnName="VIEW_COLUMN_NAME" />
+                <ScalarProperty Name="SHOW_ON_SEARCHING" ColumnName="SHOW_ON_SEARCHING" />
+                <ScalarProperty Name="SHOW_ON_LIST" ColumnName="SHOW_ON_LIST" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LT_FLEX_VALUE_CATEGORIES">
+            <EntityTypeMapping TypeName="ITEMS_LISTModel.LT_FLEX_VALUE_CATEGORIES">
+              <MappingFragment StoreEntitySet="LT_FLEX_VALUE_CATEGORIES">
+                <ScalarProperty Name="FLEX_VALUE_CATEGORY_ID" ColumnName="FLEX_VALUE_CATEGORY_ID" />
+                <ScalarProperty Name="FLEX_VALUE_SET_ID" ColumnName="FLEX_VALUE_SET_ID" />
+                <ScalarProperty Name="FLEX_VALUE_CATEGORY" ColumnName="FLEX_VALUE_CATEGORY" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="BRIEF_NAME" ColumnName="BRIEF_NAME" />
+                <ScalarProperty Name="ENABLED_FLAG" ColumnName="ENABLED_FLAG" />
+                <ScalarProperty Name="LAST_UPDATE_DATE" ColumnName="LAST_UPDATE_DATE" />
+                <ScalarProperty Name="LAST_UPDATED_BY" ColumnName="LAST_UPDATED_BY" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="PARENT_FLEX_VALUE_CATEGORY" ColumnName="PARENT_FLEX_VALUE_CATEGORY" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+                <ScalarProperty Name="DATA_SOURCE" ColumnName="DATA_SOURCE" />
+                <ScalarProperty Name="ATTRIBUTE1" ColumnName="ATTRIBUTE1" />
+                <ScalarProperty Name="ATTRIBUTE2" ColumnName="ATTRIBUTE2" />
+                <ScalarProperty Name="ATTRIBUTE3" ColumnName="ATTRIBUTE3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LT_FLEX_VALUE_SETS">
+            <EntityTypeMapping TypeName="ITEMS_LISTModel.LT_FLEX_VALUE_SETS">
+              <MappingFragment StoreEntitySet="LT_FLEX_VALUE_SETS">
+                <ScalarProperty Name="FLEX_VALUE_SET_ID" ColumnName="FLEX_VALUE_SET_ID" />
+                <ScalarProperty Name="FLEX_VALUE_SET_NAME" ColumnName="FLEX_VALUE_SET_NAME" />
+                <ScalarProperty Name="LAST_UPDATE_DATE" ColumnName="LAST_UPDATE_DATE" />
+                <ScalarProperty Name="LAST_UPDATED_BY" ColumnName="LAST_UPDATED_BY" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="ENABLED_FLAG" ColumnName="ENABLED_FLAG" />
+                <ScalarProperty Name="FLEX_TYPE" ColumnName="FLEX_TYPE" />
+                <ScalarProperty Name="SCOPE" ColumnName="SCOPE" />
+                <ScalarProperty Name="FORM_DISPLAY_FLAG" ColumnName="FORM_DISPLAY_FLAG" />
+                <ScalarProperty Name="APP_CODE" ColumnName="APP_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LT_FLEX_VALUES">
+            <EntityTypeMapping TypeName="ITEMS_LISTModel.LT_FLEX_VALUES">
+              <MappingFragment StoreEntitySet="LT_FLEX_VALUES">
+                <ScalarProperty Name="FLEX_VALUE_ID" ColumnName="FLEX_VALUE_ID" />
+                <ScalarProperty Name="FLEX_VALUE_SET_ID" ColumnName="FLEX_VALUE_SET_ID" />
+                <ScalarProperty Name="FLEX_VALUE" ColumnName="FLEX_VALUE" />
+                <ScalarProperty Name="LAST_UPDATE_DATE" ColumnName="LAST_UPDATE_DATE" />
+                <ScalarProperty Name="LAST_UPDATED_BY" ColumnName="LAST_UPDATED_BY" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="ENABLED_FLAG" ColumnName="ENABLED_FLAG" />
+                <ScalarProperty Name="SUMMARY_FLAG" ColumnName="SUMMARY_FLAG" />
+                <ScalarProperty Name="PARENT_FLEX_VALUE_ID" ColumnName="PARENT_FLEX_VALUE_ID" />
+                <ScalarProperty Name="HIERARCHY_LEVEL" ColumnName="HIERARCHY_LEVEL" />
+                <ScalarProperty Name="FLEX_VALUE_CATEGORY" ColumnName="FLEX_VALUE_CATEGORY" />
+                <ScalarProperty Name="ATTRIBUTE1" ColumnName="ATTRIBUTE1" />
+                <ScalarProperty Name="ATTRIBUTE2" ColumnName="ATTRIBUTE2" />
+                <ScalarProperty Name="ATTRIBUTE3" ColumnName="ATTRIBUTE3" />
+                <ScalarProperty Name="ATTRIBUTE4" ColumnName="ATTRIBUTE4" />
+                <ScalarProperty Name="ATTRIBUTE5" ColumnName="ATTRIBUTE5" />
+                <ScalarProperty Name="ATTRIBUTE6" ColumnName="ATTRIBUTE6" />
+                <ScalarProperty Name="ATTRIBUTE7" ColumnName="ATTRIBUTE7" />
+                <ScalarProperty Name="ATTRIBUTE8" ColumnName="ATTRIBUTE8" />
+                <ScalarProperty Name="ATTRIBUTE9" ColumnName="ATTRIBUTE9" />
+                <ScalarProperty Name="ATTRIBUTE10" ColumnName="ATTRIBUTE10" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

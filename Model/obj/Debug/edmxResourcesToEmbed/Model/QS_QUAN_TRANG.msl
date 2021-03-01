@@ -1,0 +1,636 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QS_QUAN_TRANGModelStoreContainer" CdmEntityContainer="QS_QUAN_TRANGEntities">
+    <EntitySetMapping Name="DM_CAP_BAC">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.DM_CAP_BAC">
+        <MappingFragment StoreEntitySet="DM_CAP_BAC">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TEN_CB" ColumnName="TEN_CB" />
+          <ScalarProperty Name="MO_TA_CB" ColumnName="MO_TA_CB" />
+          <ScalarProperty Name="IS_MAY_DO" ColumnName="IS_MAY_DO" />
+          <ScalarProperty Name="NIEN_HAN" ColumnName="NIEN_HAN" />
+          <ScalarProperty Name="NHOM_CB_ID" ColumnName="NHOM_CB_ID" />
+          <ScalarProperty Name="NHOM_TC_ID" ColumnName="NHOM_TC_ID" />
+          <ScalarProperty Name="SO_THU_TU" ColumnName="SO_THU_TU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_CAP_BAC_CHO_QUAN_SO">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.DM_CAP_BAC_CHO_QUAN_SO">
+        <MappingFragment StoreEntitySet="DM_CAP_BAC_CHO_QUAN_SO">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CAP_BAC_ID" ColumnName="CAP_BAC_ID" />
+          <ScalarProperty Name="LUC_LUONG_ID" ColumnName="LUC_LUONG_ID" />
+          <ScalarProperty Name="LOAI_HAM_ID" ColumnName="LOAI_HAM_ID" />
+          <ScalarProperty Name="LOAI_QUAN_SO" ColumnName="LOAI_QUAN_SO" />
+          <ScalarProperty Name="TEN_CB_THAY_THE" ColumnName="TEN_CB_THAY_THE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_CAP_BAC_HAM">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.DM_CAP_BAC_HAM">
+        <MappingFragment StoreEntitySet="DM_CAP_BAC_HAM">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LUC_LUONG_ID" ColumnName="LUC_LUONG_ID" />
+          <ScalarProperty Name="CAP_BAC_ID" ColumnName="CAP_BAC_ID" />
+          <ScalarProperty Name="LOAI_HAM_ID" ColumnName="LOAI_HAM_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_CAP_BAC_NHOM">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.DM_CAP_BAC_NHOM">
+        <MappingFragment StoreEntitySet="DM_CAP_BAC_NHOM">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TEN_NHOM_CB" ColumnName="TEN_NHOM_CB" />
+          <ScalarProperty Name="MO_TA" ColumnName="MO_TA" />
+          <ScalarProperty Name="IS_TAN_BINH" ColumnName="IS_TAN_BINH" />
+          <ScalarProperty Name="NHOM_CB_CHA_ID" ColumnName="NHOM_CB_CHA_ID" />
+          <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+          <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+          <ScalarProperty Name="NGUOI_CAP_NHAT" ColumnName="NGUOI_CAP_NHAT" />
+          <ScalarProperty Name="SO_THU_TU" ColumnName="SO_THU_TU" />
+          <ScalarProperty Name="KY_HIEU_VIET_TAT" ColumnName="KY_HIEU_VIET_TAT" />
+          <ScalarProperty Name="MaNhomCB" ColumnName="MaNhomCB" />
+          <ScalarProperty Name="NhomCBCha_ID" ColumnName="NhomCBCha_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_DINH_MUC">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.DM_DINH_MUC">
+        <MappingFragment StoreEntitySet="DM_DINH_MUC">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SO_QUYET_DINH" ColumnName="SO_QUYET_DINH" />
+          <ScalarProperty Name="NGAY_QUYET_DINH" ColumnName="NGAY_QUYET_DINH" />
+          <ScalarProperty Name="NGUOI_KY" ColumnName="NGUOI_KY" />
+          <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+          <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+          <ScalarProperty Name="NGUOI_CAP_NHAT" ColumnName="NGUOI_CAP_NHAT" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="HAO_HUT" ColumnName="HAO_HUT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_DINH_MUC_SP">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.DM_DINH_MUC_SP">
+        <MappingFragment StoreEntitySet="DM_DINH_MUC_SP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DINH_MUC_ID" ColumnName="DINH_MUC_ID" />
+          <ScalarProperty Name="SP_ID" ColumnName="SP_ID" />
+          <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+          <ScalarProperty Name="NGAY_CAPNHAT" ColumnName="NGAY_CAPNHAT" />
+          <ScalarProperty Name="NGUOI_CAPNHAT" ColumnName="NGUOI_CAPNHAT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_DINH_MUC_SP_VT">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.DM_DINH_MUC_SP_VT">
+        <MappingFragment StoreEntitySet="DM_DINH_MUC_SP_VT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DINH_MUC_ID" ColumnName="DINH_MUC_ID" />
+          <ScalarProperty Name="DINH_MUC_SP_ID" ColumnName="DINH_MUC_SP_ID" />
+          <ScalarProperty Name="SP_ID" ColumnName="SP_ID" />
+          <ScalarProperty Name="NHOM_VATTU_ID" ColumnName="NHOM_VATTU_ID" />
+          <ScalarProperty Name="DVT_ID" ColumnName="DVT_ID" />
+          <ScalarProperty Name="TEN_DVT" ColumnName="TEN_DVT" />
+          <ScalarProperty Name="SO_LUONG" ColumnName="SO_LUONG" />
+          <ScalarProperty Name="TYLE_HH" ColumnName="TYLE_HH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_DON_VI_DUOC_TRO_GIA">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.DM_DON_VI_DUOC_TRO_GIA">
+        <MappingFragment StoreEntitySet="DM_DON_VI_DUOC_TRO_GIA">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DON_VI_ID" ColumnName="DON_VI_ID" />
+          <ScalarProperty Name="NAM" ColumnName="NAM" />
+          <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+          <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+          <ScalarProperty Name="NGUOI_CAP_NHAT" ColumnName="NGUOI_CAP_NHAT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_LOAI_DT">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.DM_LOAI_DT">
+        <MappingFragment StoreEntitySet="DM_LOAI_DT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TEN_LOAI" ColumnName="TEN_LOAI" />
+          <ScalarProperty Name="MO_TA" ColumnName="MO_TA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_LOAI_PHAM">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.DM_LOAI_PHAM">
+        <MappingFragment StoreEntitySet="DM_LOAI_PHAM">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TEN_LOAI_PHAM" ColumnName="TEN_LOAI_PHAM" />
+          <ScalarProperty Name="MO_TA" ColumnName="MO_TA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_LOAI_TC">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.DM_LOAI_TC">
+        <MappingFragment StoreEntitySet="DM_LOAI_TC">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TEN_LOAI" ColumnName="TEN_LOAI" />
+          <ScalarProperty Name="MO_TA" ColumnName="MO_TA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_NHOM_SAN_PHAM_BG">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.DM_NHOM_SAN_PHAM_BG">
+        <MappingFragment StoreEntitySet="DM_NHOM_SAN_PHAM_BG">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TEN_NHOM" ColumnName="TEN_NHOM" />
+          <ScalarProperty Name="MO_TA" ColumnName="MO_TA" />
+          <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+          <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+          <ScalarProperty Name="NGUOI_CAP_NHAT" ColumnName="NGUOI_CAP_NHAT" />
+          <ScalarProperty Name="NAM" ColumnName="NAM" />
+          <ScalarProperty Name="BIEU_GIA" ColumnName="BIEU_GIA" />
+          <ScalarProperty Name="PHAN_TRAM_TRO_GIA" ColumnName="PHAN_TRAM_TRO_GIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_NHOM_SAN_PHAM_BG_D">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.DM_NHOM_SAN_PHAM_BG_D">
+        <MappingFragment StoreEntitySet="DM_NHOM_SAN_PHAM_BG_D">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NHOM_SAN_PHAM_BG_ID" ColumnName="NHOM_SAN_PHAM_BG_ID" />
+          <ScalarProperty Name="SP_ID" ColumnName="SP_ID" />
+          <ScalarProperty Name="TEN_SP" ColumnName="TEN_SP" />
+          <ScalarProperty Name="DVT_ID" ColumnName="DVT_ID" />
+          <ScalarProperty Name="TEN_DVT" ColumnName="TEN_DVT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_NHOM_SP">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.DM_NHOM_SP">
+        <MappingFragment StoreEntitySet="DM_NHOM_SP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MA_H55" ColumnName="MA_H55" />
+          <ScalarProperty Name="TEN_NHOM_SP" ColumnName="TEN_NHOM_SP" />
+          <ScalarProperty Name="MO_TA" ColumnName="MO_TA" />
+          <ScalarProperty Name="LOAI_SP" ColumnName="LOAI_SP" />
+          <ScalarProperty Name="LOAI_NHOM_SP" ColumnName="LOAI_NHOM_SP" />
+          <ScalarProperty Name="NHOM_SP_CHA_ID" ColumnName="NHOM_SP_CHA_ID" />
+          <ScalarProperty Name="NHOM_TIEU_CHUAN_ID" ColumnName="NHOM_TIEU_CHUAN_ID" />
+          <ScalarProperty Name="IS_VAT_TU" ColumnName="IS_VAT_TU" />
+          <ScalarProperty Name="IS_PHAM_NHAN" ColumnName="IS_PHAM_NHAN" />
+          <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+          <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+          <ScalarProperty Name="NGUOI_CAP_NHAT" ColumnName="NGUOI_CAP_NHAT" />
+          <ScalarProperty Name="DVT_ID" ColumnName="DVT_ID" />
+          <ScalarProperty Name="MaNhomSP" ColumnName="MaNhomSP" />
+          <ScalarProperty Name="NhomSPCha_ID" ColumnName="NhomSPCha_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_NHOM_TC">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.DM_NHOM_TC">
+        <MappingFragment StoreEntitySet="DM_NHOM_TC">
+          <ScalarProperty Name="ID_NHOM" ColumnName="ID_NHOM" />
+          <ScalarProperty Name="TEN_NHOM_TC" ColumnName="TEN_NHOM_TC" />
+          <ScalarProperty Name="MO_TA" ColumnName="MO_TA" />
+          <ScalarProperty Name="LOAI_TC" ColumnName="LOAI_TC" />
+          <ScalarProperty Name="NIEN_HAN" ColumnName="NIEN_HAN" />
+          <ScalarProperty Name="MUA" ColumnName="MUA" />
+          <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+          <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+          <ScalarProperty Name="NGUOI_CAP_NHAT" ColumnName="NGUOI_CAP_NHAT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_NHOM_TC_CAP_BAC">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.DM_NHOM_TC_CAP_BAC">
+        <MappingFragment StoreEntitySet="DM_NHOM_TC_CAP_BAC">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NHOM_TC_ID" ColumnName="NHOM_TC_ID" />
+          <ScalarProperty Name="NHOM_CB_ID" ColumnName="NHOM_CB_ID" />
+          <ScalarProperty Name="NHOM_CB_CHA_ID" ColumnName="NHOM_CB_CHA_ID" />
+          <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+          <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+          <ScalarProperty Name="NGUOI_CAP_NHAT" ColumnName="NGUOI_CAP_NHAT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_NHOM_TC_KHU_VUC">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.DM_NHOM_TC_KHU_VUC">
+        <MappingFragment StoreEntitySet="DM_NHOM_TC_KHU_VUC">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NHOM_TC_ID" ColumnName="NHOM_TC_ID" />
+          <ScalarProperty Name="KHU_VUC_ID" ColumnName="KHU_VUC_ID" />
+          <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+          <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+          <ScalarProperty Name="NGUOI_CAP_NHAT" ColumnName="NGUOI_CAP_NHAT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QS_CBCS_CHUYEN_LL_TH">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.QS_CBCS_CHUYEN_LL_TH">
+        <MappingFragment StoreEntitySet="QS_CBCS_CHUYEN_LL_TH">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAM" ColumnName="NAM" />
+          <ScalarProperty Name="KY" ColumnName="KY" />
+          <ScalarProperty Name="SO_HIEU" ColumnName="SO_HIEU" />
+          <ScalarProperty Name="GIOI_TINH" ColumnName="GIOI_TINH" />
+          <ScalarProperty Name="DON_VI_CU_ID" ColumnName="DON_VI_CU_ID" />
+          <ScalarProperty Name="DON_VI_MOI_ID" ColumnName="DON_VI_MOI_ID" />
+          <ScalarProperty Name="CAP_BAC_ID_CU" ColumnName="CAP_BAC_ID_CU" />
+          <ScalarProperty Name="CAP_BAC_ID_MOI" ColumnName="CAP_BAC_ID_MOI" />
+          <ScalarProperty Name="LOAI_HAM_CU_ID" ColumnName="LOAI_HAM_CU_ID" />
+          <ScalarProperty Name="LOAI_HAM_MOI_ID" ColumnName="LOAI_HAM_MOI_ID" />
+          <ScalarProperty Name="CHUC_VU_CU" ColumnName="CHUC_VU_CU" />
+          <ScalarProperty Name="CHUC_VU_MOI" ColumnName="CHUC_VU_MOI" />
+          <ScalarProperty Name="LUC_LUONG_ID_CU" ColumnName="LUC_LUONG_ID_CU" />
+          <ScalarProperty Name="LUC_LUONG_ID_MOI" ColumnName="LUC_LUONG_ID_MOI" />
+          <ScalarProperty Name="CHO_HUU" ColumnName="CHO_HUU" />
+          <ScalarProperty Name="DI_HOC" ColumnName="DI_HOC" />
+          <ScalarProperty Name="BIET_PHAI" ColumnName="BIET_PHAI" />
+          <ScalarProperty Name="CAT_QUAN_SO" ColumnName="CAT_QUAN_SO" />
+          <ScalarProperty Name="CO_GIAY" ColumnName="CO_GIAY" />
+          <ScalarProperty Name="CO_MU" ColumnName="CO_MU" />
+          <ScalarProperty Name="CO_QA" ColumnName="CO_QA" />
+          <ScalarProperty Name="DK_HIEN_VAT" ColumnName="DK_HIEN_VAT" />
+          <ScalarProperty Name="DK_DOI_TC" ColumnName="DK_DOI_TC" />
+          <ScalarProperty Name="NAM_NIEN_HAN" ColumnName="NAM_NIEN_HAN" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+          <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+          <ScalarProperty Name="NGUOI_CAP_NHAT" ColumnName="NGUOI_CAP_NHAT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QS_CBCS_HT">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.QS_CBCS_HT">
+        <MappingFragment StoreEntitySet="QS_CBCS_HT">
+          <ScalarProperty Name="ID_DL" ColumnName="ID_DL" />
+          <ScalarProperty Name="DON_VI_ID" ColumnName="DON_VI_ID" />
+          <ScalarProperty Name="NAM" ColumnName="NAM" />
+          <ScalarProperty Name="KY" ColumnName="KY" />
+          <ScalarProperty Name="SO_HIEU" ColumnName="SO_HIEU" />
+          <ScalarProperty Name="GIOI_TINH" ColumnName="GIOI_TINH" />
+          <ScalarProperty Name="CAP_BAC_ID" ColumnName="CAP_BAC_ID" />
+          <ScalarProperty Name="LOAI_HAM_ID" ColumnName="LOAI_HAM_ID" />
+          <ScalarProperty Name="CHUC_VU" ColumnName="CHUC_VU" />
+          <ScalarProperty Name="DON_VI_DIA_PHUONG" ColumnName="DON_VI_DIA_PHUONG" />
+          <ScalarProperty Name="LUC_LUONG_ID" ColumnName="LUC_LUONG_ID" />
+          <ScalarProperty Name="CHO_HUU" ColumnName="CHO_HUU" />
+          <ScalarProperty Name="DI_HOC" ColumnName="DI_HOC" />
+          <ScalarProperty Name="BIET_PHAI" ColumnName="BIET_PHAI" />
+          <ScalarProperty Name="CAT_QUAN_SO" ColumnName="CAT_QUAN_SO" />
+          <ScalarProperty Name="CO_GIAY" ColumnName="CO_GIAY" />
+          <ScalarProperty Name="CO_MU" ColumnName="CO_MU" />
+          <ScalarProperty Name="CO_QA" ColumnName="CO_QA" />
+          <ScalarProperty Name="DK_HIEN_VAT" ColumnName="DK_HIEN_VAT" />
+          <ScalarProperty Name="DK_DOI_TC" ColumnName="DK_DOI_TC" />
+          <ScalarProperty Name="NAM_NIEN_HAN" ColumnName="NAM_NIEN_HAN" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="LOAI_TUYEN" ColumnName="LOAI_TUYEN" />
+          <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+          <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+          <ScalarProperty Name="NGUOI_CAP_NHAT" ColumnName="NGUOI_CAP_NHAT" />
+          <ScalarProperty Name="TXN_ID" ColumnName="TXN_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QS_CBCS_SD">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.QS_CBCS_SD">
+        <MappingFragment StoreEntitySet="QS_CBCS_SD">
+          <ScalarProperty Name="ID_" ColumnName="ID_" />
+          <ScalarProperty Name="DON_VI_ID" ColumnName="DON_VI_ID" />
+          <ScalarProperty Name="NAM" ColumnName="NAM" />
+          <ScalarProperty Name="KY" ColumnName="KY" />
+          <ScalarProperty Name="CAP_BAC_ID" ColumnName="CAP_BAC_ID" />
+          <ScalarProperty Name="LOAI_HAM_ID" ColumnName="LOAI_HAM_ID" />
+          <ScalarProperty Name="LUC_LUONG_ID" ColumnName="LUC_LUONG_ID" />
+          <ScalarProperty Name="SL_NAM_DK" ColumnName="SL_NAM_DK" />
+          <ScalarProperty Name="SL_NU_DK" ColumnName="SL_NU_DK" />
+          <ScalarProperty Name="SL_NAM_TK" ColumnName="SL_NAM_TK" />
+          <ScalarProperty Name="SL_NU_TK" ColumnName="SL_NU_TK" />
+          <ScalarProperty Name="SL_NAM_DEN" ColumnName="SL_NAM_DEN" />
+          <ScalarProperty Name="SL_NU_DEN" ColumnName="SL_NU_DEN" />
+          <ScalarProperty Name="SL_NAM_DI" ColumnName="SL_NAM_DI" />
+          <ScalarProperty Name="SL_NU_DI" ColumnName="SL_NU_DI" />
+          <ScalarProperty Name="SL_NAM_CK" ColumnName="SL_NAM_CK" />
+          <ScalarProperty Name="SL_NU_CK" ColumnName="SL_NU_CK" />
+          <ScalarProperty Name="SL_NAM_KT" ColumnName="SL_NAM_KT" />
+          <ScalarProperty Name="SL_NU_KT" ColumnName="SL_NU_KT" />
+          <ScalarProperty Name="SL_NAM_HT" ColumnName="SL_NAM_HT" />
+          <ScalarProperty Name="SL_NU_HT" ColumnName="SL_NU_HT" />
+          <ScalarProperty Name="SL_TONG" ColumnName="SL_TONG" />
+          <ScalarProperty Name="SL_TONG_HT" ColumnName="SL_TONG_HT" />
+          <ScalarProperty Name="SL_NAM_TT" ColumnName="SL_NAM_TT" />
+          <ScalarProperty Name="SL_NU_TT" ColumnName="SL_NU_TT" />
+          <ScalarProperty Name="SL_TONG_TT" ColumnName="SL_TONG_TT" />
+          <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+          <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+          <ScalarProperty Name="NGUOI_CAP_NHAT" ColumnName="NGUOI_CAP_NHAT" />
+          <ScalarProperty Name="CHOT_DL" ColumnName="CHOT_DL" />
+          <ScalarProperty Name="LOAI_DL" ColumnName="LOAI_DL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SP_SAN_PHAM">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.SP_SAN_PHAM">
+        <MappingFragment StoreEntitySet="SP_SAN_PHAM">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MA_H55" ColumnName="MA_H55" />
+          <ScalarProperty Name="TEN_SP" ColumnName="TEN_SP" />
+          <ScalarProperty Name="MO_TA" ColumnName="MO_TA" />
+          <ScalarProperty Name="IS_MAY_DO" ColumnName="IS_MAY_DO" />
+          <ScalarProperty Name="NHOM_SP_ID" ColumnName="NHOM_SP_ID" />
+          <ScalarProperty Name="GIOI_TINH" ColumnName="GIOI_TINH" />
+          <ScalarProperty Name="DVT_ID" ColumnName="DVT_ID" />
+          <ScalarProperty Name="LUC_LUONG_ID" ColumnName="LUC_LUONG_ID" />
+          <ScalarProperty Name="NHOM_CB_ID" ColumnName="NHOM_CB_ID" />
+          <ScalarProperty Name="SP_CHA_ID" ColumnName="SP_CHA_ID" />
+          <ScalarProperty Name="IS_VAT_TU" ColumnName="IS_VAT_TU" />
+          <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+          <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+          <ScalarProperty Name="NGUOI_CAP_NHAT" ColumnName="NGUOI_CAP_NHAT" />
+          <ScalarProperty Name="LOAI_HAM" ColumnName="LOAI_HAM" />
+          <ScalarProperty Name="CAP_BAC_ID" ColumnName="CAP_BAC_ID" />
+          <ScalarProperty Name="IS_NHAN_TIEN" ColumnName="IS_NHAN_TIEN" />
+          <ScalarProperty Name="IS_NHAN_TRANG_PHUC" ColumnName="IS_NHAN_TRANG_PHUC" />
+          <ScalarProperty Name="IS_VAT_TU_CHINH" ColumnName="IS_VAT_TU_CHINH" />
+          <ScalarProperty Name="SO_THU_TU" ColumnName="SO_THU_TU" />
+          <ScalarProperty Name="TRO_GIA" ColumnName="TRO_GIA" />
+          <ScalarProperty Name="IS_HUY_MA" ColumnName="IS_HUY_MA" />
+          <ScalarProperty Name="NGAY_HUY" ColumnName="NGAY_HUY" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="NhomSP_ID" ColumnName="NhomSP_ID" />
+          <ScalarProperty Name="SPCha_ID" ColumnName="SPCha_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SP_SAN_PHAM_BG">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.SP_SAN_PHAM_BG">
+        <MappingFragment StoreEntitySet="SP_SAN_PHAM_BG">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SP_ID" ColumnName="SP_ID" />
+          <ScalarProperty Name="NAM" ColumnName="NAM" />
+          <ScalarProperty Name="BIEU_GIA" ColumnName="BIEU_GIA" />
+          <ScalarProperty Name="PHAN_TRAM_TRO_GIA" ColumnName="PHAN_TRAM_TRO_GIA" />
+          <ScalarProperty Name="MO_TA" ColumnName="MO_TA" />
+          <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+          <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+          <ScalarProperty Name="NGUOI_CAP_NHAT" ColumnName="NGUOI_CAP_NHAT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TC_CBCS">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.TC_CBCS">
+        <MappingFragment StoreEntitySet="TC_CBCS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NHOM_TIEU_CHUAN_ID" ColumnName="NHOM_TIEU_CHUAN_ID" />
+          <ScalarProperty Name="SP_ID" ColumnName="SP_ID" />
+          <ScalarProperty Name="GIOI_TINH" ColumnName="GIOI_TINH" />
+          <ScalarProperty Name="NAM" ColumnName="NAM" />
+          <ScalarProperty Name="MUA" ColumnName="MUA" />
+          <ScalarProperty Name="NHOM_CB_ID" ColumnName="NHOM_CB_ID" />
+          <ScalarProperty Name="IS_MO_RONG" ColumnName="IS_MO_RONG" />
+          <ScalarProperty Name="IS_THEM" ColumnName="IS_THEM" />
+          <ScalarProperty Name="SO_LUONG_TC" ColumnName="SO_LUONG_TC" />
+          <ScalarProperty Name="LOAI_TC" ColumnName="LOAI_TC" />
+          <ScalarProperty Name="NIEN_HAN" ColumnName="NIEN_HAN" />
+          <ScalarProperty Name="LUC_LUONG_ID" ColumnName="LUC_LUONG_ID" />
+          <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+          <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+          <ScalarProperty Name="NGUOI_CAP_NHAT" ColumnName="NGUOI_CAP_NHAT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TC_DON_VI_NH">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.TC_DON_VI_NH">
+        <MappingFragment StoreEntitySet="TC_DON_VI_NH">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DON_VI_ID" ColumnName="DON_VI_ID" />
+          <ScalarProperty Name="NHOM_TIEU_CHUAN_ID" ColumnName="NHOM_TIEU_CHUAN_ID" />
+          <ScalarProperty Name="SP_ID" ColumnName="SP_ID" />
+          <ScalarProperty Name="GIOI_TINH" ColumnName="GIOI_TINH" />
+          <ScalarProperty Name="NAM" ColumnName="NAM" />
+          <ScalarProperty Name="MUA" ColumnName="MUA" />
+          <ScalarProperty Name="NHOM_CB_ID" ColumnName="NHOM_CB_ID" />
+          <ScalarProperty Name="IS_MO_RONG" ColumnName="IS_MO_RONG" />
+          <ScalarProperty Name="IS_THEM" ColumnName="IS_THEM" />
+          <ScalarProperty Name="SO_LUONG_TC" ColumnName="SO_LUONG_TC" />
+          <ScalarProperty Name="LOAI_TC" ColumnName="LOAI_TC" />
+          <ScalarProperty Name="NIEN_HAN" ColumnName="NIEN_HAN" />
+          <ScalarProperty Name="NAM_NIEN_HAN" ColumnName="NAM_NIEN_HAN" />
+          <ScalarProperty Name="LUC_LUONG_ID" ColumnName="LUC_LUONG_ID" />
+          <ScalarProperty Name="SO_LUONG_CBCS" ColumnName="SO_LUONG_CBCS" />
+          <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+          <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+          <ScalarProperty Name="NGUOI_CAP_NHAT" ColumnName="NGUOI_CAP_NHAT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TC_PHAM_NHAN">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.TC_PHAM_NHAN">
+        <MappingFragment StoreEntitySet="TC_PHAM_NHAN">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NHOM_TIEU_CHUAN_ID" ColumnName="NHOM_TIEU_CHUAN_ID" />
+          <ScalarProperty Name="SP_ID" ColumnName="SP_ID" />
+          <ScalarProperty Name="LOAI_PHAM_ID" ColumnName="LOAI_PHAM_ID" />
+          <ScalarProperty Name="GIOI_TINH" ColumnName="GIOI_TINH" />
+          <ScalarProperty Name="NAM" ColumnName="NAM" />
+          <ScalarProperty Name="SO_LUONG_TC" ColumnName="SO_LUONG_TC" />
+          <ScalarProperty Name="NIEN_HAN" ColumnName="NIEN_HAN" />
+          <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+          <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+          <ScalarProperty Name="NGUOI_CAP_NHAT" ColumnName="NGUOI_CAP_NHAT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TP_CB_BIET_PHAI">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.TP_CB_BIET_PHAI">
+        <MappingFragment StoreEntitySet="TP_CB_BIET_PHAI">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SO_HIEU" ColumnName="SO_HIEU" />
+          <ScalarProperty Name="GIOI_TINH" ColumnName="GIOI_TINH" />
+          <ScalarProperty Name="CAP_BAC_ID" ColumnName="CAP_BAC_ID" />
+          <ScalarProperty Name="LOAI_HAM_ID" ColumnName="LOAI_HAM_ID" />
+          <ScalarProperty Name="CHUC_VU" ColumnName="CHUC_VU" />
+          <ScalarProperty Name="DON_VI_ID" ColumnName="DON_VI_ID" />
+          <ScalarProperty Name="LUC_LUONG_ID" ColumnName="LUC_LUONG_ID" />
+          <ScalarProperty Name="CO_GIAY" ColumnName="CO_GIAY" />
+          <ScalarProperty Name="CO_MU" ColumnName="CO_MU" />
+          <ScalarProperty Name="CO_QA" ColumnName="CO_QA" />
+          <ScalarProperty Name="LOAI" ColumnName="LOAI" />
+          <ScalarProperty Name="LOAI_TUYEN" ColumnName="LOAI_TUYEN" />
+          <ScalarProperty Name="HIEU_LUC" ColumnName="HIEU_LUC" />
+          <ScalarProperty Name="TXN_ID" ColumnName="TXN_ID" />
+          <ScalarProperty Name="DANG_KY_HV" ColumnName="DANG_KY_HV" />
+          <ScalarProperty Name="CAC_TRUONG_ERR" ColumnName="CAC_TRUONG_ERR" />
+          <ScalarProperty Name="MO_TA_ERR" ColumnName="MO_TA_ERR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TP_CB_CHO_HUU">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.TP_CB_CHO_HUU">
+        <MappingFragment StoreEntitySet="TP_CB_CHO_HUU">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SO_HIEU" ColumnName="SO_HIEU" />
+          <ScalarProperty Name="GIOI_TINH" ColumnName="GIOI_TINH" />
+          <ScalarProperty Name="CAP_BAC_ID" ColumnName="CAP_BAC_ID" />
+          <ScalarProperty Name="LOAI_HAM_ID" ColumnName="LOAI_HAM_ID" />
+          <ScalarProperty Name="CHUC_VU" ColumnName="CHUC_VU" />
+          <ScalarProperty Name="DON_VI_ID" ColumnName="DON_VI_ID" />
+          <ScalarProperty Name="LUC_LUONG_ID" ColumnName="LUC_LUONG_ID" />
+          <ScalarProperty Name="CO_GIAY" ColumnName="CO_GIAY" />
+          <ScalarProperty Name="CO_MU" ColumnName="CO_MU" />
+          <ScalarProperty Name="CO_QA" ColumnName="CO_QA" />
+          <ScalarProperty Name="LOAI" ColumnName="LOAI" />
+          <ScalarProperty Name="LOAI_TUYEN" ColumnName="LOAI_TUYEN" />
+          <ScalarProperty Name="HIEU_LUC" ColumnName="HIEU_LUC" />
+          <ScalarProperty Name="TXN_ID" ColumnName="TXN_ID" />
+          <ScalarProperty Name="DANG_KY_HV" ColumnName="DANG_KY_HV" />
+          <ScalarProperty Name="CAC_TRUONG_ERR" ColumnName="CAC_TRUONG_ERR" />
+          <ScalarProperty Name="MO_TA_ERR" ColumnName="MO_TA_ERR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TP_CB_CONG_TAC">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.TP_CB_CONG_TAC">
+        <MappingFragment StoreEntitySet="TP_CB_CONG_TAC">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SO_HIEU" ColumnName="SO_HIEU" />
+          <ScalarProperty Name="GIOI_TINH" ColumnName="GIOI_TINH" />
+          <ScalarProperty Name="CAP_BAC_ID" ColumnName="CAP_BAC_ID" />
+          <ScalarProperty Name="LOAI_HAM_ID" ColumnName="LOAI_HAM_ID" />
+          <ScalarProperty Name="CHUC_VU" ColumnName="CHUC_VU" />
+          <ScalarProperty Name="DON_VI_ID" ColumnName="DON_VI_ID" />
+          <ScalarProperty Name="LUC_LUONG_ID" ColumnName="LUC_LUONG_ID" />
+          <ScalarProperty Name="CO_GIAY" ColumnName="CO_GIAY" />
+          <ScalarProperty Name="CO_MU" ColumnName="CO_MU" />
+          <ScalarProperty Name="CO_QA" ColumnName="CO_QA" />
+          <ScalarProperty Name="LOAI" ColumnName="LOAI" />
+          <ScalarProperty Name="LOAI_TUYEN" ColumnName="LOAI_TUYEN" />
+          <ScalarProperty Name="HIEU_LUC" ColumnName="HIEU_LUC" />
+          <ScalarProperty Name="TXN_ID" ColumnName="TXN_ID" />
+          <ScalarProperty Name="DANG_KY_HV" ColumnName="DANG_KY_HV" />
+          <ScalarProperty Name="DOI_TIEU_CHUAN" ColumnName="DOI_TIEU_CHUAN" />
+          <ScalarProperty Name="CAC_TRUONG_ERR" ColumnName="CAC_TRUONG_ERR" />
+          <ScalarProperty Name="MO_TA_ERR" ColumnName="MO_TA_ERR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TP_CB_DI_HOC">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.TP_CB_DI_HOC">
+        <MappingFragment StoreEntitySet="TP_CB_DI_HOC">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SO_HIEU" ColumnName="SO_HIEU" />
+          <ScalarProperty Name="GIOI_TINH" ColumnName="GIOI_TINH" />
+          <ScalarProperty Name="CAP_BAC_ID" ColumnName="CAP_BAC_ID" />
+          <ScalarProperty Name="LOAI_HAM_ID" ColumnName="LOAI_HAM_ID" />
+          <ScalarProperty Name="CHUC_VU" ColumnName="CHUC_VU" />
+          <ScalarProperty Name="DON_VI_ID" ColumnName="DON_VI_ID" />
+          <ScalarProperty Name="LUC_LUONG_ID" ColumnName="LUC_LUONG_ID" />
+          <ScalarProperty Name="CO_GIAY" ColumnName="CO_GIAY" />
+          <ScalarProperty Name="CO_MU" ColumnName="CO_MU" />
+          <ScalarProperty Name="CO_QA" ColumnName="CO_QA" />
+          <ScalarProperty Name="LOAI" ColumnName="LOAI" />
+          <ScalarProperty Name="LOAI_TUYEN" ColumnName="LOAI_TUYEN" />
+          <ScalarProperty Name="HIEU_LUC" ColumnName="HIEU_LUC" />
+          <ScalarProperty Name="TXN_ID" ColumnName="TXN_ID" />
+          <ScalarProperty Name="DANG_KY_HV" ColumnName="DANG_KY_HV" />
+          <ScalarProperty Name="CAC_TRUONG_ERR" ColumnName="CAC_TRUONG_ERR" />
+          <ScalarProperty Name="MO_TA_ERR" ColumnName="MO_TA_ERR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TP_CB_TUYEN_MOI">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.TP_CB_TUYEN_MOI">
+        <MappingFragment StoreEntitySet="TP_CB_TUYEN_MOI">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SO_HIEU" ColumnName="SO_HIEU" />
+          <ScalarProperty Name="GIOI_TINH" ColumnName="GIOI_TINH" />
+          <ScalarProperty Name="CAP_BAC_ID" ColumnName="CAP_BAC_ID" />
+          <ScalarProperty Name="LOAI_HAM_ID" ColumnName="LOAI_HAM_ID" />
+          <ScalarProperty Name="CHUC_VU" ColumnName="CHUC_VU" />
+          <ScalarProperty Name="DON_VI_ID" ColumnName="DON_VI_ID" />
+          <ScalarProperty Name="LUC_LUONG_ID" ColumnName="LUC_LUONG_ID" />
+          <ScalarProperty Name="CO_GIAY" ColumnName="CO_GIAY" />
+          <ScalarProperty Name="CO_MU" ColumnName="CO_MU" />
+          <ScalarProperty Name="CO_QA" ColumnName="CO_QA" />
+          <ScalarProperty Name="NGANH_NGOAI" ColumnName="NGANH_NGOAI" />
+          <ScalarProperty Name="TRUONG_CAND" ColumnName="TRUONG_CAND" />
+          <ScalarProperty Name="TBINH_TUYEN_LAI" ColumnName="TBINH_TUYEN_LAI" />
+          <ScalarProperty Name="LOAI" ColumnName="LOAI" />
+          <ScalarProperty Name="LOAI_TUYEN" ColumnName="LOAI_TUYEN" />
+          <ScalarProperty Name="HIEU_LUC" ColumnName="HIEU_LUC" />
+          <ScalarProperty Name="TXN_ID" ColumnName="TXN_ID" />
+          <ScalarProperty Name="DANG_KY_HV" ColumnName="DANG_KY_HV" />
+          <ScalarProperty Name="CAC_TRUONG_ERR" ColumnName="CAC_TRUONG_ERR" />
+          <ScalarProperty Name="MO_TA_ERR" ColumnName="MO_TA_ERR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TP_CS_NGHIA_VU">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.TP_CS_NGHIA_VU">
+        <MappingFragment StoreEntitySet="TP_CS_NGHIA_VU">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SO_HIEU" ColumnName="SO_HIEU" />
+          <ScalarProperty Name="GIOI_TINH" ColumnName="GIOI_TINH" />
+          <ScalarProperty Name="CAP_BAC_ID" ColumnName="CAP_BAC_ID" />
+          <ScalarProperty Name="LOAI_HAM_ID" ColumnName="LOAI_HAM_ID" />
+          <ScalarProperty Name="CHUC_VU" ColumnName="CHUC_VU" />
+          <ScalarProperty Name="DON_VI_ID" ColumnName="DON_VI_ID" />
+          <ScalarProperty Name="LUC_LUONG_ID" ColumnName="LUC_LUONG_ID" />
+          <ScalarProperty Name="CO_GIAY" ColumnName="CO_GIAY" />
+          <ScalarProperty Name="CO_MU" ColumnName="CO_MU" />
+          <ScalarProperty Name="CO_QA" ColumnName="CO_QA" />
+          <ScalarProperty Name="LOAI" ColumnName="LOAI" />
+          <ScalarProperty Name="LOAI_TUYEN" ColumnName="LOAI_TUYEN" />
+          <ScalarProperty Name="HIEU_LUC" ColumnName="HIEU_LUC" />
+          <ScalarProperty Name="TXN_ID" ColumnName="TXN_ID" />
+          <ScalarProperty Name="CAC_TRUONG_ERR" ColumnName="CAC_TRUONG_ERR" />
+          <ScalarProperty Name="MO_TA_ERR" ColumnName="MO_TA_ERR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QS_CBCS">
+      <EntityTypeMapping TypeName="QS_QUAN_TRANGModel.QS_CBCS">
+        <MappingFragment StoreEntitySet="QS_CBCS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DON_VI_ID" ColumnName="DON_VI_ID" />
+          <ScalarProperty Name="NAM" ColumnName="NAM" />
+          <ScalarProperty Name="KY" ColumnName="KY" />
+          <ScalarProperty Name="SO_HIEU" ColumnName="SO_HIEU" />
+          <ScalarProperty Name="GIOI_TINH" ColumnName="GIOI_TINH" />
+          <ScalarProperty Name="CAP_BAC_ID" ColumnName="CAP_BAC_ID" />
+          <ScalarProperty Name="LOAI_HAM_ID" ColumnName="LOAI_HAM_ID" />
+          <ScalarProperty Name="CHUC_VU" ColumnName="CHUC_VU" />
+          <ScalarProperty Name="DON_VI_DIA_PHUONG" ColumnName="DON_VI_DIA_PHUONG" />
+          <ScalarProperty Name="LUC_LUONG_ID" ColumnName="LUC_LUONG_ID" />
+          <ScalarProperty Name="CHO_HUU" ColumnName="CHO_HUU" />
+          <ScalarProperty Name="DI_HOC" ColumnName="DI_HOC" />
+          <ScalarProperty Name="BIET_PHAI" ColumnName="BIET_PHAI" />
+          <ScalarProperty Name="CAT_QUAN_SO" ColumnName="CAT_QUAN_SO" />
+          <ScalarProperty Name="CO_GIAY" ColumnName="CO_GIAY" />
+          <ScalarProperty Name="CO_MU" ColumnName="CO_MU" />
+          <ScalarProperty Name="CO_QA" ColumnName="CO_QA" />
+          <ScalarProperty Name="DK_HIEN_VAT" ColumnName="DK_HIEN_VAT" />
+          <ScalarProperty Name="DK_DOI_TC" ColumnName="DK_DOI_TC" />
+          <ScalarProperty Name="NAM_NIEN_HAN" ColumnName="NAM_NIEN_HAN" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="LOAI_TUYEN" ColumnName="LOAI_TUYEN" />
+          <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+          <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+          <ScalarProperty Name="NGUOI_CAP_NHAT" ColumnName="NGUOI_CAP_NHAT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,752 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QS_QUAN_TRANGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DM_CAP_BAC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="TEN_CB" Type="nvarchar" MaxLength="200" />
+    <Property Name="MO_TA_CB" Type="nvarchar" MaxLength="500" />
+    <Property Name="IS_MAY_DO" Type="char" MaxLength="1" />
+    <Property Name="NIEN_HAN" Type="int" />
+    <Property Name="NHOM_CB_ID" Type="int" />
+    <Property Name="NHOM_TC_ID" Type="int" />
+    <Property Name="SO_THU_TU" Type="int" />
+  </EntityType>
+  <EntityType Name="DM_CAP_BAC_CHO_QUAN_SO">
+    <Key>
+      <PropertyRef Name="CAP_BAC_ID" />
+      <PropertyRef Name="LUC_LUONG_ID" />
+      <PropertyRef Name="LOAI_HAM_ID" />
+      <PropertyRef Name="LOAI_QUAN_SO" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CAP_BAC_ID" Type="int" Nullable="false" />
+    <Property Name="LUC_LUONG_ID" Type="int" Nullable="false" />
+    <Property Name="LOAI_HAM_ID" Type="int" Nullable="false" />
+    <Property Name="LOAI_QUAN_SO" Type="int" Nullable="false" />
+    <Property Name="TEN_CB_THAY_THE" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DM_CAP_BAC_HAM">
+    <Key>
+      <PropertyRef Name="LUC_LUONG_ID" />
+      <PropertyRef Name="CAP_BAC_ID" />
+      <PropertyRef Name="LOAI_HAM_ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="LUC_LUONG_ID" Type="int" Nullable="false" />
+    <Property Name="CAP_BAC_ID" Type="int" Nullable="false" />
+    <Property Name="LOAI_HAM_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DM_CAP_BAC_NHOM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="TEN_NHOM_CB" Type="nvarchar" MaxLength="200" />
+    <Property Name="MO_TA" Type="nvarchar" MaxLength="500" />
+    <Property Name="IS_TAN_BINH" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="NHOM_CB_CHA_ID" Type="int" />
+    <Property Name="NGAY_TAO" Type="datetime" />
+    <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+    <Property Name="NGUOI_CAP_NHAT" Type="int" />
+    <Property Name="SO_THU_TU" Type="int" />
+    <Property Name="KY_HIEU_VIET_TAT" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaNhomCB" Type="varchar" MaxLength="100" />
+    <Property Name="NhomCBCha_ID" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="DM_DINH_MUC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SO_QUYET_DINH" Type="varchar" MaxLength="50" />
+    <Property Name="NGAY_QUYET_DINH" Type="datetime" />
+    <Property Name="NGUOI_KY" Type="nvarchar" MaxLength="200" />
+    <Property Name="NGAY_TAO" Type="datetime" />
+    <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+    <Property Name="NGUOI_CAP_NHAT" Type="int" />
+    <Property Name="STATUS" Type="int" />
+    <Property Name="HAO_HUT" Type="float" />
+  </EntityType>
+  <EntityType Name="DM_DINH_MUC_SP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DINH_MUC_ID" Type="int" />
+    <Property Name="SP_ID" Type="bigint" />
+    <Property Name="NGAY_TAO" Type="datetime" />
+    <Property Name="NGAY_CAPNHAT" Type="datetime" />
+    <Property Name="NGUOI_CAPNHAT" Type="int" />
+  </EntityType>
+  <EntityType Name="DM_DINH_MUC_SP_VT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DINH_MUC_ID" Type="int" />
+    <Property Name="DINH_MUC_SP_ID" Type="bigint" />
+    <Property Name="SP_ID" Type="bigint" />
+    <Property Name="NHOM_VATTU_ID" Type="int" />
+    <Property Name="DVT_ID" Type="int" />
+    <Property Name="TEN_DVT" Type="nvarchar" MaxLength="50" />
+    <Property Name="SO_LUONG" Type="float" />
+    <Property Name="TYLE_HH" Type="float" />
+  </EntityType>
+  <EntityType Name="DM_DON_VI_DUOC_TRO_GIA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DON_VI_ID" Type="int" />
+    <Property Name="NAM" Type="int" />
+    <Property Name="NGAY_TAO" Type="datetime" />
+    <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+    <Property Name="NGUOI_CAP_NHAT" Type="int" />
+  </EntityType>
+  <EntityType Name="DM_LOAI_DT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="TEN_LOAI" Type="nchar" MaxLength="50" />
+    <Property Name="MO_TA" Type="nchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="DM_LOAI_PHAM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="TEN_LOAI_PHAM" Type="nvarchar" MaxLength="200" />
+    <Property Name="MO_TA" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="DM_LOAI_TC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="TEN_LOAI" Type="nchar" MaxLength="50" />
+    <Property Name="MO_TA" Type="nchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="DM_NHOM_SAN_PHAM_BG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TEN_NHOM" Type="nvarchar" MaxLength="50" />
+    <Property Name="MO_TA" Type="nvarchar" MaxLength="50" />
+    <Property Name="NGAY_TAO" Type="datetime" />
+    <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+    <Property Name="NGUOI_CAP_NHAT" Type="int" />
+    <Property Name="NAM" Type="int" />
+    <Property Name="BIEU_GIA" Type="float" />
+    <Property Name="PHAN_TRAM_TRO_GIA" Type="float" />
+  </EntityType>
+  <EntityType Name="DM_NHOM_SAN_PHAM_BG_D">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NHOM_SAN_PHAM_BG_ID" Type="int" />
+    <Property Name="SP_ID" Type="bigint" />
+    <Property Name="TEN_SP" Type="nvarchar" MaxLength="255" />
+    <Property Name="DVT_ID" Type="int" />
+    <Property Name="TEN_DVT" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DM_NHOM_SP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MA_H55" Type="varchar" MaxLength="50" />
+    <Property Name="TEN_NHOM_SP" Type="nvarchar" MaxLength="200" />
+    <Property Name="MO_TA" Type="nvarchar" MaxLength="500" />
+    <Property Name="LOAI_SP" Type="int" />
+    <Property Name="LOAI_NHOM_SP" Type="int" />
+    <Property Name="NHOM_SP_CHA_ID" Type="bigint" />
+    <Property Name="NHOM_TIEU_CHUAN_ID" Type="int" />
+    <Property Name="IS_VAT_TU" Type="char" MaxLength="1" />
+    <Property Name="IS_PHAM_NHAN" Type="char" MaxLength="1" />
+    <Property Name="NGAY_TAO" Type="datetime" />
+    <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+    <Property Name="NGUOI_CAP_NHAT" Type="int" />
+    <Property Name="DVT_ID" Type="int" />
+    <Property Name="MaNhomSP" Type="varchar" MaxLength="100" />
+    <Property Name="NhomSPCha_ID" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="DM_NHOM_TC">
+    <Key>
+      <PropertyRef Name="ID_NHOM" />
+    </Key>
+    <Property Name="ID_NHOM" Type="int" Nullable="false" />
+    <Property Name="TEN_NHOM_TC" Type="nvarchar" MaxLength="200" />
+    <Property Name="MO_TA" Type="nvarchar" MaxLength="500" />
+    <Property Name="LOAI_TC" Type="int" />
+    <Property Name="NIEN_HAN" Type="int" />
+    <Property Name="MUA" Type="char" MaxLength="2" />
+    <Property Name="NGAY_TAO" Type="datetime" />
+    <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+    <Property Name="NGUOI_CAP_NHAT" Type="int" />
+  </EntityType>
+  <EntityType Name="DM_NHOM_TC_CAP_BAC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="NHOM_TC_ID" Type="int" />
+    <Property Name="NHOM_CB_ID" Type="int" />
+    <Property Name="NHOM_CB_CHA_ID" Type="int" />
+    <Property Name="NGAY_TAO" Type="datetime" />
+    <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+    <Property Name="NGUOI_CAP_NHAT" Type="int" />
+  </EntityType>
+  <EntityType Name="DM_NHOM_TC_KHU_VUC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NHOM_TC_ID" Type="int" />
+    <Property Name="KHU_VUC_ID" Type="int" />
+    <Property Name="NGAY_TAO" Type="datetime" />
+    <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+    <Property Name="NGUOI_CAP_NHAT" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QS_QUAN_TRANG.dbo.QS_CBCS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="QS_CBCS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="DON_VI_ID" Type="int" />
+    <Property Name="NAM" Type="int" />
+    <Property Name="KY" Type="int" />
+    <Property Name="SO_HIEU" Type="varchar" MaxLength="10" />
+    <Property Name="GIOI_TINH" Type="int" />
+    <Property Name="CAP_BAC_ID" Type="int" />
+    <Property Name="LOAI_HAM_ID" Type="int" />
+    <Property Name="CHUC_VU" Type="nvarchar" MaxLength="100" />
+    <Property Name="DON_VI_DIA_PHUONG" Type="nvarchar" MaxLength="200" />
+    <Property Name="LUC_LUONG_ID" Type="int" />
+    <Property Name="CHO_HUU" Type="int" />
+    <Property Name="DI_HOC" Type="int" />
+    <Property Name="BIET_PHAI" Type="int" />
+    <Property Name="CAT_QUAN_SO" Type="int" />
+    <Property Name="CO_GIAY" Type="int" />
+    <Property Name="CO_MU" Type="int" />
+    <Property Name="CO_QA" Type="int" />
+    <Property Name="DK_HIEN_VAT" Type="int" />
+    <Property Name="DK_DOI_TC" Type="int" />
+    <Property Name="NAM_NIEN_HAN" Type="int" />
+    <Property Name="TYPE" Type="int" />
+    <Property Name="LOAI_TUYEN" Type="int" />
+    <Property Name="NGAY_TAO" Type="datetime" />
+    <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+    <Property Name="NGUOI_CAP_NHAT" Type="int" />
+  </EntityType>
+  <EntityType Name="QS_CBCS_CHUYEN_LL_TH">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAM" Type="int" Nullable="false" />
+    <Property Name="KY" Type="int" Nullable="false" />
+    <Property Name="SO_HIEU" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="GIOI_TINH" Type="int" />
+    <Property Name="DON_VI_CU_ID" Type="int" Nullable="false" />
+    <Property Name="DON_VI_MOI_ID" Type="int" Nullable="false" />
+    <Property Name="CAP_BAC_ID_CU" Type="int" />
+    <Property Name="CAP_BAC_ID_MOI" Type="int" />
+    <Property Name="LOAI_HAM_CU_ID" Type="int" />
+    <Property Name="LOAI_HAM_MOI_ID" Type="int" />
+    <Property Name="CHUC_VU_CU" Type="nvarchar" MaxLength="100" />
+    <Property Name="CHUC_VU_MOI" Type="nvarchar" MaxLength="100" />
+    <Property Name="LUC_LUONG_ID_CU" Type="int" />
+    <Property Name="LUC_LUONG_ID_MOI" Type="int" />
+    <Property Name="CHO_HUU" Type="int" />
+    <Property Name="DI_HOC" Type="int" />
+    <Property Name="BIET_PHAI" Type="int" />
+    <Property Name="CAT_QUAN_SO" Type="int" />
+    <Property Name="CO_GIAY" Type="int" />
+    <Property Name="CO_MU" Type="int" />
+    <Property Name="CO_QA" Type="int" />
+    <Property Name="DK_HIEN_VAT" Type="int" />
+    <Property Name="DK_DOI_TC" Type="int" />
+    <Property Name="NAM_NIEN_HAN" Type="int" />
+    <Property Name="TYPE" Type="int" />
+    <Property Name="NGAY_TAO" Type="datetime" />
+    <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+    <Property Name="NGUOI_CAP_NHAT" Type="int" />
+  </EntityType>
+  <EntityType Name="QS_CBCS_HT">
+    <Key>
+      <PropertyRef Name="ID_DL" />
+    </Key>
+    <Property Name="ID_DL" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DON_VI_ID" Type="int" />
+    <Property Name="NAM" Type="int" />
+    <Property Name="KY" Type="int" />
+    <Property Name="SO_HIEU" Type="varchar" MaxLength="10" />
+    <Property Name="GIOI_TINH" Type="int" />
+    <Property Name="CAP_BAC_ID" Type="int" />
+    <Property Name="LOAI_HAM_ID" Type="int" />
+    <Property Name="CHUC_VU" Type="nvarchar" MaxLength="100" />
+    <Property Name="DON_VI_DIA_PHUONG" Type="nvarchar" MaxLength="200" />
+    <Property Name="LUC_LUONG_ID" Type="int" />
+    <Property Name="CHO_HUU" Type="int" />
+    <Property Name="DI_HOC" Type="int" />
+    <Property Name="BIET_PHAI" Type="int" />
+    <Property Name="CAT_QUAN_SO" Type="int" />
+    <Property Name="CO_GIAY" Type="int" />
+    <Property Name="CO_MU" Type="int" />
+    <Property Name="CO_QA" Type="int" />
+    <Property Name="DK_HIEN_VAT" Type="int" />
+    <Property Name="DK_DOI_TC" Type="int" />
+    <Property Name="NAM_NIEN_HAN" Type="int" />
+    <Property Name="TYPE" Type="int" />
+    <Property Name="LOAI_TUYEN" Type="int" />
+    <Property Name="NGAY_TAO" Type="datetime" />
+    <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+    <Property Name="NGUOI_CAP_NHAT" Type="int" />
+    <Property Name="TXN_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="QS_CBCS_SD">
+    <Key>
+      <PropertyRef Name="ID_" />
+    </Key>
+    <Property Name="ID_" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DON_VI_ID" Type="int" Nullable="false" />
+    <Property Name="NAM" Type="int" Nullable="false" />
+    <Property Name="KY" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="CAP_BAC_ID" Type="int" />
+    <Property Name="LOAI_HAM_ID" Type="int" />
+    <Property Name="LUC_LUONG_ID" Type="int" Nullable="false" />
+    <Property Name="SL_NAM_DK" Type="int" />
+    <Property Name="SL_NU_DK" Type="int" />
+    <Property Name="SL_NAM_TK" Type="int" />
+    <Property Name="SL_NU_TK" Type="int" />
+    <Property Name="SL_NAM_DEN" Type="int" />
+    <Property Name="SL_NU_DEN" Type="int" />
+    <Property Name="SL_NAM_DI" Type="int" />
+    <Property Name="SL_NU_DI" Type="int" />
+    <Property Name="SL_NAM_CK" Type="int" />
+    <Property Name="SL_NU_CK" Type="int" />
+    <Property Name="SL_NAM_KT" Type="int" />
+    <Property Name="SL_NU_KT" Type="int" />
+    <Property Name="SL_NAM_HT" Type="int" />
+    <Property Name="SL_NU_HT" Type="int" />
+    <Property Name="SL_TONG" Type="int" />
+    <Property Name="SL_TONG_HT" Type="int" />
+    <Property Name="SL_NAM_TT" Type="int" />
+    <Property Name="SL_NU_TT" Type="int" />
+    <Property Name="SL_TONG_TT" Type="int" />
+    <Property Name="NGAY_TAO" Type="datetime" />
+    <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+    <Property Name="NGUOI_CAP_NHAT" Type="int" />
+    <Property Name="CHOT_DL" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="LOAI_DL" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SP_SAN_PHAM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MA_H55" Type="varchar" MaxLength="50" />
+    <Property Name="TEN_SP" Type="nvarchar" MaxLength="200" />
+    <Property Name="MO_TA" Type="nvarchar" MaxLength="500" />
+    <Property Name="IS_MAY_DO" Type="char" MaxLength="1" />
+    <Property Name="NHOM_SP_ID" Type="bigint" />
+    <Property Name="GIOI_TINH" Type="int" />
+    <Property Name="DVT_ID" Type="int" />
+    <Property Name="LUC_LUONG_ID" Type="int" />
+    <Property Name="NHOM_CB_ID" Type="int" />
+    <Property Name="SP_CHA_ID" Type="bigint" />
+    <Property Name="IS_VAT_TU" Type="char" MaxLength="1" />
+    <Property Name="NGAY_TAO" Type="datetime" />
+    <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+    <Property Name="NGUOI_CAP_NHAT" Type="int" />
+    <Property Name="LOAI_HAM" Type="int" />
+    <Property Name="CAP_BAC_ID" Type="int" />
+    <Property Name="IS_NHAN_TIEN" Type="char" MaxLength="1" />
+    <Property Name="IS_NHAN_TRANG_PHUC" Type="char" MaxLength="1" />
+    <Property Name="IS_VAT_TU_CHINH" Type="char" MaxLength="1" />
+    <Property Name="SO_THU_TU" Type="float" />
+    <Property Name="TRO_GIA" Type="float" />
+    <Property Name="IS_HUY_MA" Type="char" MaxLength="1" />
+    <Property Name="NGAY_HUY" Type="datetime" />
+    <Property Name="MaSP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NhomSP_ID" Type="varchar" MaxLength="50" />
+    <Property Name="SPCha_ID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SP_SAN_PHAM_BG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SP_ID" Type="bigint" Nullable="false" />
+    <Property Name="NAM" Type="int" Nullable="false" />
+    <Property Name="BIEU_GIA" Type="float" />
+    <Property Name="PHAN_TRAM_TRO_GIA" Type="float" />
+    <Property Name="MO_TA" Type="nvarchar" MaxLength="500" />
+    <Property Name="NGAY_TAO" Type="datetime" />
+    <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+    <Property Name="NGUOI_CAP_NHAT" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TC_CBCS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="NHOM_TIEU_CHUAN_ID" Type="int" />
+    <Property Name="SP_ID" Type="bigint" Nullable="false" />
+    <Property Name="GIOI_TINH" Type="int" />
+    <Property Name="NAM" Type="int" Nullable="false" />
+    <Property Name="MUA" Type="int" />
+    <Property Name="NHOM_CB_ID" Type="int" />
+    <Property Name="IS_MO_RONG" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="IS_THEM" Type="char" MaxLength="1" />
+    <Property Name="SO_LUONG_TC" Type="float" />
+    <Property Name="LOAI_TC" Type="int" />
+    <Property Name="NIEN_HAN" Type="int" />
+    <Property Name="LUC_LUONG_ID" Type="int" />
+    <Property Name="NGAY_TAO" Type="datetime" />
+    <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+    <Property Name="NGUOI_CAP_NHAT" Type="int" />
+  </EntityType>
+  <EntityType Name="TC_DON_VI_NH">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="DON_VI_ID" Type="int" />
+    <Property Name="NHOM_TIEU_CHUAN_ID" Type="int" />
+    <Property Name="SP_ID" Type="bigint" />
+    <Property Name="GIOI_TINH" Type="int" />
+    <Property Name="NAM" Type="int" Nullable="false" />
+    <Property Name="MUA" Type="int" />
+    <Property Name="NHOM_CB_ID" Type="int" />
+    <Property Name="IS_MO_RONG" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="IS_THEM" Type="char" MaxLength="1" />
+    <Property Name="SO_LUONG_TC" Type="float" />
+    <Property Name="LOAI_TC" Type="int" />
+    <Property Name="NIEN_HAN" Type="int" />
+    <Property Name="NAM_NIEN_HAN" Type="int" />
+    <Property Name="LUC_LUONG_ID" Type="int" />
+    <Property Name="SO_LUONG_CBCS" Type="int" />
+    <Property Name="NGAY_TAO" Type="datetime" />
+    <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+    <Property Name="NGUOI_CAP_NHAT" Type="int" />
+  </EntityType>
+  <EntityType Name="TC_PHAM_NHAN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="NHOM_TIEU_CHUAN_ID" Type="int" />
+    <Property Name="SP_ID" Type="bigint" />
+    <Property Name="LOAI_PHAM_ID" Type="int" />
+    <Property Name="GIOI_TINH" Type="int" />
+    <Property Name="NAM" Type="int" Nullable="false" />
+    <Property Name="SO_LUONG_TC" Type="float" />
+    <Property Name="NIEN_HAN" Type="int" />
+    <Property Name="NGAY_TAO" Type="datetime" />
+    <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+    <Property Name="NGUOI_CAP_NHAT" Type="int" />
+  </EntityType>
+  <EntityType Name="TP_CB_BIET_PHAI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SO_HIEU" Type="varchar" MaxLength="10" />
+    <Property Name="GIOI_TINH" Type="char" MaxLength="1" />
+    <Property Name="CAP_BAC_ID" Type="int" />
+    <Property Name="LOAI_HAM_ID" Type="int" />
+    <Property Name="CHUC_VU" Type="nchar" MaxLength="100" />
+    <Property Name="DON_VI_ID" Type="int" />
+    <Property Name="LUC_LUONG_ID" Type="int" />
+    <Property Name="CO_GIAY" Type="int" />
+    <Property Name="CO_MU" Type="int" />
+    <Property Name="CO_QA" Type="int" />
+    <Property Name="LOAI" Type="int" />
+    <Property Name="LOAI_TUYEN" Type="int" />
+    <Property Name="HIEU_LUC" Type="char" MaxLength="1" />
+    <Property Name="TXN_ID" Type="bigint" />
+    <Property Name="DANG_KY_HV" Type="char" MaxLength="1" />
+    <Property Name="CAC_TRUONG_ERR" Type="varchar" MaxLength="1000" />
+    <Property Name="MO_TA_ERR" Type="nvarchar" MaxLength="3000" />
+  </EntityType>
+  <EntityType Name="TP_CB_CHO_HUU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SO_HIEU" Type="varchar" MaxLength="10" />
+    <Property Name="GIOI_TINH" Type="char" MaxLength="1" />
+    <Property Name="CAP_BAC_ID" Type="int" />
+    <Property Name="LOAI_HAM_ID" Type="int" />
+    <Property Name="CHUC_VU" Type="nchar" MaxLength="100" />
+    <Property Name="DON_VI_ID" Type="int" />
+    <Property Name="LUC_LUONG_ID" Type="int" />
+    <Property Name="CO_GIAY" Type="int" />
+    <Property Name="CO_MU" Type="int" />
+    <Property Name="CO_QA" Type="int" />
+    <Property Name="LOAI" Type="int" />
+    <Property Name="LOAI_TUYEN" Type="int" />
+    <Property Name="HIEU_LUC" Type="char" MaxLength="1" />
+    <Property Name="TXN_ID" Type="bigint" />
+    <Property Name="DANG_KY_HV" Type="char" MaxLength="1" />
+    <Property Name="CAC_TRUONG_ERR" Type="varchar" MaxLength="1000" />
+    <Property Name="MO_TA_ERR" Type="nvarchar" MaxLength="3000" />
+  </EntityType>
+  <EntityType Name="TP_CB_CONG_TAC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SO_HIEU" Type="varchar" MaxLength="10" />
+    <Property Name="GIOI_TINH" Type="char" MaxLength="1" />
+    <Property Name="CAP_BAC_ID" Type="int" />
+    <Property Name="LOAI_HAM_ID" Type="int" />
+    <Property Name="CHUC_VU" Type="nchar" MaxLength="100" />
+    <Property Name="DON_VI_ID" Type="int" />
+    <Property Name="LUC_LUONG_ID" Type="int" />
+    <Property Name="CO_GIAY" Type="int" />
+    <Property Name="CO_MU" Type="int" />
+    <Property Name="CO_QA" Type="int" />
+    <Property Name="LOAI" Type="int" />
+    <Property Name="LOAI_TUYEN" Type="int" />
+    <Property Name="HIEU_LUC" Type="char" MaxLength="1" />
+    <Property Name="TXN_ID" Type="bigint" />
+    <Property Name="DANG_KY_HV" Type="char" MaxLength="1" />
+    <Property Name="DOI_TIEU_CHUAN" Type="char" MaxLength="1" />
+    <Property Name="CAC_TRUONG_ERR" Type="varchar" MaxLength="1000" />
+    <Property Name="MO_TA_ERR" Type="nvarchar" MaxLength="3000" />
+  </EntityType>
+  <EntityType Name="TP_CB_DI_HOC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SO_HIEU" Type="varchar" MaxLength="10" />
+    <Property Name="GIOI_TINH" Type="char" MaxLength="1" />
+    <Property Name="CAP_BAC_ID" Type="int" />
+    <Property Name="LOAI_HAM_ID" Type="int" />
+    <Property Name="CHUC_VU" Type="nchar" MaxLength="100" />
+    <Property Name="DON_VI_ID" Type="int" />
+    <Property Name="LUC_LUONG_ID" Type="int" />
+    <Property Name="CO_GIAY" Type="int" />
+    <Property Name="CO_MU" Type="int" />
+    <Property Name="CO_QA" Type="int" />
+    <Property Name="LOAI" Type="int" />
+    <Property Name="LOAI_TUYEN" Type="int" />
+    <Property Name="HIEU_LUC" Type="char" MaxLength="1" />
+    <Property Name="TXN_ID" Type="bigint" />
+    <Property Name="DANG_KY_HV" Type="char" MaxLength="1" />
+    <Property Name="CAC_TRUONG_ERR" Type="varchar" MaxLength="1000" />
+    <Property Name="MO_TA_ERR" Type="nvarchar" MaxLength="3000" />
+  </EntityType>
+  <EntityType Name="TP_CB_TUYEN_MOI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SO_HIEU" Type="varchar" MaxLength="10" />
+    <Property Name="GIOI_TINH" Type="char" MaxLength="1" />
+    <Property Name="CAP_BAC_ID" Type="int" />
+    <Property Name="LOAI_HAM_ID" Type="int" />
+    <Property Name="CHUC_VU" Type="nchar" MaxLength="100" />
+    <Property Name="DON_VI_ID" Type="int" />
+    <Property Name="LUC_LUONG_ID" Type="int" />
+    <Property Name="CO_GIAY" Type="int" />
+    <Property Name="CO_MU" Type="int" />
+    <Property Name="CO_QA" Type="int" />
+    <Property Name="NGANH_NGOAI" Type="int" />
+    <Property Name="TRUONG_CAND" Type="int" />
+    <Property Name="TBINH_TUYEN_LAI" Type="int" />
+    <Property Name="LOAI" Type="int" />
+    <Property Name="LOAI_TUYEN" Type="int" />
+    <Property Name="HIEU_LUC" Type="char" MaxLength="1" />
+    <Property Name="TXN_ID" Type="bigint" />
+    <Property Name="DANG_KY_HV" Type="char" MaxLength="1" />
+    <Property Name="CAC_TRUONG_ERR" Type="varchar" MaxLength="1000" />
+    <Property Name="MO_TA_ERR" Type="nvarchar" MaxLength="3000" />
+  </EntityType>
+  <EntityType Name="TP_CS_NGHIA_VU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SO_HIEU" Type="varchar" MaxLength="10" />
+    <Property Name="GIOI_TINH" Type="char" MaxLength="1" />
+    <Property Name="CAP_BAC_ID" Type="int" />
+    <Property Name="LOAI_HAM_ID" Type="int" />
+    <Property Name="CHUC_VU" Type="nchar" MaxLength="100" />
+    <Property Name="DON_VI_ID" Type="int" />
+    <Property Name="LUC_LUONG_ID" Type="int" />
+    <Property Name="CO_GIAY" Type="int" />
+    <Property Name="CO_MU" Type="int" />
+    <Property Name="CO_QA" Type="int" />
+    <Property Name="LOAI" Type="int" />
+    <Property Name="LOAI_TUYEN" Type="int" />
+    <Property Name="HIEU_LUC" Type="char" MaxLength="1" />
+    <Property Name="TXN_ID" Type="bigint" />
+    <Property Name="CAC_TRUONG_ERR" Type="varchar" MaxLength="1000" />
+    <Property Name="MO_TA_ERR" Type="nvarchar" MaxLength="3000" />
+  </EntityType>
+  <Association Name="FK_DM_CAP_BAC_DM_CAP_BAC_NHOM">
+    <End Role="DM_CAP_BAC_NHOM" Type="Self.DM_CAP_BAC_NHOM" Multiplicity="0..1" />
+    <End Role="DM_CAP_BAC" Type="Self.DM_CAP_BAC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_CAP_BAC_NHOM">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DM_CAP_BAC">
+        <PropertyRef Name="NHOM_CB_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DM_CAP_BAC_HAM_DM_CAP_BAC">
+    <End Role="DM_CAP_BAC" Type="Self.DM_CAP_BAC" Multiplicity="1" />
+    <End Role="DM_CAP_BAC_HAM" Type="Self.DM_CAP_BAC_HAM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_CAP_BAC">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DM_CAP_BAC_HAM">
+        <PropertyRef Name="CAP_BAC_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DM_NHOM_TC_KHUVUC_DM_NHOM_TC">
+    <End Role="DM_NHOM_TC" Type="Self.DM_NHOM_TC" Multiplicity="0..1" />
+    <End Role="DM_NHOM_TC_KHU_VUC" Type="Self.DM_NHOM_TC_KHU_VUC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_NHOM_TC">
+        <PropertyRef Name="ID_NHOM" />
+      </Principal>
+      <Dependent Role="DM_NHOM_TC_KHU_VUC">
+        <PropertyRef Name="NHOM_TC_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TC_CBCS_DM_NHOM_TC">
+    <End Role="DM_NHOM_TC" Type="Self.DM_NHOM_TC" Multiplicity="0..1" />
+    <End Role="TC_CBCS" Type="Self.TC_CBCS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_NHOM_TC">
+        <PropertyRef Name="ID_NHOM" />
+      </Principal>
+      <Dependent Role="TC_CBCS">
+        <PropertyRef Name="NHOM_TIEU_CHUAN_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TC_DON_VI_NH_DM_NHOM_TC">
+    <End Role="DM_NHOM_TC" Type="Self.DM_NHOM_TC" Multiplicity="0..1" />
+    <End Role="TC_DON_VI_NH" Type="Self.TC_DON_VI_NH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_NHOM_TC">
+        <PropertyRef Name="ID_NHOM" />
+      </Principal>
+      <Dependent Role="TC_DON_VI_NH">
+        <PropertyRef Name="NHOM_TIEU_CHUAN_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QS_QUAN_TRANGModelStoreContainer">
+    <EntitySet Name="DM_CAP_BAC" EntityType="Self.DM_CAP_BAC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DM_CAP_BAC_CHO_QUAN_SO" EntityType="Self.DM_CAP_BAC_CHO_QUAN_SO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DM_CAP_BAC_HAM" EntityType="Self.DM_CAP_BAC_HAM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DM_CAP_BAC_NHOM" EntityType="Self.DM_CAP_BAC_NHOM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DM_DINH_MUC" EntityType="Self.DM_DINH_MUC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DM_DINH_MUC_SP" EntityType="Self.DM_DINH_MUC_SP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DM_DINH_MUC_SP_VT" EntityType="Self.DM_DINH_MUC_SP_VT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DM_DON_VI_DUOC_TRO_GIA" EntityType="Self.DM_DON_VI_DUOC_TRO_GIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DM_LOAI_DT" EntityType="Self.DM_LOAI_DT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DM_LOAI_PHAM" EntityType="Self.DM_LOAI_PHAM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DM_LOAI_TC" EntityType="Self.DM_LOAI_TC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DM_NHOM_SAN_PHAM_BG" EntityType="Self.DM_NHOM_SAN_PHAM_BG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DM_NHOM_SAN_PHAM_BG_D" EntityType="Self.DM_NHOM_SAN_PHAM_BG_D" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DM_NHOM_SP" EntityType="Self.DM_NHOM_SP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DM_NHOM_TC" EntityType="Self.DM_NHOM_TC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DM_NHOM_TC_CAP_BAC" EntityType="Self.DM_NHOM_TC_CAP_BAC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DM_NHOM_TC_KHU_VUC" EntityType="Self.DM_NHOM_TC_KHU_VUC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QS_CBCS_CHUYEN_LL_TH" EntityType="Self.QS_CBCS_CHUYEN_LL_TH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QS_CBCS_HT" EntityType="Self.QS_CBCS_HT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QS_CBCS_SD" EntityType="Self.QS_CBCS_SD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SP_SAN_PHAM" EntityType="Self.SP_SAN_PHAM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SP_SAN_PHAM_BG" EntityType="Self.SP_SAN_PHAM_BG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TC_CBCS" EntityType="Self.TC_CBCS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TC_DON_VI_NH" EntityType="Self.TC_DON_VI_NH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TC_PHAM_NHAN" EntityType="Self.TC_PHAM_NHAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TP_CB_BIET_PHAI" EntityType="Self.TP_CB_BIET_PHAI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TP_CB_CHO_HUU" EntityType="Self.TP_CB_CHO_HUU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TP_CB_CONG_TAC" EntityType="Self.TP_CB_CONG_TAC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TP_CB_DI_HOC" EntityType="Self.TP_CB_DI_HOC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TP_CB_TUYEN_MOI" EntityType="Self.TP_CB_TUYEN_MOI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TP_CS_NGHIA_VU" EntityType="Self.TP_CS_NGHIA_VU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QS_CBCS" EntityType="Self.QS_CBCS" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [QS_CBCS].[ID] AS [ID], 
+    [QS_CBCS].[DON_VI_ID] AS [DON_VI_ID], 
+    [QS_CBCS].[NAM] AS [NAM], 
+    [QS_CBCS].[KY] AS [KY], 
+    [QS_CBCS].[SO_HIEU] AS [SO_HIEU], 
+    [QS_CBCS].[GIOI_TINH] AS [GIOI_TINH], 
+    [QS_CBCS].[CAP_BAC_ID] AS [CAP_BAC_ID], 
+    [QS_CBCS].[LOAI_HAM_ID] AS [LOAI_HAM_ID], 
+    [QS_CBCS].[CHUC_VU] AS [CHUC_VU], 
+    [QS_CBCS].[DON_VI_DIA_PHUONG] AS [DON_VI_DIA_PHUONG], 
+    [QS_CBCS].[LUC_LUONG_ID] AS [LUC_LUONG_ID], 
+    [QS_CBCS].[CHO_HUU] AS [CHO_HUU], 
+    [QS_CBCS].[DI_HOC] AS [DI_HOC], 
+    [QS_CBCS].[BIET_PHAI] AS [BIET_PHAI], 
+    [QS_CBCS].[CAT_QUAN_SO] AS [CAT_QUAN_SO], 
+    [QS_CBCS].[CO_GIAY] AS [CO_GIAY], 
+    [QS_CBCS].[CO_MU] AS [CO_MU], 
+    [QS_CBCS].[CO_QA] AS [CO_QA], 
+    [QS_CBCS].[DK_HIEN_VAT] AS [DK_HIEN_VAT], 
+    [QS_CBCS].[DK_DOI_TC] AS [DK_DOI_TC], 
+    [QS_CBCS].[NAM_NIEN_HAN] AS [NAM_NIEN_HAN], 
+    [QS_CBCS].[TYPE] AS [TYPE], 
+    [QS_CBCS].[LOAI_TUYEN] AS [LOAI_TUYEN], 
+    [QS_CBCS].[NGAY_TAO] AS [NGAY_TAO], 
+    [QS_CBCS].[NGAY_CAP_NHAT] AS [NGAY_CAP_NHAT], 
+    [QS_CBCS].[NGUOI_CAP_NHAT] AS [NGUOI_CAP_NHAT]
+    FROM [dbo].[QS_CBCS] AS [QS_CBCS]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_DM_CAP_BAC_DM_CAP_BAC_NHOM" Association="Self.FK_DM_CAP_BAC_DM_CAP_BAC_NHOM">
+      <End Role="DM_CAP_BAC_NHOM" EntitySet="DM_CAP_BAC_NHOM" />
+      <End Role="DM_CAP_BAC" EntitySet="DM_CAP_BAC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DM_CAP_BAC_HAM_DM_CAP_BAC" Association="Self.FK_DM_CAP_BAC_HAM_DM_CAP_BAC">
+      <End Role="DM_CAP_BAC" EntitySet="DM_CAP_BAC" />
+      <End Role="DM_CAP_BAC_HAM" EntitySet="DM_CAP_BAC_HAM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DM_NHOM_TC_KHUVUC_DM_NHOM_TC" Association="Self.FK_DM_NHOM_TC_KHUVUC_DM_NHOM_TC">
+      <End Role="DM_NHOM_TC" EntitySet="DM_NHOM_TC" />
+      <End Role="DM_NHOM_TC_KHU_VUC" EntitySet="DM_NHOM_TC_KHU_VUC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TC_CBCS_DM_NHOM_TC" Association="Self.FK_TC_CBCS_DM_NHOM_TC">
+      <End Role="DM_NHOM_TC" EntitySet="DM_NHOM_TC" />
+      <End Role="TC_CBCS" EntitySet="TC_CBCS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TC_DON_VI_NH_DM_NHOM_TC" Association="Self.FK_TC_DON_VI_NH_DM_NHOM_TC">
+      <End Role="DM_NHOM_TC" EntitySet="DM_NHOM_TC" />
+      <End Role="TC_DON_VI_NH" EntitySet="TC_DON_VI_NH" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

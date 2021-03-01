@@ -1,0 +1,131 @@
+﻿
+<div id="nhapHang" class="modal fade " role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Thêm hàng hóa nhập kho</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="cancel()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class=" col-md-12" id="formSubmithang">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                            <label class="requiredInput">Từ hợp đồng</label>
+                                       
+                                        
+                                            <input type="text" class="form-control" disabled ng-model="hang.HOP_DONG">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="requiredInput">Kho</label>
+                                        <select class="form-control" ng-model="hang.ID_KHO" ui-select2 required ng-options="item.ID as item.NAME for item in dsKho">
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label class="requiredInput">Nhóm hàng</label>
+                                            <select class="form-control" ng-model="hang.NHOM_HANG" ui-select2 ng-options="item.ID as item.NAME for item in nhomHang">
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="requiredInput">Loại hàng</label>
+                                        <select class="form-control" ng-model="hang.LOAI_HANG" ui-select2 ng-options="item.ID as item.NAME for item in loaiHang">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label>Mặt hàng</label>
+                                        <select class="form-control" ng-model="hang.THIET_BI" ui-select2 ng-options="item.ID_THIET_BI as item.TEN for item in dmHang">
+                                        </select>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="requiredInput">Số lượng</label>
+                                        <input type="text" class="form-control" ng-model="hang.SO_LUONG">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Đơn vị tính</label>
+                                        <input type="text" class="form-control" ng-model="hang.DON_VI_TINH">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label class="requiredInput">Chất lượng</label>
+                                            <select class="form-control" ng-model="hang.CHAT_LUONG" ui-select2 required ng-options="item.ID as item.NAME for item in chatLuong">
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label class="requiredInput">Ghi chú</label>
+                                            <input type="text" class="form-control" ng-model="hang.GHI_CHU">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="requiredInput">Nguồn gốc</label>
+                                        <input type="text" class="form-control" ng-model="hang.NGUON_GOC">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Nhà sản xuất</label>
+                                        <input type="text" class="form-control" ng-model="hang.NHA_SAN_XUAT">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label class="requiredInput">Năm sản xuất</label>
+                                            <input type="text" class="form-control" ng-model="hang.NAM_SAN_XUAT">
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" ng-click="luuHang()">Thêm</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancel()">Hủy</button>
+            </div>
+        </div>
+    </div>
+</div>

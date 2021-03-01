@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="page-content" ng-controller="UserController">
+    <div class="row">
+        <div class="col-xs-12">
+            <div>
+                <div class="row search-page" id="search-page-1">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="row">
+                                            <button class="btn btn-white btn-default btn-bold" ng-show="RoleBtnCreate == true" ng-click="add()">
+                                                Thêm mới
+                                            </button>
+                                            <button class="btn btn-white btn-default btn-bold">
+                                                Xóa
+                                            </button>
+                                            <button class="btn btn-white btn-default btn-bold" ng-show="RoleBtnSearch == true" ng-click="LoadPage()">
+                                                Làm mới
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9 pull-right">
+                                    </div>
+                                </div>
+                                <div class="space-2"></div>
+                                <div class="row">
+                                    <table id="simple-table" class="table table-bordered table-hover" style="margin-bottom: 0px;">
+                                        <thead>
+                                            <tr>
+                                                <th class="center">
+                                                    <label class="pos-rel">
+                                                        <input type="checkbox" class="ace" />
+                                                        <span class="lbl"></span>
+                                                    </label>
+                                                </th>
+                                                <th class="center">STT</th>
+                                                <th class="center">Tên đăng nhập</th>
+                                                <th class="center">Họ và tên</th>
+                                                <th class="center">Số điện thoại</th>
+                                                <th class="center">Nhóm quyền</th>
+                                                <th class="center">Nhóm người dùng</th>
+                                                <th class="center">Đơn vị</th>
+                                                <th class="center">Trạng thái </th>
+                                                <th class="center">Thao tác</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr ng-repeat="item in ListUser" ng-click="ViewDetail(item.USER_ID, $index)" ng-class="{activerow:$index==selectedRow}">
+                                                <td class="center">
+                                                    <label class="pos-rel">
+                                                        <input type="checkbox" class="ace" />
+                                                        <span class="lbl"></span>
+                                                    </label>
+                                                </td>
+                                                <td>{{(10 * (modelSearch.currentPage-1)) + $index + 1}}</td>
+                                                <td>{{item.LOGIN_NAME}}</td>
+                                                <td>{{item.FULL_NAME}}</td>
+                                                <td>{{item.TEL_NO}}</td>
+                                                <td>{{item.ROLE_DESC}}</td>
+                                                <td>{{item.USER_GROUP}}</td>
+                                                <td>{{item.UNIT_NAME}}</td>
+                                                <td class="text-center">{{item.ENABLED_FLAG == 'Y' ? 'Sử dụng' : 'Không sử dụng'}}</td>
+                                                <td class="text-center">
+                                                    <button class="btn btn-default btn-xs" ng-show="RoleBtnUpdate == true" ng-click="edit(item.USER_ID)">
+                                                        <i class="ace-icon fa fa-pencil bigger-110 icon-only"></i>
+                                                    </button>
+                                                    <button class="btn btn-default btn-xs" ng-show="RoleBtnDelete == true" ng-click="delete(item.USER_ID, item.FULL_NAME)">
+                                                        <i class="ace-icon fa fa-trash-o bigger-110 icon-only"></i>
+                                                    </button> 
+                                                    <button class="btn btn-default btn-xs" ng-show="RoleBtnLock == true && item.IsLock == 0" ng-click="lockUser(item.USER_ID)">
+                                                        <i class="ace-icon fa fa-lock bigger-110 icon-only"></i>
+                                                    </button> 
+                                                    <button class="btn btn-default btn-xs" ng-show="RoleBtnUnlock == true && item.IsLock == 1" ng-click="unlockUser(item.USER_ID, item.FULL_NAME)">
+                                                        <i class="ace-icon fa fa-unlock bigger-110 icon-only"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <ul class="pagination pagination-sm m-0 float-right" uib-pagination total-items="modelSearch.totalItems" items-per-page="modelSearch.pageSize" ng-model="modelSearch.currentPage" ng-change="pageChanged()" max-size="modelSearch.maxSize" class="pagination-sm" boundary-links="true" rotate="false" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+                                        </div><!-- /.span -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bootbox modal fade bootbox-prompt" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                   
+                </div>
+            </div>
+            <!-- PAGE CONTENT ENDS -->
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</div><!-- /.page-content -->
+@section scripts{
+    <script src="~/app/Controller/UserController.js"></script>
+}

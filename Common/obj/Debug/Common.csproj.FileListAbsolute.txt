@@ -1,0 +1,89 @@
+D:\Work\WebApp\WebApp\Common\bin\Debug\Common.dll
+D:\Work\WebApp\WebApp\Common\bin\Debug\Common.pdb
+D:\Work\WebApp\WebApp\Common\bin\Debug\Model.dll
+D:\Work\WebApp\WebApp\Common\bin\Debug\Simple.dll
+D:\Work\WebApp\WebApp\Common\bin\Debug\System.Web.Mvc.dll
+D:\Work\WebApp\WebApp\Common\bin\Debug\EntityFramework.dll
+D:\Work\WebApp\WebApp\Common\bin\Debug\System.Web.WebPages.dll
+D:\Work\WebApp\WebApp\Common\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Work\WebApp\WebApp\Common\bin\Debug\System.Web.Razor.dll
+D:\Work\WebApp\WebApp\Common\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Work\WebApp\WebApp\Common\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Work\WebApp\WebApp\Common\bin\Debug\Model.pdb
+D:\Work\WebApp\WebApp\Common\bin\Debug\Model.dll.config
+D:\Work\WebApp\WebApp\Common\bin\Debug\Simple.pdb
+D:\Work\WebApp\WebApp\Common\bin\Debug\System.Web.Mvc.xml
+D:\Work\WebApp\WebApp\Common\bin\Debug\EntityFramework.xml
+D:\Work\WebApp\WebApp\Common\bin\Debug\System.Web.WebPages.xml
+D:\Work\WebApp\WebApp\Common\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Work\WebApp\WebApp\Common\bin\Debug\System.Web.Razor.xml
+D:\Work\WebApp\WebApp\Common\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Work\WebApp\WebApp\Common\obj\Debug\Common.csprojAssemblyReference.cache
+D:\Work\WebApp\WebApp\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+D:\Work\WebApp\WebApp\Common\obj\Debug\Common.csproj.CopyComplete
+D:\Work\WebApp\WebApp\Common\obj\Debug\Common.dll
+D:\Work\WebApp\WebApp\Common\obj\Debug\Common.pdb
+F:\OutSource\Quản lý thiết bị\Code\Common\bin\Debug\Common.dll
+F:\OutSource\Quản lý thiết bị\Code\Common\bin\Debug\Common.pdb
+F:\OutSource\Quản lý thiết bị\Code\Common\bin\Debug\Model.dll
+F:\OutSource\Quản lý thiết bị\Code\Common\bin\Debug\Simple.dll
+F:\OutSource\Quản lý thiết bị\Code\Common\bin\Debug\EntityFramework.dll
+F:\OutSource\Quản lý thiết bị\Code\Common\bin\Debug\Model.pdb
+F:\OutSource\Quản lý thiết bị\Code\Common\bin\Debug\Model.dll.config
+F:\OutSource\Quản lý thiết bị\Code\Common\bin\Debug\Simple.pdb
+F:\OutSource\Quản lý thiết bị\Code\Common\bin\Debug\EntityFramework.xml
+F:\OutSource\Quản lý thiết bị\Code\Common\obj\Debug\Common.csprojAssemblyReference.cache
+F:\OutSource\Quản lý thiết bị\Code\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+F:\OutSource\Quản lý thiết bị\Code\Common\obj\Debug\Common.csproj.CopyComplete
+F:\OutSource\Quản lý thiết bị\Code\Common\obj\Debug\Common.dll
+F:\OutSource\Quản lý thiết bị\Code\Common\obj\Debug\Common.pdb
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Common\bin\Debug\Common.dll
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Common\bin\Debug\Common.pdb
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Common\bin\Debug\Model.dll
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Common\bin\Debug\Simple.dll
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Common\bin\Debug\EntityFramework.dll
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Common\bin\Debug\Model.pdb
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Common\bin\Debug\Model.dll.config
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Common\bin\Debug\Simple.pdb
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Common\bin\Debug\EntityFramework.xml
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Common\obj\Debug\Common.csprojAssemblyReference.cache
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Common\obj\Debug\Common.csproj.CopyComplete
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Common\obj\Debug\Common.dll
+F:\OutSource\Quản lý thiết bị\CodeSvn\Source\Dev\Common\obj\Debug\Common.pdb
+D:\Code\QuanLyThietBi\Source\Dev\Common\bin\Debug\Common.dll
+D:\Code\QuanLyThietBi\Source\Dev\Common\bin\Debug\Common.pdb
+D:\Code\QuanLyThietBi\Source\Dev\Common\bin\Debug\Model.dll
+D:\Code\QuanLyThietBi\Source\Dev\Common\bin\Debug\Simple.dll
+D:\Code\QuanLyThietBi\Source\Dev\Common\bin\Debug\EntityFramework.dll
+D:\Code\QuanLyThietBi\Source\Dev\Common\bin\Debug\Model.pdb
+D:\Code\QuanLyThietBi\Source\Dev\Common\bin\Debug\Model.dll.config
+D:\Code\QuanLyThietBi\Source\Dev\Common\bin\Debug\Simple.pdb
+D:\Code\QuanLyThietBi\Source\Dev\Common\bin\Debug\EntityFramework.xml
+D:\Code\QuanLyThietBi\Source\Dev\Common\obj\Debug\Common.csprojAssemblyReference.cache
+D:\Code\QuanLyThietBi\Source\Dev\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+D:\Code\QuanLyThietBi\Source\Dev\Common\obj\Debug\Common.csproj.CopyComplete
+D:\Code\QuanLyThietBi\Source\Dev\Common\obj\Debug\Common.dll
+D:\Code\QuanLyThietBi\Source\Dev\Common\obj\Debug\Common.pdb
+D:\Code\QuanLyThietBi\Source\Dev\Common\bin\Debug\log4net.dll
+D:\Code\QuanLyThietBi\Source\Dev\Common\bin\Debug\log4net.xml
+D:\Code\QuanLyThietBi\Source\Dev\Common\bin\Debug\Newtonsoft.Json.dll
+D:\Code\QuanLyThietBi\Source\Dev\Common\bin\Debug\Newtonsoft.Json.xml
+C:\Users\trant\source\repos\Project1\Common\bin\Debug\Common.dll
+C:\Users\trant\source\repos\Project1\Common\bin\Debug\Common.pdb
+C:\Users\trant\source\repos\Project1\Common\bin\Debug\log4net.dll
+C:\Users\trant\source\repos\Project1\Common\bin\Debug\Model.dll
+C:\Users\trant\source\repos\Project1\Common\bin\Debug\Newtonsoft.Json.dll
+C:\Users\trant\source\repos\Project1\Common\bin\Debug\Simple.dll
+C:\Users\trant\source\repos\Project1\Common\bin\Debug\EntityFramework.dll
+C:\Users\trant\source\repos\Project1\Common\bin\Debug\Model.pdb
+C:\Users\trant\source\repos\Project1\Common\bin\Debug\Model.dll.config
+C:\Users\trant\source\repos\Project1\Common\bin\Debug\Simple.pdb
+C:\Users\trant\source\repos\Project1\Common\bin\Debug\log4net.xml
+C:\Users\trant\source\repos\Project1\Common\bin\Debug\Newtonsoft.Json.xml
+C:\Users\trant\source\repos\Project1\Common\bin\Debug\EntityFramework.xml
+C:\Users\trant\source\repos\Project1\Common\obj\Debug\Common.csprojAssemblyReference.cache
+C:\Users\trant\source\repos\Project1\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\trant\source\repos\Project1\Common\obj\Debug\Common.csproj.CopyComplete
+C:\Users\trant\source\repos\Project1\Common\obj\Debug\Common.dll
+C:\Users\trant\source\repos\Project1\Common\obj\Debug\Common.pdb

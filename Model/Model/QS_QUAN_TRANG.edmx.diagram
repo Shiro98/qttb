@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="83a62c81f621468a8af1069cb02de816" Name="Diagram1">
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.DM_CAP_BAC" Width="1.5" PointX="8" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.DM_CAP_BAC_CHO_QUAN_SO" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.DM_CAP_BAC_HAM" Width="1.5" PointX="10.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.DM_CAP_BAC_NHOM" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.DM_DINH_MUC" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.DM_DINH_MUC_SP" Width="1.5" PointX="9.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.DM_DINH_MUC_SP_VT" Width="1.5" PointX="5.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.DM_DON_VI_DUOC_TRO_GIA" Width="1.5" PointX="7.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.DM_LOAI_DT" Width="1.5" PointX="9.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.DM_LOAI_PHAM" Width="1.5" PointX="11.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.DM_LOAI_TC" Width="1.5" PointX="11.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.DM_NHOM_SAN_PHAM_BG" Width="1.5" PointX="9.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.DM_NHOM_SAN_PHAM_BG_D" Width="1.5" PointX="11.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.DM_NHOM_SP" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.DM_NHOM_TC" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.DM_NHOM_TC_CAP_BAC" Width="1.5" PointX="13.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.DM_NHOM_TC_KHU_VUC" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.QS_CBCS_CHUYEN_LL_TH" Width="1.5" PointX="5.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.QS_CBCS_HT" Width="1.5" PointX="13.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.QS_CBCS_SD" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.SP_SAN_PHAM" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.SP_SAN_PHAM_BG" Width="1.5" PointX="2.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.sysdiagram" Width="1.5" PointX="7.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.TC_CBCS" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.TC_DON_VI_NH" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.TC_PHAM_NHAN" Width="1.5" PointX="15.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.TP_CB_BIET_PHAI" Width="1.5" PointX="9.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.TP_CB_CHO_HUU" Width="1.5" PointX="15.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.TP_CB_CONG_TAC" Width="1.5" PointX="11.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.TP_CB_DI_HOC" Width="1.5" PointX="17.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.TP_CB_TUYEN_MOI" Width="1.5" PointX="17.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.TP_CS_NGHIA_VU" Width="1.5" PointX="17.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QS_QUAN_TRANGModel.QS_CBCS" Width="1.5" PointX="13.75" PointY="18.75" IsExpanded="true" />
+        <AssociationConnector Association="QS_QUAN_TRANGModel.FK_DM_CAP_BAC_DM_CAP_BAC_NHOM" ManuallyRouted="false" />
+        <AssociationConnector Association="QS_QUAN_TRANGModel.FK_DM_CAP_BAC_HAM_DM_CAP_BAC" ManuallyRouted="false" />
+        <AssociationConnector Association="QS_QUAN_TRANGModel.FK_DM_NHOM_TC_KHUVUC_DM_NHOM_TC" ManuallyRouted="false" />
+        <AssociationConnector Association="QS_QUAN_TRANGModel.FK_TC_CBCS_DM_NHOM_TC" ManuallyRouted="false" />
+        <AssociationConnector Association="QS_QUAN_TRANGModel.FK_TC_DON_VI_NH_DM_NHOM_TC" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
