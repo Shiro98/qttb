@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ModelExtend\DM_DON_VI_TINHModel.cs" />
     <Compile Include="ModelExtend\FlexColumnModel.cs" />
     <Compile Include="ModelExtend\FlexValueCategoryColumn.cs" />
     <Compile Include="ModelExtend\FlexValueCategoryModel.cs" />
@@ -76,6 +77,9 @@
     <Compile Include="ModelExtend\TreeItem.cs" />
     <Compile Include="ModelExtend\TreeModel.cs" />
     <Compile Include="ModelExtend\UserPageModel.cs" />
+    <Compile Include="Model\APP.cs">
+      <DependentUpon>ITEMS_SYSTEM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\APPS_CONF.cs">
       <DependentUpon>ITEMS_SYSTEM.tt</DependentUpon>
     </Compile>
@@ -260,7 +264,7 @@
       <DependentUpon>ITEMS_SYSTEM.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\sysdiagram.cs">
-      <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
+      <DependentUpon>ITEMS_SYSTEM.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\TC_CBCS.cs">
       <DependentUpon>QS_QUAN_TRANG.tt</DependentUpon>
@@ -306,6 +310,10 @@
     <None Include="Model\ITEMS_LIST.edmx.diagram">
       <DependentUpon>ITEMS_LIST.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="Model\QS_QUAN_TRANG.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QS_QUAN_TRANG.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <EntityDeploy Include="Model\ITEMS_SYSTEM.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ITEMS_SYSTEM.Designer.cs</LastGenOutput>
@@ -313,10 +321,6 @@
     <None Include="Model\ITEMS_SYSTEM.edmx.diagram">
       <DependentUpon>ITEMS_SYSTEM.edmx</DependentUpon>
     </None>
-    <EntityDeploy Include="Model\QS_QUAN_TRANG.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QS_QUAN_TRANG.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="Model\QS_QUAN_TRANG.edmx.diagram">
       <DependentUpon>QS_QUAN_TRANG.edmx</DependentUpon>
     </None>

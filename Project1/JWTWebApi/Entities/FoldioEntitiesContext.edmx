@@ -474,7 +474,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ITEMS_SYSTEMEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ITEMS_SYSTEMEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="APPs" EntityType="Self.APP" />
           <EntitySet Name="APPS_CONF" EntityType="Self.APPS_CONF" />
           <EntitySet Name="ST_PAGE_FUNCTIONS" EntityType="Self.ST_PAGE_FUNCTIONS" />
@@ -499,7 +499,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ITEMS_SYSTEMModelStoreContainer" CdmEntityContainer="ITEMS_SYSTEMEntities1">
+        <EntityContainerMapping StorageEntityContainer="ITEMS_SYSTEMModelStoreContainer" CdmEntityContainer="ITEMS_SYSTEMEntities">
           <EntitySetMapping Name="APPs">
             <EntityTypeMapping TypeName="ITEMS_SYSTEMModel.APP">
               <MappingFragment StoreEntitySet="APP">

@@ -65,6 +65,7 @@
     <Compile Include="Admin\RolePageDA.cs" />
     <Compile Include="Admin\SysParameterDA.cs" />
     <Compile Include="Admin\UserDA.cs" />
+    <Compile Include="DanhMuc\Don_vi_tinhDA.cs" />
     <Compile Include="Home\QuanSoDA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

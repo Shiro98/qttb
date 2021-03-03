@@ -218,10 +218,6 @@ D:\Code\QuanLyThietBi\Source\Dev\JWTWebApi\obj\Debug\JWTWebApi.csproj.CoreCompil
 D:\Code\QuanLyThietBi\Source\Dev\JWTWebApi\obj\Debug\JWTWebApi.csproj.CopyComplete
 D:\Code\QuanLyThietBi\Source\Dev\JWTWebApi\obj\Debug\JWTWebApi.dll
 D:\Code\QuanLyThietBi\Source\Dev\JWTWebApi\obj\Debug\JWTWebApi.pdb
-C:\Users\trant\source\repos\Project1\JWTWebApi\obj\Debug\JWTWebApi.csprojAssemblyReference.cache
-C:\Users\trant\source\repos\Project1\JWTWebApi\obj\Debug\JWTWebApi.csproj.CoreCompileInputs.cache
-C:\Users\trant\source\repos\Project1\JWTWebApi\obj\Debug\JWTWebApi.dll
-C:\Users\trant\source\repos\Project1\JWTWebApi\obj\Debug\JWTWebApi.pdb
 C:\Users\trant\source\repos\Project1\JWTWebApi\bin\JWTWebApi.dll.config
 C:\Users\trant\source\repos\Project1\JWTWebApi\bin\JWTWebApi.dll
 C:\Users\trant\source\repos\Project1\JWTWebApi\bin\JWTWebApi.pdb
@@ -348,4 +344,8 @@ C:\Users\trant\source\repos\Project1\JWTWebApi\bin\System.Web.WebPages.Deploymen
 C:\Users\trant\source\repos\Project1\JWTWebApi\bin\System.Web.WebPages.Razor.xml
 C:\Users\trant\source\repos\Project1\JWTWebApi\bin\Antlr3.Runtime.pdb
 C:\Users\trant\source\repos\Project1\JWTWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\trant\source\repos\Project1\JWTWebApi\obj\Debug\JWTWebApi.csproj.CoreCompileInputs.cache
 C:\Users\trant\source\repos\Project1\JWTWebApi\obj\Debug\JWTWebApi.csproj.CopyComplete
+C:\Users\trant\source\repos\Project1\JWTWebApi\obj\Debug\JWTWebApi.dll
+C:\Users\trant\source\repos\Project1\JWTWebApi\obj\Debug\JWTWebApi.pdb
+C:\Users\trant\source\repos\Project1\JWTWebApi\obj\Debug\JWTWebApi.csprojAssemblyReference.cache

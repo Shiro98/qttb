@@ -223,7 +223,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="ITEMS_SYSTEMEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="ITEMS_SYSTEMEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="APPs" EntityType="Self.APP" />
     <EntitySet Name="APPS_CONF" EntityType="Self.APPS_CONF" />
     <EntitySet Name="ST_PAGE_FUNCTIONS" EntityType="Self.ST_PAGE_FUNCTIONS" />

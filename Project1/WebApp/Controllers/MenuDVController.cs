@@ -19,7 +19,7 @@ namespace WebApp.Controllers
 {
     public class MenuDVController : BaseController
     {
-        Entities db = new Entities();
+        ITEMS_SYSTEMEntities db = new ITEMS_SYSTEMEntities();
         UserDA _userDA = new UserDA();
         BaseController _helperController = new BaseController();
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);

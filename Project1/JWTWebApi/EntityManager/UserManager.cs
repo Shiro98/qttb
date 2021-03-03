@@ -9,7 +9,7 @@ namespace JWTWebApi.EntityManager
         public ST_USERS GetInfoByUserName(string userName)
         {
             var user = new ST_USERS();
-            using (var cs = new ITEMS_SYSTEMEntities1())
+            using (var cs = new ITEMS_SYSTEMEntities())
             {
                 user = (from b in cs.ST_USERS where b.LOGIN_NAME == userName select b).FirstOrDefault();
             }
@@ -20,7 +20,7 @@ namespace JWTWebApi.EntityManager
             var flag = false;
             try
             {
-                using (var cs = new ITEMS_SYSTEMEntities1())
+                using (var cs = new ITEMS_SYSTEMEntities())
                 {
                    var user = (from b in cs.USER_LOCK where b.USER_LOCKED_ID == userId && b.ENABLED_FLAG == "Y" select b).FirstOrDefault();
                     if (user != null)

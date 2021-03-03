@@ -13,10 +13,10 @@ namespace JWTWebApi.Entities
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ITEMS_SYSTEMEntities1 : DbContext
+    public partial class ITEMS_SYSTEMEntities : DbContext
     {
-        public ITEMS_SYSTEMEntities1()
-            : base("name=ITEMS_SYSTEMEntities1")
+        public ITEMS_SYSTEMEntities()
+            : base("name=ITEMS_SYSTEMEntities")
         {
         }
     

@@ -10,7 +10,7 @@ namespace JWTWebApi.EntityManager
         public List<AppModel> GetAllApp()
         {
             var lstApp = new List<AppModel>();
-            using (var cs = new ITEMS_SYSTEMEntities1())
+            using (var cs = new ITEMS_SYSTEMEntities())
             {
                 lstApp = (from b in cs.APPs 
                           select new AppModel

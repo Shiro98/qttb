@@ -23,7 +23,7 @@ namespace WebApp.Controllers
         ITokenService _ITokenService = new TokenService();
         PageMenuDA _pageMenuDA = new PageMenuDA();
         UserDA _userDA = new UserDA();
-        Entities db = new Entities();
+        ITEMS_SYSTEMEntities db = new ITEMS_SYSTEMEntities();
         public ActionResult Index()
         {
             //log4net.Config.XmlConfigurator.Configure();

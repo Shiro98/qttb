@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="ITEMS_SYSTEMModelStoreContainer" CdmEntityContainer="ITEMS_SYSTEMEntities1">
+  <EntityContainerMapping StorageEntityContainer="ITEMS_SYSTEMModelStoreContainer" CdmEntityContainer="ITEMS_SYSTEMEntities">
     <EntitySetMapping Name="APPs">
       <EntityTypeMapping TypeName="ITEMS_SYSTEMModel.APP">
         <MappingFragment StoreEntitySet="APP">
