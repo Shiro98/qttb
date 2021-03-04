@@ -1,7 +1,10 @@
 ﻿app.controller("Don_vi_tinhController", function ($scope, $uibModal, $ngConfirm, showToast, hideLoading) {
-    $scope.modell = 26;
-    $scope.List = [];
-    $scope.modelSearch.currentPage = 1;
+    $scope.modelSearch = {};
+    $scope.DanhSach = {
+        ID: '',
+        TEN_DVT: '',
+        MO_TA: ''
+    }
     angular.element(document).ready(function () {
         $scope.LoadPage();
     });
@@ -9,10 +12,12 @@
         $.ajax({
             type: 'post',
             url: '/Don_vi_tinh/DanhSach',
-            data: { tID: $scope.modell },
+            data: {},
             success: function (data) {
-                $scope.List = data.data;
+                $scope.DanhSach = data.Data;
+
             }
         });
     };
+    
 });

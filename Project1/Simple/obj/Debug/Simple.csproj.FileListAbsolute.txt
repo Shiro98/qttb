@@ -29,3 +29,4 @@ C:\Users\trant\source\repos\Project1\Simple\obj\Debug\Simple.csproj.CoreCompileI
 C:\Users\trant\source\repos\Project1\Simple\obj\Debug\Simple.csproj.CopyComplete
 C:\Users\trant\source\repos\Project1\Simple\obj\Debug\Simple.dll
 C:\Users\trant\source\repos\Project1\Simple\obj\Debug\Simple.pdb
+C:\Users\trant\source\repos\Project1\Simple\obj\Debug\Simple.csprojAssemblyReference.cache

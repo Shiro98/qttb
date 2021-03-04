@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KHO_HHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="KH_NHAP_KHO">
+    <Key>
+      <PropertyRef Name="ID_TXN" />
+    </Key>
+    <Property Name="ID_TXN" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_KHO" Type="int" Nullable="false" />
+    <Property Name="TEN_KHO" Type="nvarchar" MaxLength="150" />
+    <Property Name="ID_DON_VI" Type="int" Nullable="false" />
+    <Property Name="TEN_DON_VI" Type="nvarchar" MaxLength="200" />
+    <Property Name="LOAI_NK" Type="int" />
+    <Property Name="SO_PHIEU" Type="nvarchar" MaxLength="50" />
+    <Property Name="NGAY_CT" Type="varchar" MaxLength="8" />
+    <Property Name="ID_HOP_DONG" Type="int" />
+    <Property Name="SO_HOP_DONG" Type="nvarchar" MaxLength="50" />
+    <Property Name="NGAY_KY_HD" Type="varchar" MaxLength="8" />
+    <Property Name="NGAY_HH_HD" Type="varchar" MaxLength="8" />
+    <Property Name="ID_NHA_CC" Type="int" />
+    <Property Name="TEN_NHA_CC" Type="nvarchar" MaxLength="200" />
+    <Property Name="LY_DO_NHAP" Type="nvarchar" MaxLength="200" />
+    <Property Name="ID_KE_HOACH" Type="int" />
+    <Property Name="SO_KE_HOACH" Type="nvarchar" MaxLength="50" />
+    <Property Name="TONG_TIEN" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="TONG_TIEN_CHU" Type="nvarchar" MaxLength="200" />
+    <Property Name="NGAY_NK" Type="varchar" MaxLength="8" />
+    <Property Name="TRANG_THAI" Type="char" MaxLength="1" />
+    <Property Name="NGUON_KINH_PHI" Type="nvarchar" MaxLength="150" />
+    <Property Name="NGUON_HANG" Type="nvarchar" MaxLength="150" />
+    <Property Name="ID_NGUOI_TAO" Type="int" />
+    <Property Name="NGAY_TAO" Type="datetime" />
+    <Property Name="ID_NGUOI_CAP_NHAT" Type="int" />
+    <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+    <Property Name="ID_NGUOI_GIAO" Type="int" />
+    <Property Name="TEN_NGUOI_GIAO" Type="nvarchar" MaxLength="150" />
+    <Property Name="ID_NGUOI_NHAN" Type="int" />
+    <Property Name="TEN_NGUOI_NHAN" Type="nvarchar" MaxLength="150" />
+    <Property Name="NHAP_TRA_DOI_CO" Type="char" MaxLength="1" />
+    <Property Name="ID_NGUOI_KY_1" Type="int" />
+    <Property Name="TEN_NGUOI_KY_1" Type="nvarchar" MaxLength="150" />
+    <Property Name="CV_NGUOI_KY_1" Type="nvarchar" MaxLength="50" />
+    <Property Name="CB_NGUOI_KY_1" Type="nvarchar" MaxLength="50" />
+    <Property Name="ID_NGUOI_KY_2" Type="int" />
+    <Property Name="TEN_NGUOI_KY_2" Type="nvarchar" MaxLength="150" />
+    <Property Name="CV_NGUOI_KY_2" Type="nvarchar" MaxLength="50" />
+    <Property Name="CB_NGUOI_KY_2" Type="nvarchar" MaxLength="50" />
+    <Property Name="ID_NGUOI_KY_3" Type="int" />
+    <Property Name="TEN_NGUOI_KY_3" Type="nvarchar" MaxLength="150" />
+    <Property Name="CV_NGUOI_KY_3" Type="nvarchar" MaxLength="50" />
+    <Property Name="CB_NGUOI_KY_3" Type="nvarchar" MaxLength="50" />
+    <Property Name="ID_NGUOI_KY_4" Type="int" />
+    <Property Name="TEN_NGUOI_KY_4" Type="nvarchar" MaxLength="150" />
+    <Property Name="CV_NGUOI_KY_4" Type="nvarchar" MaxLength="50" />
+    <Property Name="CB_NGUOI_KY_4" Type="nvarchar" MaxLength="50" />
+    <Property Name="ID_NGUOI_KY_5" Type="int" />
+    <Property Name="TEN_NGUOI_KY_5" Type="nvarchar" MaxLength="150" />
+    <Property Name="CV_NGUOI_KY_5" Type="nvarchar" MaxLength="50" />
+    <Property Name="CB_NGUOI_KY_5" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="KH_NHAP_KHO_CT">
+    <Key>
+      <PropertyRef Name="ID_NK_CT" />
+    </Key>
+    <Property Name="ID_NK_CT" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_TXN" Type="bigint" Nullable="false" />
+    <Property Name="STT" Type="smallint" />
+    <Property Name="ID_HANG" Type="int" />
+    <Property Name="MA_HANG" Type="nvarchar" MaxLength="30" />
+    <Property Name="TEN_HANG" Type="nvarchar" MaxLength="150" />
+    <Property Name="DVT" Type="varchar" MaxLength="50" />
+    <Property Name="SO_LUONG_KH" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SO_LUONG_TT" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DON_GIA" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="THANH_TIEN_KH" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="THANH_TIEN_TT" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="GHI_CHU" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityContainer Name="KHO_HHModelStoreContainer">
+    <EntitySet Name="KH_NHAP_KHO" EntityType="Self.KH_NHAP_KHO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KH_NHAP_KHO_CT" EntityType="Self.KH_NHAP_KHO_CT" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

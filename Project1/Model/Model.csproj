@@ -50,7 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ModelExtend\DM_DON_VI_TINHModel.cs" />
+    <Compile Include="ModelExtend\DM_DON_VI_TINH_Model.cs" />
     <Compile Include="ModelExtend\FlexColumnModel.cs" />
     <Compile Include="ModelExtend\FlexValueCategoryColumn.cs" />
     <Compile Include="ModelExtend\FlexValueCategoryModel.cs" />
@@ -188,6 +188,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ITEMS_SYSTEM.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\KHO_HH.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KHO_HH.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KHO_HH.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KHO_HH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KHO_HH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KHO_HH.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KH_NHAP_KHO.cs">
+      <DependentUpon>KHO_HH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KH_NHAP_KHO_CT.cs">
+      <DependentUpon>KHO_HH.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\LT_DATA_TYPES.cs">
       <DependentUpon>ITEMS_LIST.tt</DependentUpon>
     </Compile>
@@ -321,6 +342,13 @@
     <None Include="Model\ITEMS_SYSTEM.edmx.diagram">
       <DependentUpon>ITEMS_SYSTEM.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="Model\KHO_HH.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KHO_HH.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\KHO_HH.edmx.diagram">
+      <DependentUpon>KHO_HH.edmx</DependentUpon>
+    </None>
     <None Include="Model\QS_QUAN_TRANG.edmx.diagram">
       <DependentUpon>QS_QUAN_TRANG.edmx</DependentUpon>
     </None>
@@ -355,6 +383,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ITEMS_SYSTEM.edmx</DependentUpon>
       <LastGenOutput>ITEMS_SYSTEM.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\KHO_HH.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KHO_HH.edmx</DependentUpon>
+      <LastGenOutput>KHO_HH.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\KHO_HH.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KHO_HH.edmx</DependentUpon>
+      <LastGenOutput>KHO_HH.cs</LastGenOutput>
     </Content>
     <Content Include="Model\QS_QUAN_TRANG.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

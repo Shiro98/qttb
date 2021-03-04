@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="KHO_HHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="KH_NHAP_KHO">
+          <Key>
+            <PropertyRef Name="ID_TXN" />
+          </Key>
+          <Property Name="ID_TXN" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_KHO" Type="int" Nullable="false" />
+          <Property Name="TEN_KHO" Type="nvarchar" MaxLength="150" />
+          <Property Name="ID_DON_VI" Type="int" Nullable="false" />
+          <Property Name="TEN_DON_VI" Type="nvarchar" MaxLength="200" />
+          <Property Name="LOAI_NK" Type="int" />
+          <Property Name="SO_PHIEU" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGAY_CT" Type="varchar" MaxLength="8" />
+          <Property Name="ID_HOP_DONG" Type="int" />
+          <Property Name="SO_HOP_DONG" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGAY_KY_HD" Type="varchar" MaxLength="8" />
+          <Property Name="NGAY_HH_HD" Type="varchar" MaxLength="8" />
+          <Property Name="ID_NHA_CC" Type="int" />
+          <Property Name="TEN_NHA_CC" Type="nvarchar" MaxLength="200" />
+          <Property Name="LY_DO_NHAP" Type="nvarchar" MaxLength="200" />
+          <Property Name="ID_KE_HOACH" Type="int" />
+          <Property Name="SO_KE_HOACH" Type="nvarchar" MaxLength="50" />
+          <Property Name="TONG_TIEN" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TONG_TIEN_CHU" Type="nvarchar" MaxLength="200" />
+          <Property Name="NGAY_NK" Type="varchar" MaxLength="8" />
+          <Property Name="TRANG_THAI" Type="char" MaxLength="1" />
+          <Property Name="NGUON_KINH_PHI" Type="nvarchar" MaxLength="150" />
+          <Property Name="NGUON_HANG" Type="nvarchar" MaxLength="150" />
+          <Property Name="ID_NGUOI_TAO" Type="int" />
+          <Property Name="NGAY_TAO" Type="datetime" />
+          <Property Name="ID_NGUOI_CAP_NHAT" Type="int" />
+          <Property Name="NGAY_CAP_NHAT" Type="datetime" />
+          <Property Name="ID_NGUOI_GIAO" Type="int" />
+          <Property Name="TEN_NGUOI_GIAO" Type="nvarchar" MaxLength="150" />
+          <Property Name="ID_NGUOI_NHAN" Type="int" />
+          <Property Name="TEN_NGUOI_NHAN" Type="nvarchar" MaxLength="150" />
+          <Property Name="NHAP_TRA_DOI_CO" Type="char" MaxLength="1" />
+          <Property Name="ID_NGUOI_KY_1" Type="int" />
+          <Property Name="TEN_NGUOI_KY_1" Type="nvarchar" MaxLength="150" />
+          <Property Name="CV_NGUOI_KY_1" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_NGUOI_KY_1" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID_NGUOI_KY_2" Type="int" />
+          <Property Name="TEN_NGUOI_KY_2" Type="nvarchar" MaxLength="150" />
+          <Property Name="CV_NGUOI_KY_2" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_NGUOI_KY_2" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID_NGUOI_KY_3" Type="int" />
+          <Property Name="TEN_NGUOI_KY_3" Type="nvarchar" MaxLength="150" />
+          <Property Name="CV_NGUOI_KY_3" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_NGUOI_KY_3" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID_NGUOI_KY_4" Type="int" />
+          <Property Name="TEN_NGUOI_KY_4" Type="nvarchar" MaxLength="150" />
+          <Property Name="CV_NGUOI_KY_4" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_NGUOI_KY_4" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID_NGUOI_KY_5" Type="int" />
+          <Property Name="TEN_NGUOI_KY_5" Type="nvarchar" MaxLength="150" />
+          <Property Name="CV_NGUOI_KY_5" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_NGUOI_KY_5" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="KH_NHAP_KHO_CT">
+          <Key>
+            <PropertyRef Name="ID_NK_CT" />
+          </Key>
+          <Property Name="ID_NK_CT" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_TXN" Type="bigint" Nullable="false" />
+          <Property Name="STT" Type="smallint" />
+          <Property Name="ID_HANG" Type="int" />
+          <Property Name="MA_HANG" Type="nvarchar" MaxLength="30" />
+          <Property Name="TEN_HANG" Type="nvarchar" MaxLength="150" />
+          <Property Name="DVT" Type="varchar" MaxLength="50" />
+          <Property Name="SO_LUONG_KH" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SO_LUONG_TT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DON_GIA" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="THANH_TIEN_KH" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="THANH_TIEN_TT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="GHI_CHU" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityContainer Name="KHO_HHModelStoreContainer">
+          <EntitySet Name="KH_NHAP_KHO" EntityType="Self.KH_NHAP_KHO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KH_NHAP_KHO_CT" EntityType="Self.KH_NHAP_KHO_CT" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KHO_HHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="KH_NHAP_KHO">
+          <Key>
+            <PropertyRef Name="ID_TXN" />
+          </Key>
+          <Property Name="ID_TXN" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_KHO" Type="Int32" Nullable="false" />
+          <Property Name="TEN_KHO" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ID_DON_VI" Type="Int32" Nullable="false" />
+          <Property Name="TEN_DON_VI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LOAI_NK" Type="Int32" />
+          <Property Name="SO_PHIEU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAY_CT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="ID_HOP_DONG" Type="Int32" />
+          <Property Name="SO_HOP_DONG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAY_KY_HD" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="NGAY_HH_HD" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="ID_NHA_CC" Type="Int32" />
+          <Property Name="TEN_NHA_CC" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LY_DO_NHAP" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ID_KE_HOACH" Type="Int32" />
+          <Property Name="SO_KE_HOACH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TONG_TIEN" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TONG_TIEN_CHU" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NGAY_NK" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="TRANG_THAI" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="NGUON_KINH_PHI" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="NGUON_HANG" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ID_NGUOI_TAO" Type="Int32" />
+          <Property Name="NGAY_TAO" Type="DateTime" Precision="3" />
+          <Property Name="ID_NGUOI_CAP_NHAT" Type="Int32" />
+          <Property Name="NGAY_CAP_NHAT" Type="DateTime" Precision="3" />
+          <Property Name="ID_NGUOI_GIAO" Type="Int32" />
+          <Property Name="TEN_NGUOI_GIAO" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ID_NGUOI_NHAN" Type="Int32" />
+          <Property Name="TEN_NGUOI_NHAN" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="NHAP_TRA_DOI_CO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ID_NGUOI_KY_1" Type="Int32" />
+          <Property Name="TEN_NGUOI_KY_1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CV_NGUOI_KY_1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_NGUOI_KY_1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_NGUOI_KY_2" Type="Int32" />
+          <Property Name="TEN_NGUOI_KY_2" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CV_NGUOI_KY_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_NGUOI_KY_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_NGUOI_KY_3" Type="Int32" />
+          <Property Name="TEN_NGUOI_KY_3" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CV_NGUOI_KY_3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_NGUOI_KY_3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_NGUOI_KY_4" Type="Int32" />
+          <Property Name="TEN_NGUOI_KY_4" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CV_NGUOI_KY_4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_NGUOI_KY_4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_NGUOI_KY_5" Type="Int32" />
+          <Property Name="TEN_NGUOI_KY_5" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CV_NGUOI_KY_5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_NGUOI_KY_5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="KH_NHAP_KHO_CT">
+          <Key>
+            <PropertyRef Name="ID_NK_CT" />
+          </Key>
+          <Property Name="ID_NK_CT" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_TXN" Type="Int64" Nullable="false" />
+          <Property Name="STT" Type="Int16" />
+          <Property Name="ID_HANG" Type="Int32" />
+          <Property Name="MA_HANG" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="TEN_HANG" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DVT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SO_LUONG_KH" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SO_LUONG_TT" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DON_GIA" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="THANH_TIEN_KH" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="THANH_TIEN_TT" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="GHI_CHU" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="KHO_HHEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="KH_NHAP_KHO" EntityType="Self.KH_NHAP_KHO" />
+          <EntitySet Name="KH_NHAP_KHO_CT" EntityType="Self.KH_NHAP_KHO_CT" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KHO_HHModelStoreContainer" CdmEntityContainer="KHO_HHEntities">
+          <EntitySetMapping Name="KH_NHAP_KHO">
+            <EntityTypeMapping TypeName="KHO_HHModel.KH_NHAP_KHO">
+              <MappingFragment StoreEntitySet="KH_NHAP_KHO">
+                <ScalarProperty Name="ID_TXN" ColumnName="ID_TXN" />
+                <ScalarProperty Name="ID_KHO" ColumnName="ID_KHO" />
+                <ScalarProperty Name="TEN_KHO" ColumnName="TEN_KHO" />
+                <ScalarProperty Name="ID_DON_VI" ColumnName="ID_DON_VI" />
+                <ScalarProperty Name="TEN_DON_VI" ColumnName="TEN_DON_VI" />
+                <ScalarProperty Name="LOAI_NK" ColumnName="LOAI_NK" />
+                <ScalarProperty Name="SO_PHIEU" ColumnName="SO_PHIEU" />
+                <ScalarProperty Name="NGAY_CT" ColumnName="NGAY_CT" />
+                <ScalarProperty Name="ID_HOP_DONG" ColumnName="ID_HOP_DONG" />
+                <ScalarProperty Name="SO_HOP_DONG" ColumnName="SO_HOP_DONG" />
+                <ScalarProperty Name="NGAY_KY_HD" ColumnName="NGAY_KY_HD" />
+                <ScalarProperty Name="NGAY_HH_HD" ColumnName="NGAY_HH_HD" />
+                <ScalarProperty Name="ID_NHA_CC" ColumnName="ID_NHA_CC" />
+                <ScalarProperty Name="TEN_NHA_CC" ColumnName="TEN_NHA_CC" />
+                <ScalarProperty Name="LY_DO_NHAP" ColumnName="LY_DO_NHAP" />
+                <ScalarProperty Name="ID_KE_HOACH" ColumnName="ID_KE_HOACH" />
+                <ScalarProperty Name="SO_KE_HOACH" ColumnName="SO_KE_HOACH" />
+                <ScalarProperty Name="TONG_TIEN" ColumnName="TONG_TIEN" />
+                <ScalarProperty Name="TONG_TIEN_CHU" ColumnName="TONG_TIEN_CHU" />
+                <ScalarProperty Name="NGAY_NK" ColumnName="NGAY_NK" />
+                <ScalarProperty Name="TRANG_THAI" ColumnName="TRANG_THAI" />
+                <ScalarProperty Name="NGUON_KINH_PHI" ColumnName="NGUON_KINH_PHI" />
+                <ScalarProperty Name="NGUON_HANG" ColumnName="NGUON_HANG" />
+                <ScalarProperty Name="ID_NGUOI_TAO" ColumnName="ID_NGUOI_TAO" />
+                <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+                <ScalarProperty Name="ID_NGUOI_CAP_NHAT" ColumnName="ID_NGUOI_CAP_NHAT" />
+                <ScalarProperty Name="NGAY_CAP_NHAT" ColumnName="NGAY_CAP_NHAT" />
+                <ScalarProperty Name="ID_NGUOI_GIAO" ColumnName="ID_NGUOI_GIAO" />
+                <ScalarProperty Name="TEN_NGUOI_GIAO" ColumnName="TEN_NGUOI_GIAO" />
+                <ScalarProperty Name="ID_NGUOI_NHAN" ColumnName="ID_NGUOI_NHAN" />
+                <ScalarProperty Name="TEN_NGUOI_NHAN" ColumnName="TEN_NGUOI_NHAN" />
+                <ScalarProperty Name="NHAP_TRA_DOI_CO" ColumnName="NHAP_TRA_DOI_CO" />
+                <ScalarProperty Name="ID_NGUOI_KY_1" ColumnName="ID_NGUOI_KY_1" />
+                <ScalarProperty Name="TEN_NGUOI_KY_1" ColumnName="TEN_NGUOI_KY_1" />
+                <ScalarProperty Name="CV_NGUOI_KY_1" ColumnName="CV_NGUOI_KY_1" />
+                <ScalarProperty Name="CB_NGUOI_KY_1" ColumnName="CB_NGUOI_KY_1" />
+                <ScalarProperty Name="ID_NGUOI_KY_2" ColumnName="ID_NGUOI_KY_2" />
+                <ScalarProperty Name="TEN_NGUOI_KY_2" ColumnName="TEN_NGUOI_KY_2" />
+                <ScalarProperty Name="CV_NGUOI_KY_2" ColumnName="CV_NGUOI_KY_2" />
+                <ScalarProperty Name="CB_NGUOI_KY_2" ColumnName="CB_NGUOI_KY_2" />
+                <ScalarProperty Name="ID_NGUOI_KY_3" ColumnName="ID_NGUOI_KY_3" />
+                <ScalarProperty Name="TEN_NGUOI_KY_3" ColumnName="TEN_NGUOI_KY_3" />
+                <ScalarProperty Name="CV_NGUOI_KY_3" ColumnName="CV_NGUOI_KY_3" />
+                <ScalarProperty Name="CB_NGUOI_KY_3" ColumnName="CB_NGUOI_KY_3" />
+                <ScalarProperty Name="ID_NGUOI_KY_4" ColumnName="ID_NGUOI_KY_4" />
+                <ScalarProperty Name="TEN_NGUOI_KY_4" ColumnName="TEN_NGUOI_KY_4" />
+                <ScalarProperty Name="CV_NGUOI_KY_4" ColumnName="CV_NGUOI_KY_4" />
+                <ScalarProperty Name="CB_NGUOI_KY_4" ColumnName="CB_NGUOI_KY_4" />
+                <ScalarProperty Name="ID_NGUOI_KY_5" ColumnName="ID_NGUOI_KY_5" />
+                <ScalarProperty Name="TEN_NGUOI_KY_5" ColumnName="TEN_NGUOI_KY_5" />
+                <ScalarProperty Name="CV_NGUOI_KY_5" ColumnName="CV_NGUOI_KY_5" />
+                <ScalarProperty Name="CB_NGUOI_KY_5" ColumnName="CB_NGUOI_KY_5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KH_NHAP_KHO_CT">
+            <EntityTypeMapping TypeName="KHO_HHModel.KH_NHAP_KHO_CT">
+              <MappingFragment StoreEntitySet="KH_NHAP_KHO_CT">
+                <ScalarProperty Name="ID_NK_CT" ColumnName="ID_NK_CT" />
+                <ScalarProperty Name="ID_TXN" ColumnName="ID_TXN" />
+                <ScalarProperty Name="STT" ColumnName="STT" />
+                <ScalarProperty Name="ID_HANG" ColumnName="ID_HANG" />
+                <ScalarProperty Name="MA_HANG" ColumnName="MA_HANG" />
+                <ScalarProperty Name="TEN_HANG" ColumnName="TEN_HANG" />
+                <ScalarProperty Name="DVT" ColumnName="DVT" />
+                <ScalarProperty Name="SO_LUONG_KH" ColumnName="SO_LUONG_KH" />
+                <ScalarProperty Name="SO_LUONG_TT" ColumnName="SO_LUONG_TT" />
+                <ScalarProperty Name="DON_GIA" ColumnName="DON_GIA" />
+                <ScalarProperty Name="THANH_TIEN_KH" ColumnName="THANH_TIEN_KH" />
+                <ScalarProperty Name="THANH_TIEN_TT" ColumnName="THANH_TIEN_TT" />
+                <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

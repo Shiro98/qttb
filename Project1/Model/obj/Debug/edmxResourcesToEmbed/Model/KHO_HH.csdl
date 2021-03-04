@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KHO_HHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="KH_NHAP_KHO">
+    <Key>
+      <PropertyRef Name="ID_TXN" />
+    </Key>
+    <Property Name="ID_TXN" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_KHO" Type="Int32" Nullable="false" />
+    <Property Name="TEN_KHO" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ID_DON_VI" Type="Int32" Nullable="false" />
+    <Property Name="TEN_DON_VI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="LOAI_NK" Type="Int32" />
+    <Property Name="SO_PHIEU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NGAY_CT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="ID_HOP_DONG" Type="Int32" />
+    <Property Name="SO_HOP_DONG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NGAY_KY_HD" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="NGAY_HH_HD" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="ID_NHA_CC" Type="Int32" />
+    <Property Name="TEN_NHA_CC" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="LY_DO_NHAP" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ID_KE_HOACH" Type="Int32" />
+    <Property Name="SO_KE_HOACH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TONG_TIEN" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="TONG_TIEN_CHU" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="NGAY_NK" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="TRANG_THAI" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NGUON_KINH_PHI" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="NGUON_HANG" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ID_NGUOI_TAO" Type="Int32" />
+    <Property Name="NGAY_TAO" Type="DateTime" Precision="3" />
+    <Property Name="ID_NGUOI_CAP_NHAT" Type="Int32" />
+    <Property Name="NGAY_CAP_NHAT" Type="DateTime" Precision="3" />
+    <Property Name="ID_NGUOI_GIAO" Type="Int32" />
+    <Property Name="TEN_NGUOI_GIAO" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ID_NGUOI_NHAN" Type="Int32" />
+    <Property Name="TEN_NGUOI_NHAN" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="NHAP_TRA_DOI_CO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ID_NGUOI_KY_1" Type="Int32" />
+    <Property Name="TEN_NGUOI_KY_1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CV_NGUOI_KY_1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CB_NGUOI_KY_1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID_NGUOI_KY_2" Type="Int32" />
+    <Property Name="TEN_NGUOI_KY_2" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CV_NGUOI_KY_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CB_NGUOI_KY_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID_NGUOI_KY_3" Type="Int32" />
+    <Property Name="TEN_NGUOI_KY_3" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CV_NGUOI_KY_3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CB_NGUOI_KY_3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID_NGUOI_KY_4" Type="Int32" />
+    <Property Name="TEN_NGUOI_KY_4" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CV_NGUOI_KY_4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CB_NGUOI_KY_4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID_NGUOI_KY_5" Type="Int32" />
+    <Property Name="TEN_NGUOI_KY_5" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CV_NGUOI_KY_5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CB_NGUOI_KY_5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="KH_NHAP_KHO_CT">
+    <Key>
+      <PropertyRef Name="ID_NK_CT" />
+    </Key>
+    <Property Name="ID_NK_CT" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_TXN" Type="Int64" Nullable="false" />
+    <Property Name="STT" Type="Int16" />
+    <Property Name="ID_HANG" Type="Int32" />
+    <Property Name="MA_HANG" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="TEN_HANG" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="DVT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SO_LUONG_KH" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SO_LUONG_TT" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DON_GIA" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="THANH_TIEN_KH" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="THANH_TIEN_TT" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="GHI_CHU" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="KHO_HHEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="KH_NHAP_KHO" EntityType="Self.KH_NHAP_KHO" />
+    <EntitySet Name="KH_NHAP_KHO_CT" EntityType="Self.KH_NHAP_KHO_CT" />
+  </EntityContainer>
+</Schema>
